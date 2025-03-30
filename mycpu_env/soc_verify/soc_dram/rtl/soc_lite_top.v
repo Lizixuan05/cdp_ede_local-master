@@ -75,21 +75,12 @@ module soc_lite_top #(parameter SIMULATION=1'b0)
     output wire [1 :0] led_rg1,
     output wire [7 :0] num_csn,
     output wire [6 :0] num_a_g,
-    //output wire [31:0] num_data,
+    output wire [31:0] num_data,
     input  wire [7 :0] switch, 
-    //output wire [3 :0] btn_key_col,
-    //input  wire [3 :0] btn_key_row,
+    output wire [3 :0] btn_key_col,
+    input  wire [3 :0] btn_key_row,
     input  wire [1 :0] btn_step
 );
-
-//适配本地开发板外设
-//*************************************************************************
-wire [31:0] num_data;
-wire [3 :0] btn_key_col;
-wire [3 :0] btn_key_row;
-//************************************************************************
-
-
 
 //debug signals
 wire [31:0] debug_wb_pc;
