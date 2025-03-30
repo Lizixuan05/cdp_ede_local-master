@@ -1,0 +1,109 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Mar 30 16:56:22 2025
+| Host         : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'inst_ram'
+
+1. Summary
+----------
+
+SUCCESS in the update of inst_ram (xilinx.com:ip:dist_mem_gen:8.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Mar 30 16:56:13 2025
+| Host         : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'data_ram'
+
+1. Summary
+----------
+
+SUCCESS in the update of data_ram (xilinx.com:ip:dist_mem_gen:8.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Mar 30 16:56:00 2025
+| Host         : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_pll'
+
+1. Summary
+----------
+
+SUCCESS in the update of clk_pll (xilinx.com:ip:clk_wiz:6.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Mar 30 15:18:59 2025
+| Host         : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_pll'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of clk_pll (xilinx.com:ip:clk_wiz:6.0) from (Rev. 4) to (Rev. 12)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'clk_pll'.
+
+
+-Upgrade has removed interface 'CLOCK_CLK_IN1'
+
+-Upgrade has removed interface 'CLOCK_CLK_OUT1'
+
+-Upgrade has removed interface 'CLOCK_CLK_OUT2'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'clk_pll'. These changes may impact your design.
+
+
+-Upgrade has removed port 'reset'
+
+-Upgrade has added port 'clk_in1'
+
+-Upgrade has added port 'cpu_clk'
+
+-Upgrade has added port 'timer_clk'
+
+

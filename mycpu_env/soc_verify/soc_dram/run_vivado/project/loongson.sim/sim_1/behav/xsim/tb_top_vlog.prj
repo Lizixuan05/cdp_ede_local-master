@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v" \
+"../../../../../../rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v" \
+"../../../../../../rtl/xilinx_ip/inst_ram/inst_ram_sim_netlist.v" \
+"../../../../../../../../myCPU/alu.v" \
+"../../../../../../rtl/BRIDGE/bridge_1x2.v" \
+"../../../../../../rtl/CONFREG/confreg.v" \
+"../../../../../../../../myCPU/mycpu_top.v" \
+"../../../../../../../../myCPU/regfile.v" \
+"../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../../../myCPU/tools.v" \
+"../../../../../../testbench/mycpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

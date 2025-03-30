@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../loongson.ip_user_files/ipstatic/hdl" --include "../../../../loongson.ip_user_files/ipstatic" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll.v" \
+"../../../../../../rtl/xilinx_ip/axi_ram/sim/axi_ram.v" \
+"../../../../../../rtl/xilinx_ip/axi_crossbar_1x2/sim/axi_crossbar_1x2.v" \
+"../../../../../../../../myCPU/alu.v" \
+"../../../../../../rtl/axi_wrap/axi_wrap.v" \
+"../../../../../../rtl/ram_wrap/axi_wrap_ram.v" \
+"../../../../../../rtl/CONFREG/confreg.v" \
+"../../../../../../../../myCPU/mycpu_top.v" \
+"../../../../../../../../myCPU/regfile.v" \
+"../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../../../myCPU/tools.v" \
+"../../../../../../testbench/mycpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,15 @@
+0.7
+2020.2
+May  7 2023
+15:24:31
+D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v,1743321013,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v,,alu,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v,1743340591,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/regfile.v,,mycpu_top,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/regfile.v,1742979283,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v,,regfile,,,../../../../loongson.ip_user_files/ipstatic,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v,1742979283,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/testbench/mycpu_tb.v,,decoder_2_4;decoder_4_16;decoder_5_32;decoder_6_64,,,../../../../loongson.ip_user_files/ipstatic,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v,1742979285,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v,,bridge_1x2,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v,1743337487,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v,,confreg,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v,1742979285,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v,,soc_lite_top,,,../../../../loongson.ip_user_files/ipstatic,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v,1743325106,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/inst_ram/inst_ram_sim_netlist.v,,data_ram;data_ram_dist_mem_gen_v8_0_13;data_ram_dist_mem_gen_v8_0_13_synth;data_ram_spram,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/inst_ram/inst_ram_sim_netlist.v,1743325490,verilog,,D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v,,inst_ram;inst_ram_dist_mem_gen_v8_0_13;inst_ram_dist_mem_gen_v8_0_13_synth;inst_ram_spram,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
+D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/testbench/mycpu_tb.v,1742979286,verilog,,,,tb_top,,,../../../../loongson.ip_user_files/ipstatic,,,,,

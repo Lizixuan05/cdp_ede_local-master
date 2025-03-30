@@ -1,0 +1,28 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_6 -L generic_baseblocks_v2_1_0 -L axi_infrastructure_v1_1_0 -L axi_register_slice_v2_1_28 -L fifo_generator_v13_2_8 -L axi_data_fifo_v2_1_27 -L axi_crossbar_v2_1_29 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'bready' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:314]
+ERROR: [VRFC 10-3180] cannot find port 'bvalid' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:313]
+ERROR: [VRFC 10-3180] cannot find port 'bresp' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:312]
+ERROR: [VRFC 10-3180] cannot find port 'bid' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:311]
+ERROR: [VRFC 10-3180] cannot find port 'wready' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:309]
+ERROR: [VRFC 10-3180] cannot find port 'wvalid' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:308]
+ERROR: [VRFC 10-3180] cannot find port 'wlast' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:307]
+ERROR: [VRFC 10-3180] cannot find port 'wstrb' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:306]
+ERROR: [VRFC 10-3180] cannot find port 'wdata' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:305]
+ERROR: [VRFC 10-3180] cannot find port 'wid' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:304]
+ERROR: [VRFC 10-3180] cannot find port 'awready' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:302]
+ERROR: [VRFC 10-3180] cannot find port 'awvalid' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:301]
+ERROR: [VRFC 10-3180] cannot find port 'awprot' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:300]
+ERROR: [VRFC 10-3180] cannot find port 'awcache' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:299]
+ERROR: [VRFC 10-3180] cannot find port 'awlock' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:298]
+ERROR: [VRFC 10-3180] cannot find port 'awburst' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:297]
+ERROR: [VRFC 10-3180] cannot find port 'awsize' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:296]
+ERROR: [VRFC 10-3180] cannot find port 'awlen' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:295]
+ERROR: [VRFC 10-3180] cannot find port 'awaddr' on this module [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_axi/rtl/soc_lite_top.v:294]
+INFO: [#UNDEF] Sorry, too many errors..
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

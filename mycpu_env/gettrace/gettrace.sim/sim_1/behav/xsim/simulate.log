@@ -1,0 +1,37 @@
+Time resolution is 1 ps
+==============================================================
+Test begin!
+----[   4765 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  13275 ns] Number 8'd02 Functional Test Point PASS!!!
+----[  17565 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0x1c01a4c8
+----[  24795 ns] Number 8'd04 Functional Test Point PASS!!!
+----[  26025 ns] Number 8'd05 Functional Test Point PASS!!!
+----[  30695 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0x1c01b384
+----[  35045 ns] Number 8'd07 Functional Test Point PASS!!!
+----[  38915 ns] Number 8'd08 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0x1c01c28c
+----[  42705 ns] Number 8'd09 Functional Test Point PASS!!!
+----[  47455 ns] Number 8'd10 Functional Test Point PASS!!!
+----[  51685 ns] Number 8'd11 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0x1c011400
+----[  54295 ns] Number 8'd12 Functional Test Point PASS!!!
+----[  56905 ns] Number 8'd13 Functional Test Point PASS!!!
+        [  62000 ns] Test is running, debug_wb_pc = 0x1c012308
+----[  63255 ns] Number 8'd14 Functional Test Point PASS!!!
+----[  69285 ns] Number 8'd15 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0x1c013310
+----[  81595 ns] Number 8'd16 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0x1c01447c
+----[  90335 ns] Number 8'd17 Functional Test Point PASS!!!
+        [  92000 ns] Test is running, debug_wb_pc = 0x1c015534
+----[  97365 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0x1c0165b8
+        [ 112000 ns] Test is running, debug_wb_pc = 0x1c0176a8
+----[ 113715 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 121585 ns] Number 8'd20 Functional Test Point PASS!!!
+==============================================================
+gettrace end!
+----Succeed in generating trace file!
+$finish called at time : 121915 ns : File "D:/_study materials/nscscc/cdp_ede_local-master/mycpu_env/gettrace/src/tb_top.v" Line 224
