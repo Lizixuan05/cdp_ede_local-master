@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1743337529" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/soc_lite_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1743433525" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/soc_lite_top.dcp">
   <File Type="PA-TCL" Name="soc_lite_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="soc_lite_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="soc_lite_top_reports.tcl"/>
@@ -60,7 +60,199 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v"/>
+        <Attr Name="ImportTime" Val="1680850350"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v"/>
+        <Attr Name="ImportTime" Val="1680850118"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_D.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_D.v"/>
+        <Attr Name="ImportTime" Val="1680849124"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v"/>
+        <Attr Name="ImportTime" Val="1680850182"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_I.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_I.v"/>
+        <Attr Name="ImportTime" Val="1680849352"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v"/>
+        <Attr Name="ImportTime" Val="1680849568"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v"/>
+        <Attr Name="ImportTime" Val="1680849934"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_R.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_R.v"/>
+        <Attr Name="ImportTime" Val="1680850228"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v"/>
+        <Attr Name="ImportTime" Val="1680850068"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DIV_RX_CLK.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DIV_RX_CLK.v"/>
+        <Attr Name="ImportTime" Val="1680840292"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/H2C.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/H2C.v"/>
+        <Attr Name="ImportTime" Val="1680263366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/PRINT.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/PRINT.v"/>
+        <Attr Name="ImportTime" Val="1680848254"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/RX.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/RX.v"/>
+        <Attr Name="ImportTime" Val="1680263366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SCAN.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SCAN.v"/>
+        <Attr Name="ImportTime" Val="1680263366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SDU.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SDU.v"/>
+        <Attr Name="ImportTime" Val="1680840654"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SIR.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SIR.v"/>
+        <Attr Name="ImportTime" Val="1680263366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/TX.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/TX.v"/>
+        <Attr Name="ImportTime" Val="1680263366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/SDU-DM_2023.4.8/sdu_dm.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../_study materials/课程资料/Digital lab/lab/lab4/SDU-DM_2023.4.8/sdu_dm.v"/>
+        <Attr Name="ImportTime" Val="1680850354"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../../../func/obj/inst_ram.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../../lab/lab2/text.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../../lab/lab2/data.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -99,9 +291,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="inst_ram"/>

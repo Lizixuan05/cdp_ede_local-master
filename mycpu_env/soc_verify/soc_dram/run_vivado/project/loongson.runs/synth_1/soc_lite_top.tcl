@@ -70,13 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 5
-set_param synth.incrementalSynthesisCache C:/Users/lizixuan/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6712-LAPTOP-EH5L1GAH/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100ticsg324-1L
 
@@ -93,7 +87,9 @@ set_property ip_output_repo d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files d:/nscscc/cdp_ede_local-master/mycpu_env/func/obj/inst_ram.coe
+add_files D:/nscscc/cdp_ede_local-master/mycpu_env/func/obj/inst_ram.coe
+add_files d:/nscscc/lab/lab2/text.coe
+add_files d:/nscscc/lab/lab2/data.coe
 read_verilog -library xil_defaultlib {
   D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v

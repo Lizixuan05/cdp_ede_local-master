@@ -79,7 +79,9 @@ module soc_lite_top #(parameter SIMULATION=1'b0)
     input  wire [7 :0] switch, 
     //output wire [3 :0] btn_key_col,
     //input  wire [3 :0] btn_key_row,
-    input  wire [1 :0] btn_step
+    input  wire [1 :0] btn_step,
+    input  wire        rxd,
+    output wire        txd
 );
 
 //适配本地开发板外设
@@ -232,6 +234,18 @@ confreg #(.SIMULATION(SIMULATION)) u_confreg
     .btn_key_row  ( btn_key_row),  // i, 4           
     .btn_step     ( btn_step   )   // i, 2   
 );
-
+wire [31:0] sdu_addr;
+wire [31:0] dout;
+assign sdu_addr = {16'b0,data_sram_addr[17:2]};
+assign dout = data_sram_rdata;
+/*
+sdu_dm sdu_dm_inst(
+        .clk(cpu_clk),
+        .rstn(cpu_resetn),
+        .rxd(rxd),
+        .txd(txd),
+        .addr(sdu_addr),//32位，我们只使用其中后4位
+        .dout(dout)
+    );*/
 endmodule
 

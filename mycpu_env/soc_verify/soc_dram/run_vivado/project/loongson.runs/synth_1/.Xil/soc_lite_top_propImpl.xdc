@@ -93,6 +93,10 @@ set_property src_info {type:XDC file:1 line:84 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { btn_step[0] }]; #IO_L9P_T1_DQS_14 Sch=btnc
 set_property src_info {type:XDC file:1 line:87 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { btn_step[1] }]; #IO_L10N_T1_D15_14 Sch=btnr
+set_property src_info {type:XDC file:1 line:219 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN C4    IOSTANDARD LVCMOS33 } [get_ports { rxd }]; #IO_L7P_T1_AD6P_35 Sch=uart_txd_in
+set_property src_info {type:XDC file:1 line:220 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN D4    IOSTANDARD LVCMOS33 } [get_ports { txd }]; #IO_L11N_T1_SRCC_35 Sch=uart_rxd_out
 set_property src_info {type:XDC file:1 line:256 export:INPUT save:INPUT read:READ} [current_design]
 set_false_path -from [get_clocks -of_objects [get_pins pll.clk_pll/inst/plle2_adv_inst/CLKOUT1]] -to [get_clocks -of_objects [get_pins pll.clk_pll/inst/plle2_adv_inst/CLKOUT0]]
 set_property src_info {type:XDC file:1 line:257 export:INPUT save:INPUT read:READ} [current_design]

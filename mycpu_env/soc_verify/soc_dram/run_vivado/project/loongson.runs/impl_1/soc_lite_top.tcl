@@ -115,9 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -125,10 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 5
-  set_param synth.incrementalSynthesisCache C:/Users/lizixuan/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6712-LAPTOP-EH5L1GAH/incrSyn
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 20  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100ticsg324-1L
@@ -305,35 +299,4 @@ OPTRACE "route_design write_checkpoint" END { }
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
-OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
-OPTRACE "write_bitstream setup" START { }
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-OPTRACE "read constraints: write_bitstream" START { }
-OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
-  catch { write_mem_info -force -no_partial_mmi soc_lite_top.mmi }
-OPTRACE "write_bitstream setup" END { }
-OPTRACE "write_bitstream" START { }
-  write_bitstream -force soc_lite_top.bit 
-OPTRACE "write_bitstream" END { }
-OPTRACE "write_bitstream misc" START { }
-OPTRACE "read constraints: write_bitstream_post" START { }
-OPTRACE "read constraints: write_bitstream_post" END { }
-  catch {write_debug_probes -quiet -force soc_lite_top}
-  catch {file copy -force soc_lite_top.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "write_bitstream misc" END { }
-OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }
