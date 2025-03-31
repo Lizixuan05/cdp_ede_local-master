@@ -2,8 +2,9 @@
 对应实验手册请参阅[《LoongArch CPU设计实验》](https://bookdown.org/loongson/_book3/)。
 
 >**NOTE:** 
->  1. minicpu_env/miniCPU/目录下的代码功能不全，是有意为之，无需提issue修正。
->  2. mycpu_env/myCPU/目录下的代码有功能错误，亦是有意为之，无需提issue修正。
+> 由于本地开发板与龙芯的实验箱不同，因此上板时候需要对SOC外设等接口做一些更改，因此存在多个分支分别用于原实验环境仿真测试，与本地开发板环境上板测试
+> 1.main用于本地开发板环境上板测试单周期cpu
+> 2.simulation用于原实验环境仿真测试
 
 ## 实验安排简介
 
@@ -61,4 +62,8 @@ exp17 : TLB模块设计，非func测试，单独开发。
 
 ### **mycpu_env**/module_verify/**module_cache**
 exp20 : Cache模块设计，非func测试，单独开发。
+
+## 个人进度
+### **mycpu_env**/soc_verify/**soc_dram** *(distributed ram interface)* 
+实现了39条指令的单周期cpu
 
