@@ -3,9 +3,10 @@
 
 >**NOTE:** 
 > 由于本地开发板与龙芯的实验箱不同，因此上板时候需要对SOC外设等接口做一些更改，因此存在多个分支分别用于原实验环境仿真测试，与本地开发板环境上板测试
-> 1.main用于本地开发板环境上板测试单周期cpu
-> 2.simulation用于原实验环境仿真测试
 
+> 1.main用于本地开发板环境上板测试单周期
+> 2.simulation用于原实验环境仿真测试
+> 3.SingleCycleCPU分支实现了39条指令的单周期CPU
 ## 实验安排简介
 
 ### **dc_env**
@@ -65,5 +66,5 @@ exp20 : Cache模块设计，非func测试，单独开发。
 
 ## 个人进度
 ### **mycpu_env**/soc_verify/**soc_dram** *(distributed ram interface)* 
-实现了39条指令的单周期cpu
+SingleCycleCPU分支实现了39条指令的单周期cpu
 
