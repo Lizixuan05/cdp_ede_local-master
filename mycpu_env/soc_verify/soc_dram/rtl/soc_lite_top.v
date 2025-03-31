@@ -81,7 +81,9 @@ module soc_lite_top #(parameter SIMULATION=1'b0)
     //input  wire [3 :0] btn_key_row,
     input  wire [1 :0] btn_step,
     input  wire        rxd,
-    output wire        txd
+    output wire        txd,
+    input  wire        switch
+    
 );
 
 //适配本地开发板外设
@@ -180,12 +182,16 @@ inst_ram inst_ram
     .spo   (cpu_inst_rdata     )   
 );
 
+wire [31:0] addr;
+assign addr = switch?cpu_data_addr:sdu_addr;
+
+
 bridge_1x2 bridge_1x2(
     .clk             ( cpu_clk         ), // i, 1                 
     .resetn          ( cpu_resetn      ), // i, 1                 
 	  
     .cpu_data_we     ( cpu_data_we     ), // i, 4                 
-    .cpu_data_addr   ( cpu_data_addr   ), // i, 32                
+    .cpu_data_addr   ( addr   ), // i, 32                
     .cpu_data_wdata  ( cpu_data_wdata  ), // i, 32                
     .cpu_data_rdata  ( cpu_data_rdata  ), // o, 32                
 
@@ -235,17 +241,14 @@ confreg #(.SIMULATION(SIMULATION)) u_confreg
     .btn_step     ( btn_step   )   // i, 2   
 );
 wire [31:0] sdu_addr;
-wire [31:0] dout;
-assign sdu_addr = {16'b0,data_sram_addr[17:2]};
-assign dout = data_sram_rdata;
-/*
+
 sdu_dm sdu_dm_inst(
         .clk(cpu_clk),
         .rstn(cpu_resetn),
         .rxd(rxd),
         .txd(txd),
         .addr(sdu_addr),//32位，我们只使用其中后4位
-        .dout(dout)
-    );*/
+        .dout(data_sram_rdata)
+    );
 endmodule
 
