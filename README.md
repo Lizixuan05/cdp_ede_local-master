@@ -8,8 +8,7 @@
 
 > 2.simulation用于原实验环境仿真测试
 
-> 3.SingleCycleCPU分支实现了39条指令的单周期CPU
-> 4.SingleCycleCPU_sim分支用于SingleCycleCPU仿真测试
+> 3.SingleCPU分支实现了35条指令的单周期CPU（即除了字节传输指令），并加入了sdu串行调试单元
 ## 实验安排简介
 
 ### **dc_env**
