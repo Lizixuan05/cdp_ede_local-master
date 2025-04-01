@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Mar 31 23:08:20 2025
-# Process ID: 37044
+# Start of session at: Tue Apr  1 20:56:44 2025
+# Process ID: 17320
 # Current directory: D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/impl_1
 # Command line: vivado.exe -log soc_lite_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source soc_lite_top.tcl -notrace
 # Log file: D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/impl_1/soc_lite_top.vdi

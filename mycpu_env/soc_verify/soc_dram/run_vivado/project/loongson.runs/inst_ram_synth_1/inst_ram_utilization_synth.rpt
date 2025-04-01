@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Mon Mar 31 22:10:55 2025
+| Date         : Tue Apr  1 20:53:39 2025
 | Host         : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
 | Command      : report_utilization -file inst_ram_utilization_synth.rpt -pb inst_ram_utilization_synth.pb
 | Design       : inst_ram
@@ -28,20 +28,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+-------+-------+------------+-----------+-------+
-|          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
-+----------------------------+-------+-------+------------+-----------+-------+
-| Slice LUTs*                | 17615 |     0 |          0 |     63400 | 27.78 |
-|   LUT as Logic             |  1231 |     0 |          0 |     63400 |  1.94 |
-|   LUT as Memory            | 16384 |     0 |          0 |     19000 | 86.23 |
-|     LUT as Distributed RAM | 16384 |     0 |            |           |       |
-|     LUT as Shift Register  |     0 |     0 |            |           |       |
-| Slice Registers            |    32 |     0 |          0 |    126800 |  0.03 |
-|   Register as Flip Flop    |    32 |     0 |          0 |    126800 |  0.03 |
-|   Register as Latch        |     0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                   |  8736 |     0 |          0 |     31700 | 27.56 |
-| F8 Muxes                   |  4352 |     0 |          0 |     15850 | 27.46 |
-+----------------------------+-------+-------+------------+-----------+-------+
++----------------------------+------+-------+------------+-----------+-------+
+|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
++----------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*                | 4416 |     0 |          0 |     63400 |  6.97 |
+|   LUT as Logic             |  320 |     0 |          0 |     63400 |  0.50 |
+|   LUT as Memory            | 4096 |     0 |          0 |     19000 | 21.56 |
+|     LUT as Distributed RAM | 4096 |     0 |            |           |       |
+|     LUT as Shift Register  |    0 |     0 |            |           |       |
+| Slice Registers            |   32 |     0 |          0 |    126800 |  0.03 |
+|   Register as Flip Flop    |   32 |     0 |          0 |    126800 |  0.03 |
+|   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
+| F7 Muxes                   | 2176 |     0 |          0 |     31700 |  6.86 |
+| F8 Muxes                   | 1024 |     0 |          0 |     15850 |  6.46 |
++----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 
@@ -147,19 +147,15 @@ Warning! LUT value is adjusted to account for LUT combining.
 7. Primitives
 -------------
 
-+----------+-------+---------------------+
-| Ref Name |  Used | Functional Category |
-+----------+-------+---------------------+
-| RAMS64E  | 16384 |  Distributed Memory |
-| MUXF7    |  8736 |               MuxFx |
-| MUXF8    |  4352 |               MuxFx |
-| LUT6     |  1106 |                 LUT |
-| LUT5     |   110 |                 LUT |
-| FDRE     |    32 |        Flop & Latch |
-| LUT4     |    26 |                 LUT |
-| LUT3     |     2 |                 LUT |
-| LUT2     |     2 |                 LUT |
-+----------+-------+---------------------+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| RAMS64E  | 4096 |  Distributed Memory |
+| MUXF7    | 2176 |               MuxFx |
+| MUXF8    | 1024 |               MuxFx |
+| LUT6     |  320 |                 LUT |
+| FDRE     |   32 |        Flop & Latch |
++----------+------+---------------------+
 
 
 8. Black Boxes

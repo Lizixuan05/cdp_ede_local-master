@@ -55,7 +55,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 inst_ram your_instance_name (
-  .a(a),      // input wire [14 : 0] a
+  .a(a),      // input wire [12 : 0] a
   .d(d),      // input wire [31 : 0] d
   .clk(clk),  // input wire clk
   .we(we),    // input wire we

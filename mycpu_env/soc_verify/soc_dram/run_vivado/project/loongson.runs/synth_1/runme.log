@@ -14,7 +14,7 @@ ECHO ´¦ÓÚ¹Ø±Õ×´Ì¬¡£
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source soc_lite_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 434.676 ; gain = 162.684
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 432.434 ; gain = 164.082
 Command: read_checkpoint -auto_incremental -incremental D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/utils_1/imports/synth_1/soc_lite_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/utils_1/imports/synth_1/soc_lite_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,15 +27,17 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10880
+INFO: [Synth 8-7075] Helper process launched with PID 19956
+INFO: [Synth 8-11241] undeclared symbol 'cs_P', assumed default net type 'wire' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v:257]
 INFO: [Synth 8-11241] undeclared symbol 'inst_sltui', assumed default net type 'wire' [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:202]
 INFO: [Synth 8-11241] undeclared symbol 'debug_wb_rf_wen', assumed default net type 'wire' [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:330]
+WARNING: [Synth 8-6901] identifier 'sdu_addr' is used before its declaration [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:186]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1278.930 ; gain = 411.406
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.758 ; gain = 409.246
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'soc_lite_top' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:67]
-INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/clk_pll_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/clk_pll_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/clk_pll_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/clk_pll_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'mycpu_top' [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'decoder_6_64' [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v:40]
 INFO: [Synth 8-6155] done synthesizing module 'decoder_6_64' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v:40]
@@ -50,23 +52,70 @@ INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [D:/nscscc/cdp_ede
 INFO: [Synth 8-6157] synthesizing module 'alu' [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'mycpu_top' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'inst_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/inst_ram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'inst_ram' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/inst_ram_stub.v:6]
-WARNING: [Synth 8-689] width (16) of port connection 'a' does not match port width (15) of module 'inst_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:178]
+INFO: [Synth 8-6157] synthesizing module 'inst_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/inst_ram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_ram' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/inst_ram_stub.v:6]
+WARNING: [Synth 8-689] width (16) of port connection 'a' does not match port width (13) of module 'inst_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:180]
 INFO: [Synth 8-6157] synthesizing module 'bridge_1x2' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v:50]
 INFO: [Synth 8-6155] done synthesizing module 'bridge_1x2' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v:50]
-INFO: [Synth 8-6157] synthesizing module 'data_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/data_ram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'data_ram' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-19852-LAPTOP-EH5L1GAH/realtime/data_ram_stub.v:6]
-WARNING: [Synth 8-689] width (16) of port connection 'a' does not match port width (10) of module 'data_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:210]
+INFO: [Synth 8-6157] synthesizing module 'data_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/data_ram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_ram' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/.Xil/Vivado-17128-LAPTOP-EH5L1GAH/realtime/data_ram_stub.v:6]
+WARNING: [Synth 8-689] width (16) of port connection 'a' does not match port width (10) of module 'data_ram' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:216]
 INFO: [Synth 8-6157] synthesizing module 'confreg' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v:73]
 	Parameter SIMULATION bound to: 1'b0 
 INFO: [Synth 8-6155] done synthesizing module 'confreg' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v:73]
+INFO: [Synth 8-6157] synthesizing module 'sdu_dm' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/sdu_dm.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SDU' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SDU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DIV_RX_CLK' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DIV_RX_CLK.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DIV_RX_CLK' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DIV_RX_CLK.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RX' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/RX.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SIR' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SIR.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SIR' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SIR.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'RX' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/RX.v:3]
+INFO: [Synth 8-6157] synthesizing module 'TX' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/TX.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'TX' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/TX.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DCP' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SCAN' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SCAN.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SCAN' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SCAN.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PRINT' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/PRINT.v:3]
+INFO: [Synth 8-6157] synthesizing module 'H2C' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/H2C.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'H2C' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/H2C.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PRINT' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/PRINT.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DCP_D' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_D.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_D' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_D.v:2]
+INFO: [Synth 8-6157] synthesizing module 'DCP_I' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_I.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_I' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_I.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DCP_P' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v:370]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_P' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v:4]
+WARNING: [Synth 8-689] width (1) of port connection 'cs' does not match port width (5) of module 'DCP_P' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v:257]
+INFO: [Synth 8-6157] synthesizing module 'DCP_T' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v:402]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_T' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v:4]
+INFO: [Synth 8-6157] synthesizing module 'DCP_B' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v:51]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v:118]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_B' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v:2]
+INFO: [Synth 8-6157] synthesizing module 'DCP_G' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v:382]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_G' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v:2]
+INFO: [Synth 8-6157] synthesizing module 'DCP_R' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_R.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_R' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_R.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DCP_L' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'DCP_L' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'DCP' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SDU' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SDU.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'sdu_dm' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/sdu_dm.v:3]
+WARNING: [Synth 8-7071] port 'din' of module 'sdu_dm' is unconnected for instance 'sdu_dm_inst' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:245]
+WARNING: [Synth 8-7071] port 'we' of module 'sdu_dm' is unconnected for instance 'sdu_dm_inst' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:245]
+WARNING: [Synth 8-7071] port 'clk_ld' of module 'sdu_dm' is unconnected for instance 'sdu_dm_inst' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:245]
+WARNING: [Synth 8-7023] instance 'sdu_dm_inst' of module 'sdu_dm' has 9 connections declared, but only 6 given [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:245]
 INFO: [Synth 8-6155] done synthesizing module 'soc_lite_top' (0#1) [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:67]
 WARNING: [Synth 8-3848] Net debug_wb_rf_we in module/entity mycpu_top does not have driver. [D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:16]
 WARNING: [Synth 8-6014] Unused sequential element confreg_uart_data_reg was removed.  [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v:304]
 WARNING: [Synth 8-6014] Unused sequential element confreg_uart_valid_reg was removed.  [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v:305]
-WARNING: [Synth 8-3848] Net txd in module/entity soc_lite_top does not have driver. [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:84]
-WARNING: [Synth 8-3848] Net btn_key_row in module/entity soc_lite_top does not have driver. [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:91]
+WARNING: [Synth 8-3848] Net btn_key_row in module/entity soc_lite_top does not have driver. [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v:93]
+WARNING: [Synth 8-7129] Port flag_rx in module DCP_G is either unconnected or has no load
 WARNING: [Synth 8-7129] Port conf_addr[31] in module confreg is either unconnected or has no load
 WARNING: [Synth 8-7129] Port conf_addr[30] in module confreg is either unconnected or has no load
 WARNING: [Synth 8-7129] Port conf_addr[29] in module confreg is either unconnected or has no load
@@ -89,21 +138,19 @@ WARNING: [Synth 8-7129] Port debug_wb_rf_we[3] in module mycpu_top is either unc
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[2] in module mycpu_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[1] in module mycpu_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[0] in module mycpu_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port txd in module soc_lite_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rxd in module soc_lite_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1379.227 ; gain = 511.703
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1407.609 ; gain = 540.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1379.227 ; gain = 511.703
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1407.609 ; gain = 540.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1379.227 ; gain = 511.703
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1407.609 ; gain = 540.098
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1379.227 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1407.609 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -123,22 +170,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/soc_lite_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1466.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1517.832 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1466.113 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1517.832 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -149,9 +196,20 @@ Applied set_property KEEP_HIERARCHY = SOFT for inst_ram. (constraint file  auto 
 Applied set_property KEEP_HIERARCHY = SOFT for \pll.clk_pll . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for data_ram. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'confreg'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'SIR'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'TX'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'SCAN'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'PRINT'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_D'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_I'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_T'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_B'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_R'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'DCP_L'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'DCP'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -163,8 +221,150 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'confr
                  iSTATE3 |                           000010 |                              111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'confreg'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              000 |                              000
+                  iSTATE |                              001 |                              001
+                 iSTATE3 |                              010 |                              010
+                 iSTATE1 |                              011 |                              011
+                 iSTATE2 |                              100 |                              100
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'SIR'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+                   START |                               01 |                              001
+                    SEND |                               10 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'TX'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                           000001 |                              000
+                 iSTATE1 |                           000010 |                              010
+                 iSTATE3 |                           000100 |                              101
+                 iSTATE0 |                           001000 |                              011
+                 iSTATE2 |                           010000 |                              001
+                 iSTATE4 |                           100000 |                              100
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'SCAN'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                    BYTE |                              001 |                              001
+                    WORD |                              010 |                              010
+                     TMP |                              011 |                              110
+                    WAIT |                              100 |                              100
+                     ACK |                              101 |                              101
+                   SPACE |                              110 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'PRINT'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                         00000001 |                              000
+                    SCAN |                         00000010 |                              001
+               PRINT_INF |                         00000100 |                              010
+                  PRINTA |                         00001000 |                              100
+               PRINT_MAO |                         00010000 |                              011
+                    DATA |                         00100000 |                              101
+                  PRINTD |                         01000000 |                              110
+                  FINISH |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'one-hot' in module 'DCP_D'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                         00000001 |                              000
+                    SCAN |                         00000010 |                              001
+               PRINT_INF |                         00000100 |                              010
+                  PRINTA |                         00001000 |                              100
+               PRINT_MAO |                         00010000 |                              011
+                    DATA |                         00100000 |                              101
+                  PRINTD |                         01000000 |                              110
+                  FINISH |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'one-hot' in module 'DCP_I'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                            00000 |                            00000
+                 CLK_RST |                            00001 |                            10110
+                  CLK_ON |                            00010 |                            10100
+                 CLK_OFF |                            00011 |                            10101
+               PRINT_NPC |                            00100 |                            00001
+          PRINT_NPC_DATA |                            00101 |                            00010
+                PRINT_PC |                            00110 |                            00011
+           PRINT_PC_DATA |                            00111 |                            00100
+                PRINT_IR |                            01000 |                            00101
+           PRINT_IR_DATA |                            01001 |                            00110
+               PRINT_CTL |                            01010 |                            00111
+          PRINT_CTL_DATA |                            01011 |                            01000
+                 PRINT_A |                            01100 |                            01001
+            PRINT_A_DATA |                            01101 |                            01010
+                 PRINT_B |                            01110 |                            01011
+            PRINT_B_DATA |                            01111 |                            01100
+               PRINT_IMM |                            10000 |                            01101
+          PRINT_IMM_DATA |                            10001 |                            01110
+                 PRINT_Y |                            10010 |                            01111
+            PRINT_Y_DATA |                            10011 |                            10000
+               PRINT_MDR |                            10100 |                            10001
+          PRINT_MDR_DATA |                            10101 |                            10010
+                  FINISH |                            10110 |                            10011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'DCP_T'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              000 |                              000
+                    SCAN |                              001 |                              001
+                  UPDATE |                              010 |                              010
+                PRINT_B1 |                              011 |                              011
+                PRINT_B2 |                              100 |                              100
+                  FINISH |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'DCP_B'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              000 |                              000
+                  PRINTR |                              001 |                              001
+                  PRINTA |                              010 |                              010
+                PRINTMAO |                              011 |                              011
+                    DATA |                              100 |                              100
+                  PRINTD |                              101 |                              101
+                     ADD |                              110 |                              110
+                  FINISH |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'DCP_R'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              000 |                              000
+                   SCAN1 |                              001 |                              001
+                   SCAN2 |                              010 |                              010
+            PRINT_FINISH |                              011 |                              101
+                  FINISH |                              100 |                              110
+                   INPUT |                              101 |                              011
+                    WAIT |                              110 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'DCP_L'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                              001 |                         00000000
+                  iSTATE |                              010 |                         00000001
+                 iSTATE0 |                              100 |                         00000010
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'DCP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -172,32 +372,97 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 2     
-	   2 Input    4 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 7     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 19    
+	   2 Input    1 Bit       Adders := 9     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 20    
+	               32 Bit    Registers := 31    
 	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
 	                7 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 30    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 64    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 11    
+	   2 Input   32 Bit        Muxes := 24    
 	   4 Input   32 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 14    
+	   3 Input   32 Bit        Muxes := 2     
+	   8 Input   32 Bit        Muxes := 6     
+	  23 Input   32 Bit        Muxes := 1     
+	   6 Input   32 Bit        Muxes := 2     
+	   7 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
+	   9 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 15    
 	   5 Input   16 Bit        Muxes := 1     
 	  17 Input   16 Bit        Muxes := 1     
+	   7 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
-	   6 Input    6 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 6     
-	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 4     
+	   3 Input    8 Bit        Muxes := 1     
+	  18 Input    8 Bit        Muxes := 2     
+	   9 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 38    
+	   4 Input    7 Bit        Muxes := 12    
+	   6 Input    7 Bit        Muxes := 1     
+	   7 Input    7 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 15    
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 24    
+	   3 Input    5 Bit        Muxes := 42    
+	   5 Input    5 Bit        Muxes := 21    
+	  64 Input    5 Bit        Muxes := 1     
+	  22 Input    5 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 1     
 	   6 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 10    
+	   2 Input    4 Bit        Muxes := 9     
+	   5 Input    4 Bit        Muxes := 42    
+	   3 Input    4 Bit        Muxes := 42    
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 24    
 	   6 Input    3 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 5     
+	   5 Input    3 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 2     
+	   8 Input    3 Bit        Muxes := 3     
+	  21 Input    3 Bit        Muxes := 10    
+	   4 Input    3 Bit        Muxes := 42    
+	  23 Input    3 Bit        Muxes := 9     
+	  13 Input    3 Bit        Muxes := 1     
+	  22 Input    3 Bit        Muxes := 9     
+	  16 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	  11 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 21    
+	   5 Input    2 Bit        Muxes := 21    
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 62    
+	   4 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 11    
+	   6 Input    1 Bit        Muxes := 14    
+	   7 Input    1 Bit        Muxes := 20    
+	   8 Input    1 Bit        Muxes := 34    
+	  21 Input    1 Bit        Muxes := 15    
+	  23 Input    1 Bit        Muxes := 17    
+	  22 Input    1 Bit        Muxes := 20    
+	  11 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -214,22 +479,50 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port flag_rx in module DCP_G is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[31] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[30] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[29] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[28] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[27] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[26] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[25] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[24] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[23] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[22] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[21] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[20] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[19] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[18] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[17] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[16] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module bridge_1x2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port resetn in module bridge_1x2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[3] in module mycpu_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[2] in module mycpu_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[1] in module mycpu_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debug_wb_rf_we[0] in module mycpu_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port txd in module soc_lite_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rxd in module soc_lite_top is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (u_confreg/FSM_onehot_state_reg[5]) is unused and will be removed from module soc_lite_top.
 WARNING: [Synth 8-3332] Sequential element (u_confreg/FSM_onehot_state_reg[2]) is unused and will be removed from module soc_lite_top.
 WARNING: [Synth 8-3332] Sequential element (u_confreg/FSM_onehot_state_reg[1]) is unused and will be removed from module soc_lite_top.
 WARNING: [Synth 8-3332] Sequential element (u_confreg/FSM_onehot_state_reg[0]) is unused and will be removed from module soc_lite_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|DCP_P       | type_tx_P  | 32x1          | LUT            | 
+|DCP_G       | type_tx_G  | 32x1          | LUT            | 
+|DCP_P       | type_tx_P  | 32x1          | LUT            | 
+|DCP_G       | type_tx_G  | 32x1          | LUT            | 
++------------+------------+---------------+----------------+
+
 
 Distributed RAM: Preliminary Mapping Report (see note below)
 +-------------+----------------------+-----------+----------------------+--------------+
@@ -246,13 +539,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 1466.113 ; gain = 598.590
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:09 . Memory (MB): peak = 1517.832 ; gain = 650.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:02:00 . Memory (MB): peak = 1571.531 ; gain = 704.008
+Finished Timing Optimization : Time (s): cpu = 00:01:58 ; elapsed = 00:02:02 . Memory (MB): peak = 1598.559 ; gain = 731.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -272,7 +565,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:02:02 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Technology Mapping : Time (s): cpu = 00:02:02 ; elapsed = 00:02:05 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -290,37 +583,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished IO Insertion : Time (s): cpu = 00:02:09 ; elapsed = 00:02:13 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:09 ; elapsed = 00:02:13 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -342,45 +635,48 @@ Report Cell Usage:
 |1     |clk_pll  |     1|
 |2     |data_ram |     1|
 |3     |inst_ram |     1|
-|4     |CARRY4   |    59|
-|5     |LUT1     |     9|
-|6     |LUT2     |    99|
-|7     |LUT3     |   119|
-|8     |LUT4     |   212|
-|9     |LUT5     |   155|
-|10    |LUT6     |   636|
-|11    |MUXF7    |     4|
-|12    |RAM32M   |    10|
-|13    |RAM32X1D |     4|
-|14    |FDRE     |   704|
-|15    |FDSE     |    38|
-|16    |IBUF     |    11|
-|17    |OBUF     |    35|
-|18    |OBUFT    |     1|
+|4     |BUFG     |     1|
+|5     |CARRY4   |   111|
+|6     |LUT1     |    17|
+|7     |LUT2     |   279|
+|8     |LUT3     |   260|
+|9     |LUT4     |   310|
+|10    |LUT5     |   433|
+|11    |LUT6     |  1050|
+|12    |MUXF7    |    69|
+|13    |MUXF8    |     8|
+|14    |RAM32M   |    10|
+|15    |RAM32X1D |     4|
+|16    |FDCE     |   341|
+|17    |FDPE     |   104|
+|18    |FDRE     |   799|
+|19    |FDSE     |    45|
+|20    |IBUF     |    13|
+|21    |OBUF     |    36|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:58 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:42 ; elapsed = 00:02:05 . Memory (MB): peak = 1580.602 ; gain = 626.191
-Synthesis Optimization Complete : Time (s): cpu = 00:01:59 ; elapsed = 00:02:09 . Memory (MB): peak = 1580.602 ; gain = 713.078
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:55 ; elapsed = 00:02:10 . Memory (MB): peak = 1616.648 ; gain = 638.914
+Synthesis Optimization Complete : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 1616.648 ; gain = 749.137
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1580.602 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1616.648 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 202 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1580.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1616.648 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 14 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
 
-Synth Design complete | Checksum: 141fdd45
+Synth Design complete | Checksum: 34c1571f
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+116 Infos, 66 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:20 . Memory (MB): peak = 1580.602 ; gain = 1112.879
+synth_design: Time (s): cpu = 00:02:18 ; elapsed = 00:02:25 . Memory (MB): peak = 1616.648 ; gain = 1150.324
 INFO: [Common 17-1381] The checkpoint 'D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.runs/synth_1/soc_lite_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file soc_lite_top_utilization_synth.rpt -pb soc_lite_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 31 23:08:11 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 20:56:33 2025...

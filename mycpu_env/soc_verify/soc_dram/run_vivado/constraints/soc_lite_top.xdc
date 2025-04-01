@@ -5,7 +5,7 @@
 
 ## Clock signal
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
-create_clock -add -name sys_clk_pin -period 20.00 -waveform {0 10} [get_ports {clk}];
+create_clock -add -name sys_clk_pin -period 50.00 -waveform {0 25} [get_ports {clk}];
 
 
 ##Switches
@@ -25,7 +25,7 @@ set_property -dict { PACKAGE_PIN R13   IOSTANDARD LVCMOS33 } [get_ports { switch
 #set_property -dict { PACKAGE_PIN H6    IOSTANDARD LVCMOS33 } [get_ports { SW[12] }]; #IO_L24P_T3_35 Sch=sw[12]
 #set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { SW[13] }]; #IO_L20P_T3_A08_D24_14 Sch=sw[13]
 #set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { SW[14] }]; #IO_L19N_T3_A09_D25_VREF_14 Sch=sw[14]
-#set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { SW[15] }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
+set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { change }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
 
 
 ## LEDs

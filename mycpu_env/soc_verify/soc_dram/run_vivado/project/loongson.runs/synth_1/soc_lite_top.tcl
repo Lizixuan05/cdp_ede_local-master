@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 5
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100ticsg324-1L
 
@@ -88,14 +89,33 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files D:/nscscc/cdp_ede_local-master/mycpu_env/func/obj/inst_ram.coe
-add_files d:/nscscc/lab/lab2/text.coe
-add_files d:/nscscc/lab/lab2/data.coe
+add_files D:/nscscc/lab/lab2/text.coe
+add_files D:/nscscc/lab/lab2/data.coe
+add_files d:/nscscc/lab/lab2/sort.coe
 read_verilog -library xil_defaultlib {
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_D.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_G.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_I.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_L.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_P.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_R.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_T.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DIV_RX_CLK.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/H2C.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/PRINT.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/RX.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SCAN.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SDU.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/SIR.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/TX.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/CONFREG/confreg.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/regfile.v
+  D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/sdu_dm.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/soc_lite_top.v
 }

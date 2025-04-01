@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date                      : Mon Mar 31 23:20:01 2025
+| Date                      : Tue Apr  1 21:03:20 2025
 | Host                      : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
 | Command                   : report_io -file soc_lite_top_io_placed.rpt
 | Design                    : soc_lite_top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            49 |
+|            50 |
 +---------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 | D1         |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | D2         |             | High Range | IO_L14N_T2_SRCC_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | D3         |             | High Range | IO_L12N_T1_MRCC_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| D4         | txd         | High Range | IO_L11N_T1_SRCC_35           | TRISTATE    | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| D4         | txd         | High Range | IO_L11N_T1_SRCC_35           | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | D5         |             | High Range | IO_L11P_T1_SRCC_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | D6         |             | High Range | VCCO_35                      | VCCO        |             |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | D7         |             | High Range | IO_L6N_T0_VREF_35            | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -350,7 +350,7 @@ Table of Contents
 | V7         |             | High Range | IO_L20P_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | V8         |             | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | V9         |             | High Range | IO_L21N_T3_DQS_34            | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| V10        |             | High Range | IO_L21P_T3_DQS_14            | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| V10        | change      | High Range | IO_L21P_T3_DQS_14            | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V11        | led[15]     | High Range | IO_L21N_T3_DQS_A06_D22_14    | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V12        | led[14]     | High Range | IO_L20N_T3_A07_D23_14        | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V13        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |

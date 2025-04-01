@@ -82,7 +82,7 @@ module soc_lite_top #(parameter SIMULATION=1'b0)
     input  wire [1 :0] btn_step,
     input  wire        rxd,
     output wire        txd,
-    input  wire        switch
+    input  wire        change
     
 );
 
@@ -182,8 +182,8 @@ inst_ram inst_ram
     .spo   (cpu_inst_rdata     )   
 );
 
-wire [31:0] addr;
-assign addr = switch?cpu_data_addr:sdu_addr;
+wire [15:0] addr;
+assign addr = change?data_sram_addr[17:2]:sdu_addr[15:0];
 
 
 bridge_1x2 bridge_1x2(
@@ -191,7 +191,7 @@ bridge_1x2 bridge_1x2(
     .resetn          ( cpu_resetn      ), // i, 1                 
 	  
     .cpu_data_we     ( cpu_data_we     ), // i, 4                 
-    .cpu_data_addr   ( addr   ), // i, 32                
+    .cpu_data_addr   ( cpu_data_addr   ), // i, 32                
     .cpu_data_wdata  ( cpu_data_wdata  ), // i, 32                
     .cpu_data_rdata  ( cpu_data_rdata  ), // o, 32                
 
@@ -213,7 +213,7 @@ data_ram data_ram
 (
     .clk   (cpu_clk            ),   
     .we    (data_sram_we & data_sram_en),   
-    .a     (data_sram_addr[17:2]),   
+    .a     (addr),   
     .d     (data_sram_wdata    ),   
     .spo   (data_sram_rdata    )   
 );
