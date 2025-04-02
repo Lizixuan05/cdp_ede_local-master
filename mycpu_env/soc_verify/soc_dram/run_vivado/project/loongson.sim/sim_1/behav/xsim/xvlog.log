@@ -1,17 +1,11 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module data_ram
-INFO: [VRFC 10-311] analyzing module data_ram_dist_mem_gen_v8_0_13
-INFO: [VRFC 10-311] analyzing module data_ram_dist_mem_gen_v8_0_13_synth
-INFO: [VRFC 10-311] analyzing module data_ram_spram
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/inst_ram/inst_ram_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module inst_ram
-INFO: [VRFC 10-311] analyzing module inst_ram_dist_mem_gen_v8_0_13
-INFO: [VRFC 10-311] analyzing module inst_ram_dist_mem_gen_v8_0_13_synth
-INFO: [VRFC 10-311] analyzing module inst_ram_spram
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module alu
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
@@ -32,6 +26,3 @@ INFO: [VRFC 10-311] analyzing module decoder_6_64
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/testbench/mycpu_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_top
 WARNING: [VRFC 10-2096] empty statement in sequential block [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/testbench/mycpu_tb.v:236]
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-WARNING: [VRFC 10-3609] overwriting previous definition of module 'glbl' [D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v:6]

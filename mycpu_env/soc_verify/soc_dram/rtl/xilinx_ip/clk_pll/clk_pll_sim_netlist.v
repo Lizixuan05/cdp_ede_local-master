@@ -2,14 +2,14 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Sun Mar 30 16:58:23 2025
+// Date        : Wed Apr  2 16:59:29 2025
 // Host        : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v
 // Design      : clk_pll
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a100ticsg324-1L
+// Device      : xc7a200tfbv676-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 

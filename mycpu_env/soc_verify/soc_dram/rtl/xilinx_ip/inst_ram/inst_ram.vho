@@ -53,7 +53,7 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT inst_ram
   PORT (
-    a : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
+    a : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     d : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     clk : IN STD_LOGIC;
     we : IN STD_LOGIC;

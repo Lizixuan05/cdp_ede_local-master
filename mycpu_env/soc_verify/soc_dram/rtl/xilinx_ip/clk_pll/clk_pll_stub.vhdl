@@ -2,13 +2,13 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sun Mar 30 16:58:23 2025
+-- Date        : Wed Apr  2 16:59:29 2025
 -- Host        : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/rtl/xilinx_ip/clk_pll/clk_pll_stub.vhdl
 -- Design      : clk_pll
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a100ticsg324-1L
+-- Device      : xc7a200tfbv676-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

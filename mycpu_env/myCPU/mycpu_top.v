@@ -221,9 +221,9 @@ assign alu_op[ 4] = inst_and | inst_andi;
 assign alu_op[ 5] = inst_nor;
 assign alu_op[ 6] = inst_or | inst_ori;
 assign alu_op[ 7] = inst_xor | inst_xori;
-assign alu_op[ 8] = inst_slli_w;
-assign alu_op[ 9] = inst_srli_w;
-assign alu_op[10] = inst_srai_w;
+assign alu_op[ 8] = inst_slli_w|inst_sll_w;
+assign alu_op[ 9] = inst_srli_w|inst_srl_w;
+assign alu_op[10] = inst_srai_w|inst_sra_w;
 assign alu_op[11] = inst_lu12i_w;
 
 assign need_ui5   =  inst_slli_w | inst_srli_w | inst_srai_w;

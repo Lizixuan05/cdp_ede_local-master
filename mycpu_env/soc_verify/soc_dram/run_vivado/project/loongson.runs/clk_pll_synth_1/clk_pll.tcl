@@ -70,16 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "clk_pll_synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 5
-set_param synth.incrementalSynthesisCache C:/Users/lizixuan/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6712-LAPTOP-EH5L1GAH/incrSyn
 set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a100ticsg324-1L
+create_project -in_memory -part xc7a200tfbv676-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -120,7 +115,7 @@ if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top clk_pll -part xc7a100ticsg324-1L -incremental_mode off -mode out_of_context
+synth_design -top clk_pll -part xc7a200tfbv676-1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 
