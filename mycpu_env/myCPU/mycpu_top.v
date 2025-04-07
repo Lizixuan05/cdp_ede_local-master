@@ -55,6 +55,8 @@ wire [31:0] rkd_value;
 wire [31:0] imm;
 wire [31:0] br_offs;
 wire [31:0] jirl_offs;
+wire [31:0] ld_data;
+wire [31:0] st_data;
 
 wire [ 5:0] op_31_26;
 wire [ 3:0] op_25_22;
@@ -211,9 +213,19 @@ assign inst_blt    = op_31_26_d[6'h18];
 assign inst_bge    = op_31_26_d[6'h19];
 assign inst_bltu   = op_31_26_d[6'h1a];
 assign inst_bgeu   = op_31_26_d[6'h1b];
+assign inst_ld_b   = op_31_26_d[6'h0a] & op_25_22_d[4'h0];
+assign inst_ld_h   = op_31_26_d[6'h0a] & op_25_22_d[4'h1];
+assign inst_ld_bu  = op_31_26_d[6'h0a] & op_25_22_d[4'h8];
+assign inst_ld_hu  = op_31_26_d[6'h0a] & op_25_22_d[4'h9];
+assign inst_st_b   = op_31_26_d[6'h0a] & op_25_22_d[4'h4];
+assign inst_st_h   = op_31_26_d[6'h0a] & op_25_22_d[4'h5];
+
+
+
 
 assign alu_op[ 0] = inst_add_w | inst_addi_w | inst_ld_w | inst_st_w
-                    | inst_jirl | inst_bl | inst_pcaddu12i;
+                    | inst_jirl | inst_bl | inst_pcaddu12i | inst_ld_b | inst_ld_h | inst_ld_bu | inst_ld_hu
+                    | inst_st_b | inst_st_h;
 assign alu_op[ 1] = inst_sub_w;
 assign alu_op[ 2] = inst_slt | inst_slti;
 assign alu_op[ 3] = inst_sltu | inst_sltui;
@@ -221,14 +233,15 @@ assign alu_op[ 4] = inst_and | inst_andi;
 assign alu_op[ 5] = inst_nor;
 assign alu_op[ 6] = inst_or | inst_ori;
 assign alu_op[ 7] = inst_xor | inst_xori;
-assign alu_op[ 8] = inst_slli_w;
-assign alu_op[ 9] = inst_srli_w;
-assign alu_op[10] = inst_srai_w;
+assign alu_op[ 8] = inst_slli_w|inst_sll_w;
+assign alu_op[ 9] = inst_srli_w|inst_srl_w;
+assign alu_op[10] = inst_srai_w|inst_sra_w;
 assign alu_op[11] = inst_lu12i_w;
 
 assign need_ui5   =  inst_slli_w | inst_srli_w | inst_srai_w;
 assign need_ui12  =  inst_andi | inst_ori | inst_xori; 
-assign need_si12  =  inst_addi_w | inst_ld_w | inst_st_w | inst_slti | inst_sltui;
+assign need_si12  =  inst_addi_w | inst_ld_w | inst_st_w | inst_slti | inst_sltui | inst_ld_b | inst_ld_h | inst_ld_bu | inst_ld_hu
+                    | inst_st_b | inst_st_h;
 assign need_si16  =  inst_jirl | inst_beq | inst_bne;
 assign need_si20  =  inst_lu12i_w | inst_pcaddu12i;
 assign need_si26  =  inst_b | inst_bl;
@@ -244,8 +257,7 @@ assign br_offs = need_si26 ? {{ 4{i26[25]}}, i26[25:0], 2'b0} :
 
 assign jirl_offs = {{14{i16[15]}}, i16[15:0], 2'b0};
 
-assign src_reg_is_rd = inst_beq | inst_bne | inst_st_w | inst_blt | inst_bge | inst_bltu | inst_bgeu;
-
+assign src_reg_is_rd = inst_beq | inst_bne | inst_st_w | inst_blt | inst_bge | inst_bltu | inst_bgeu | inst_st_b | inst_st_h ;
 assign src1_is_pc    = inst_jirl | inst_bl |inst_pcaddu12i;
 
 assign src2_is_imm   = inst_slli_w |
@@ -262,12 +274,18 @@ assign src2_is_imm   = inst_slli_w |
                        inst_andi   |
                        inst_ori    |
                        inst_xori   |
-                       inst_pcaddu12i;
+                       inst_pcaddu12i|
+                       inst_ld_b   |
+                       inst_ld_h   |
+                       inst_ld_bu  |
+                       inst_ld_hu  |
+                       inst_st_b   |
+                       inst_st_h   ;
 
-assign res_from_mem  = inst_ld_w;
+assign res_from_mem  = inst_ld_w | inst_ld_b | inst_ld_h | inst_ld_bu | inst_ld_hu | inst_st_b | inst_st_h;
 assign dst_is_r1     = inst_bl;
-assign gr_we         = ~inst_st_w & ~inst_beq & ~inst_bne & ~inst_b & ~inst_blt & ~inst_bge & ~inst_bltu & ~inst_bgeu;
-assign mem_we        = inst_st_w;
+assign gr_we         = ~inst_st_w & ~inst_beq & ~inst_bne & ~inst_b & ~inst_blt & ~inst_bge & ~inst_bltu & ~inst_bgeu & ~inst_st_b & ~inst_st_h;
+assign mem_we        = inst_st_w | inst_st_b | inst_st_h;
 assign dest          = dst_is_r1 ? 5'd1 : rd;
 
 assign rf_raddr1 = rj;
@@ -316,10 +334,35 @@ alu u_alu(
 
 assign data_sram_we    = mem_we && valid;
 assign data_sram_addr  = alu_result;
-assign data_sram_wdata = rkd_value;
+assign data_sram_wdata = inst_st_w?rkd_value:st_data;
 
-assign mem_result   = data_sram_rdata;
+assign st_data = (inst_st_b && data_sram_addr[1:0] == 2'b00) ? {data_sram_rdata[31:8], rkd_value[7:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b01) ? {data_sram_rdata[31:16], rkd_value[7:0], data_sram_rdata[7:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b10) ? {data_sram_rdata[31:24], rkd_value[7:0], data_sram_rdata[15:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b11) ? {rkd_value[7:0],data_sram_rdata[23:0]}:
+                 (inst_st_h && data_sram_addr[1:0] == 2'b00) ? {data_sram_rdata[31:16], rkd_value[15:0]}:
+                 (inst_st_h && data_sram_addr[1:0] == 2'b10) ? {rkd_value[15:0], data_sram_rdata[15:0]}:
+                    32'b0;
+
+assign mem_result   =  inst_ld_w ? data_sram_rdata : ld_data;
+
+assign ld_data     = (inst_ld_b && data_sram_addr[1:0] == 2'b00) ? {{24{data_sram_rdata[7]}}, data_sram_rdata[7:0]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b01) ? {{24{data_sram_rdata[15]}}, data_sram_rdata[15:8]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b10) ? {{24{data_sram_rdata[23]}}, data_sram_rdata[23:16]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b11) ? {{24{data_sram_rdata[31]}}, data_sram_rdata[31:24]}:
+                    (inst_ld_h  && data_sram_addr[1:0] == 2'b00)? {{16{data_sram_rdata[15]}}, data_sram_rdata[15:0]}:
+                    (inst_ld_h  && data_sram_addr[1:0] == 2'b10)? {{16{data_sram_rdata[31]}}, data_sram_rdata[31:16]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b00)? {24'b0, data_sram_rdata[7:0]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b01)? {24'b0, data_sram_rdata[15:8]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b10)? {24'b0, data_sram_rdata[23:16]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b11)? {24'b0, data_sram_rdata[31:24]}:
+                    (inst_ld_hu && data_sram_addr[1:0] == 2'b00)? {16'b0, data_sram_rdata[15:0]}:
+                    (inst_ld_hu && data_sram_addr[1:0] == 2'b10)? {16'b0, data_sram_rdata[31:16]}:
+                       32'b0;
+
 assign final_result = res_from_mem ? mem_result : alu_result;
+
+
 
 assign rf_we    = gr_we && valid;
 assign rf_waddr = dest;
@@ -327,7 +370,7 @@ assign rf_wdata = final_result;
 
 // debug info generate
 assign debug_wb_pc       = pc;
-assign debug_wb_rf_wen   = {4{rf_we}};
+assign debug_wb_rf_we   = {4{rf_we}};
 assign debug_wb_rf_wnum  = dest;
 assign debug_wb_rf_wdata = final_result;
 

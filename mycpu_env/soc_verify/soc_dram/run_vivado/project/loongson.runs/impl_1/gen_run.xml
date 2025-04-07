@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1743511929">
+<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1744037601">
   <File Type="ROUTE-PWR" Name="soc_lite_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="soc_lite_top.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="soc_lite_top_power_summary_routed.pb"/>
@@ -316,6 +316,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../../../../../lab/lab2/sort.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../../lab/lab2/inst_ram.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

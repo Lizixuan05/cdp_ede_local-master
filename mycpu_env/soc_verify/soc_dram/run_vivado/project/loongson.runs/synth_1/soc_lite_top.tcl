@@ -91,7 +91,8 @@ OPTRACE "Adding files" START { }
 add_files D:/nscscc/cdp_ede_local-master/mycpu_env/func/obj/inst_ram.coe
 add_files D:/nscscc/lab/lab2/text.coe
 add_files D:/nscscc/lab/lab2/data.coe
-add_files d:/nscscc/lab/lab2/sort.coe
+add_files D:/nscscc/lab/lab2/sort.coe
+add_files d:/nscscc/lab/lab2/inst_ram.coe
 read_verilog -library xil_defaultlib {
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP.v
   D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/run_vivado/project/loongson.srcs/sources_1/imports/lab4/SDU-DM_2023.4.8/SDU_cwyl_2023.4.7/DCP_B.v
