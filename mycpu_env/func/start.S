@@ -600,6 +600,23 @@ inst_test:
     bl n40_bgeu_test       #bgeu
     bl idle_1s
     
+    bl n41_ld_b_test       #ld.b
+    bl idle_1s
+
+    bl n42_ld_h_test     #ld.h
+    bl idle_1s
+    
+    bl n43_ld_bu_test     #ld.bu
+    bl idle_1s
+    
+    bl n44_ld_hu_test       #ld.hu
+    bl idle_1s
+    
+    bl n45_st_b_test       #st.b
+    bl idle_1s
+    
+    bl n46_st_h_test    #st.h
+    bl idle_1s
 #endif
 ############################
 ############################
