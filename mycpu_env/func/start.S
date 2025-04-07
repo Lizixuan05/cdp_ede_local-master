@@ -464,7 +464,7 @@ inst_test:
 ############################
 ###TEST1 test
 #if TEST1
-    /*bl n1_lu12i_w_test    #lu12i.w
+    bl n1_lu12i_w_test    #lu12i.w
     NOP4
     bl idle_1s
     NOP4
@@ -598,7 +598,7 @@ inst_test:
     bl idle_1s
     
     bl n40_bgeu_test       #bgeu
-    bl idle_1s*/
+    bl idle_1s
     bl n41_ld_b_test       #ld.b
     bl idle_1s
     

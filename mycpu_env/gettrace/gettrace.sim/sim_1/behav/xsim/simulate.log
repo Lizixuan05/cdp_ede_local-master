@@ -1,23 +1,51 @@
 Time resolution is 1 ps
 ==============================================================
 Test begin!
-----[  21045 ns] Number 8'd01 Functional Test Point PASS!!!
-        [  22000 ns] Test is running, debug_wb_pc = 0x1c012480
-        [  32000 ns] Test is running, debug_wb_pc = 0x1c013420
-----[  35075 ns] Number 8'd02 Functional Test Point PASS!!!
-        [  42000 ns] Test is running, debug_wb_pc = 0x1c014374
-        [  52000 ns] Test is running, debug_wb_pc = 0x1c015314
-----[  55505 ns] Number 8'd03 Functional Test Point PASS!!!
-        [  62000 ns] Test is running, debug_wb_pc = 0x1c016268
-        [  72000 ns] Test is running, debug_wb_pc = 0x1c017208
-----[  73375 ns] Number 8'd04 Functional Test Point PASS!!!
-        [  82000 ns] Test is running, debug_wb_pc = 0x1c01815c
-        [  92000 ns] Test is running, debug_wb_pc = 0x1c0190fc
-----[  95115 ns] Number 8'd05 Functional Test Point PASS!!!
-        [ 102000 ns] Test is running, debug_wb_pc = 0x1c01a054
-        [ 112000 ns] Test is running, debug_wb_pc = 0x1c01aff4
-----[ 114955 ns] Number 8'd06 Functional Test Point PASS!!!
+----[   3145 ns] Number 8'd01 Functional Test Point PASS!!!
+----[   4215 ns] Number 8'd02 Functional Test Point PASS!!!
+----[   5325 ns] Number 8'd03 Functional Test Point PASS!!!
+----[   6475 ns] Number 8'd04 Functional Test Point PASS!!!
+----[   7145 ns] Number 8'd05 Functional Test Point PASS!!!
+----[   8775 ns] Number 8'd06 Functional Test Point PASS!!!
+----[  12405 ns] Number 8'd07 Functional Test Point PASS!!!
+----[  15395 ns] Number 8'd08 Functional Test Point PASS!!!
+----[  17825 ns] Number 8'd09 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0x1c010d30
+----[  22015 ns] Number 8'd10 Functional Test Point PASS!!!
+----[  23965 ns] Number 8'd11 Functional Test Point PASS!!!
+----[  26095 ns] Number 8'd12 Functional Test Point PASS!!!
+----[  27265 ns] Number 8'd13 Functional Test Point PASS!!!
+----[  29295 ns] Number 8'd14 Functional Test Point PASS!!!
+----[  30685 ns] Number 8'd15 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0x1c011b70
+----[  41855 ns] Number 8'd16 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0x1c010224
+----[  44845 ns] Number 8'd17 Functional Test Point PASS!!!
+----[  46675 ns] Number 8'd18 Functional Test Point PASS!!!
+----[  48865 ns] Number 8'd19 Functional Test Point PASS!!!
+----[  50465 ns] Number 8'd20 Functional Test Point PASS!!!
+----[  51275 ns] Number 8'd21 Functional Test Point PASS!!!
+----[  51905 ns] Number 8'd22 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0x1c010210
+----[  52595 ns] Number 8'd23 Functional Test Point PASS!!!
+----[  53225 ns] Number 8'd24 Functional Test Point PASS!!!
+----[  53855 ns] Number 8'd25 Functional Test Point PASS!!!
+----[  54485 ns] Number 8'd26 Functional Test Point PASS!!!
+----[  55315 ns] Number 8'd27 Functional Test Point PASS!!!
+----[  56065 ns] Number 8'd28 Functional Test Point PASS!!!
+----[  56735 ns] Number 8'd29 Functional Test Point PASS!!!
+----[  58025 ns] Number 8'd30 Functional Test Point PASS!!!
+----[  59135 ns] Number 8'd31 Functional Test Point PASS!!!
+----[  60235 ns] Number 8'd32 Functional Test Point PASS!!!
+----[  61335 ns] Number 8'd33 Functional Test Point PASS!!!
+        [  62000 ns] Test is running, debug_wb_pc = 0x1c014dcc
+----[  62405 ns] Number 8'd34 Functional Test Point PASS!!!
+----[  63475 ns] Number 8'd35 Functional Test Point PASS!!!
+----[  64705 ns] Number 8'd36 Functional Test Point PASS!!!
+----[  65935 ns] Number 8'd37 Functional Test Point PASS!!!
+----[  67345 ns] Number 8'd38 Functional Test Point PASS!!!
+----[  68755 ns] Number 8'd39 Functional Test Point PASS!!!
 ==============================================================
 gettrace end!
 ----Succeed in generating trace file!
-$finish called at time : 115325 ns : File "D:/nscscc/cdp_ede_local-master/mycpu_env/gettrace/src/tb_top.v" Line 224
+$finish called at time : 69125 ns : File "D:/nscscc/cdp_ede_local-master/mycpu_env/gettrace/src/tb_top.v" Line 224
