@@ -801,3 +801,23 @@ INFO: [Physopt 32-702] Processed net cpu/u_regfile/rf_reg_r1_0_31_30_31_i_4_n_0.
 INFO: [Physopt 32-663] Processed net u_confreg/cr1_reg[30]_0.  Re-placed instance u_confreg/rf_reg_r1_0_31_30_31_i_6
 INFO: [Physopt 32-735] Processed net u_confreg/cr1_reg[30]_0. Optimization improves timing on the net.
 INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.625 | TNS=-4907.895 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net cpu/u_regfile/rf_reg_r1_0_31_0_5_i_34_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.617 | TNS=-4907.811 |
+INFO: [Physopt 32-710] Processed net cpu/u_regfile/rf_reg_r1_0_31_18_23_i_1_n_0. Critical path length was reduced through logic transformation on cell cpu/u_regfile/rf_reg_r1_0_31_18_23_i_1_comp.
+INFO: [Physopt 32-735] Processed net cpu/u_regfile/rf_reg_r1_0_31_18_23_i_8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.616 | TNS=-4907.793 |
+INFO: [Physopt 32-702] Processed net data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/ram_reg_256_511_20_20/OA. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/ram_reg_256_511_0_0_i_1_n_0. Critical path length was reduced through logic transformation on cell data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/ram_reg_256_511_0_0_i_1_comp.
+INFO: [Physopt 32-735] Processed net cpu/u_regfile/we. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.611 | TNS=-4866.192 |
+INFO: [Physopt 32-702] Processed net data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/spo[28]_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/ram_reg_0_255_28_28/O. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net data_ram/U0/synth_options.dist_mem_inst/gen_sp_ram.spram_inst/ram_reg_0_255_28_28/O1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net cpu/u_regfile/rf_reg_r1_0_31_24_29_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.610 | TNS=-4865.846 |
+INFO: [Physopt 32-710] Processed net cpu/u_regfile/rf_reg_r1_0_31_30_31__0_i_6_n_0_repN_1. Critical path length was reduced through logic transformation on cell cpu/u_regfile/rf_reg_r1_0_31_30_31__0_i_6_comp.
+INFO: [Physopt 32-735] Processed net cpu/u_regfile/rf_reg_r1_0_31_24_29_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.608 | TNS=-4866.744 |
+INFO: [Common 17-14] Message 'Physopt 32-619' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
