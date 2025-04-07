@@ -65,7 +65,7 @@ begin
     #2000;
     resetn = 1'b1;
 end
-always #5 clk=~clk;
+always #10 clk=~clk;
 soc_lite_top #(.SIMULATION(1'b1)) soc_lite
 (
        .resetn      (resetn     ), 

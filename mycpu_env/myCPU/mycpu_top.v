@@ -55,6 +55,8 @@ wire [31:0] rkd_value;
 wire [31:0] imm;
 wire [31:0] br_offs;
 wire [31:0] jirl_offs;
+wire [31:0] ld_data;
+wire [31:0] st_data;
 
 wire [ 5:0] op_31_26;
 wire [ 3:0] op_25_22;
@@ -222,7 +224,7 @@ assign inst_st_h   = op_31_26_d[6'h0a] & op_25_22_d[4'h5];
 
 
 assign alu_op[ 0] = inst_add_w | inst_addi_w | inst_ld_w | inst_st_w
-                    | inst_jirl | inst_bl | inst_pcaddu12i |inst_ld_b | inst_ld_h | inst_ld_bu | inst_ld_hu
+                    | inst_jirl | inst_bl | inst_pcaddu12i | inst_ld_b | inst_ld_h | inst_ld_bu | inst_ld_hu
                     | inst_st_b | inst_st_h;
 assign alu_op[ 1] = inst_sub_w;
 assign alu_op[ 2] = inst_slt | inst_slti;
@@ -332,16 +334,31 @@ alu u_alu(
 
 assign data_sram_we    = mem_we && valid;
 assign data_sram_addr  = alu_result;
-assign data_sram_wdata = inst_st_w?rkd_value:
-                         inst_st_b?{data_sram_rdata[31:8], rkd_value[ 7:0]}:
-                         inst_st_h?{data_sram_rdata[31:16], rkd_value[15:0]}:
-                         32'b0;
+assign data_sram_wdata = inst_st_w?rkd_value:st_data;
 
-assign mem_result   =  inst_ld ? data_sram_rdata :
-                       inst_ld_b ? {{24{data_sram_rdata[ 7]}}, data_sram_rdata[ 7:0]} :
-                       inst_ld_h ? {{16{data_sram_rdata[15]}}, data_sram_rdata[15:0]} :
-                       inst_ld_bu? {24'b0, data_sram_rdata[ 7:0]} :
-                       inst_ld_hu? {16'b0, data_sram_rdata[15:0]} : 32'b0;
+assign st_data = (inst_st_b && data_sram_addr[1:0] == 2'b00) ? {data_sram_rdata[31:8], rkd_value[7:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b01) ? {data_sram_rdata[31:16], rkd_value[7:0], data_sram_rdata[7:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b10) ? {data_sram_rdata[31:24], rkd_value[7:0], data_sram_rdata[15:0]}:
+                 (inst_st_b && data_sram_addr[1:0] == 2'b11) ? {rkd_value[7:0],data_sram_rdata[23:0]}:
+                 (inst_st_h && data_sram_addr[1:0] == 2'b00) ? {data_sram_rdata[31:16], rkd_value[15:0]}:
+                 (inst_st_h && data_sram_addr[1:0] == 2'b10) ? {rkd_value[15:0], data_sram_rdata[15:0]}:
+                    32'b0;
+
+assign mem_result   =  inst_ld_w ? data_sram_rdata : ld_data;
+
+assign ld_data     = (inst_ld_b && data_sram_addr[1:0] == 2'b00) ? {{24{data_sram_rdata[7]}}, data_sram_rdata[7:0]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b01) ? {{24{data_sram_rdata[15]}}, data_sram_rdata[15:8]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b10) ? {{24{data_sram_rdata[23]}}, data_sram_rdata[23:16]}:
+                    (inst_ld_b && data_sram_addr[1:0] == 2'b11) ? {{24{data_sram_rdata[31]}}, data_sram_rdata[31:24]}:
+                    (inst_ld_h  && data_sram_addr[1:0] == 2'b00)? {{16{data_sram_rdata[15]}}, data_sram_rdata[15:0]}:
+                    (inst_ld_h  && data_sram_addr[1:0] == 2'b10)? {{16{data_sram_rdata[31]}}, data_sram_rdata[31:16]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b00)? {24'b0, data_sram_rdata[7:0]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b01)? {24'b0, data_sram_rdata[15:8]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b10)? {24'b0, data_sram_rdata[23:16]}:
+                    (inst_ld_bu && data_sram_addr[1:0] == 2'b11)? {24'b0, data_sram_rdata[31:24]}:
+                    (inst_ld_hu && data_sram_addr[1:0] == 2'b00)? {16'b0, data_sram_rdata[15:0]}:
+                    (inst_ld_hu && data_sram_addr[1:0] == 2'b10)? {16'b0, data_sram_rdata[31:16]}:
+                       32'b0;
 
 assign final_result = res_from_mem ? mem_result : alu_result;
 
@@ -353,7 +370,7 @@ assign rf_wdata = final_result;
 
 // debug info generate
 assign debug_wb_pc       = pc;
-assign debug_wb_rf_wen   = {4{rf_we}};
+assign debug_wb_rf_we   = {4{rf_we}};
 assign debug_wb_rf_wnum  = dest;
 assign debug_wb_rf_wdata = final_result;
 
