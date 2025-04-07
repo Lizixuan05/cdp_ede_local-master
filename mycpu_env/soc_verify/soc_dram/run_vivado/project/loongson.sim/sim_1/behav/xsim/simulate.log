@@ -1989,3 +1989,32 @@ WARNING in tb_top.soc_lite.data_ram.inst at time            133970000 ns:
 Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
 WARNING in tb_top.soc_lite.data_ram.inst at time            134010000 ns: 
 Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134050000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134310000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134390000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134430000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134690000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134730000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            134810000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            135190000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+----[ 135550 ns] Number 8'd39 Functional Test Point PASS!!!
+WARNING in tb_top.soc_lite.data_ram.inst at time            135590000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            135990000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            136030000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time            136070000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+==============================================================
+Test end!
+----PASS!!!
+$finish called at time : 136310 ns : File "D:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_dram/testbench/mycpu_tb.v" Line 269
