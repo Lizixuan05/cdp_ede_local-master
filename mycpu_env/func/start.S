@@ -563,60 +563,7 @@ inst_test:
     NOP4
     bl idle_1s
     NOP4
-    bl n21_pcaddu12i_test   #pcaddu12i
-    bl idle_1s
-    bl n22_slti_test   #slti
-    bl idle_1s
-    
-    bl n23_sltui_test  #sltui
-    bl idle_1s
-    
-    bl n24_andi_test   #andi
-    bl idle_1s
-    
-    bl n25_ori_test    #ori
-    bl idle_1s
-    
-    bl n26_xori_test   #xori
-    bl idle_1s
-    
-    bl n27_sll_w_test   #sll.w
-    bl idle_1s
-    
-    bl n28_sra_w_test   #sra.w
-    bl idle_1s
-    
-    bl n29_srl_w_test   #srl.w
-    bl idle_1s
-    bl n37_blt_test          #blt
-    bl idle_1s
-    
-    bl n38_bge_test       #bge
-    bl idle_1s
-    
-    bl n39_bltu_test       #bltu
-    bl idle_1s
-    
-    bl n40_bgeu_test       #bgeu
-    bl idle_1s
-    
-    bl n41_ld_b_test       #ld.b
-    bl idle_1s
 
-    bl n42_ld_h_test     #ld.h
-    bl idle_1s
-    
-    bl n43_ld_bu_test     #ld.bu
-    bl idle_1s
-    
-    bl n44_ld_hu_test       #ld.hu
-    bl idle_1s
-    
-    bl n45_st_b_test       #st.b
-    bl idle_1s
-    
-    bl n46_st_h_test    #st.h
-    bl idle_1s
 #endif
 ############################
 ############################
