@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log inst_ram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_ram.tcl
+
