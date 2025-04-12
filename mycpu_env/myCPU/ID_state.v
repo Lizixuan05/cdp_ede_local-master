@@ -19,8 +19,7 @@ module ID_state (
     input  wire        EXE_allowin,
     output wire        ID_EXE_valid,
     /*buffer*/
-    output wire [31:0] ID_inst,
-    output wire [31:0] ID_pc,
+    output reg  [31:0] ID_pc,//reg类型
     output wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     output wire [ 5:0] ID_rf,//{rf_we[5],rf_waddr[4:0]}
     output wire [75:0] ID_alu,//{alu_op[75:64],alu_src2[63:32],alu_src1[0:31]}
@@ -28,6 +27,7 @@ module ID_state (
     //WB_ID interface
     input  wire [37:0] WB_rf //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
 );
+    reg  [31:0] ID_inst,
     wire        wb_rf_we;
     wire [ 4:0] wb_rf_waddr;
     wire [31:0] wb_rf_wdata;
@@ -313,7 +313,7 @@ module ID_state (
         );
     
     assign rj_value  = rf_rdata1;
-    assign rkd_value = rf_rd
+    assign rkd_value = rf_rd;
 
     /*--------------------brunch control-----------------*/
     assign rj_eq_rd = (rj_value == rkd_value);
