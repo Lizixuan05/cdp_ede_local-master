@@ -8,7 +8,7 @@ module IF_state(
     output wire [31:0] inst_sram_addr,
     output wire [31:0] inst_sram_wdata,
     input  wire [31:0] inst_sram_rdata,
-
+    
     //IF_ID interface
     /*state control*/
     input  wire        ID_allowin,
@@ -53,7 +53,7 @@ module IF_state(
     assign seq_pc       = pc + 3'h4;
     assign nextpc       = br_taken ? br_target : seq_pc;
 
-    /*---------------buffer-----------------*/
+    /*---------------IF_ID buffer-----------------*/
 
     assign IF_inst = inst_sram_rdata;
 
