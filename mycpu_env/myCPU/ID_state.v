@@ -27,7 +27,7 @@ module ID_state (
     //WB_ID interface
     input  wire [37:0] WB_rf //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
 );
-    reg  [31:0] ID_inst,
+    reg  [31:0] inst;    
     wire        wb_rf_we;
     wire [ 4:0] wb_rf_waddr;
     wire [31:0] wb_rf_wdata;
@@ -89,7 +89,7 @@ module ID_state (
     wire        inst_bne;
     wire        inst_lu12i_w;
     wire        inst_slti;
-    wire        inst_sltiu;
+    wire        inst_sltui;
     wire        inst_andi;
     wire        inst_ori;
     wire        inst_xori;
@@ -122,7 +122,6 @@ module ID_state (
     wire [31:0] rf_rdata2;
     wire        rf_we   ;
     wire [ 4:0] rf_waddr;
-    wire [31:0] rf_wdata;
 
     wire [31:0] alu_src1   ;
     wire [31:0] alu_src2   ;        
@@ -130,7 +129,7 @@ module ID_state (
     always @(posedge clk) begin
         if (IF_ID_valid & ID_allowin) begin
             ID_pc <= IF_pc;
-            ID_inst <= IF_inst;
+            inst <= IF_inst;
         end
     end
     /*---------------state control-----------------*/
@@ -282,7 +281,7 @@ module ID_state (
     assign dest          = dst_is_r1 ? 5'd1 : rd;
 
     /*--------------signal of mem/rf/alu-----------------*/
-    assign alu_src1 = src1_is_pc  ? pc[31:0] : rj_value;
+    assign alu_src1 = src1_is_pc  ? ID_pc[31:0] : rj_value;
     assign alu_src2 = src2_is_imm ? imm : rkd_value;
     //alu_op
 
@@ -313,7 +312,7 @@ module ID_state (
         );
     
     assign rj_value  = rf_rdata1;
-    assign rkd_value = rf_rd;
+    assign rkd_value = rf_rdata2;
 
     /*--------------------brunch control-----------------*/
     assign rj_eq_rd = (rj_value == rkd_value);
@@ -331,7 +330,7 @@ module ID_state (
                       ) && ID_valid;
 
     assign br_target = (inst_beq || inst_bne || inst_bl || inst_b || inst_blt || 
-                        inst_bge || inst_bltu || inst_bgeu) ? (pc + br_offs) :
+                        inst_bge || inst_bltu || inst_bgeu) ? (ID_pc + br_offs) :
                                                        /*inst_jirl*/ (rj_value + jirl_offs);
 
     /*--------------------ID_EXE buffer-----------------*/

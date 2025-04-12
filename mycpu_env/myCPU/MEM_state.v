@@ -71,7 +71,7 @@ module MEM_state (
     /*--------------MEM_WB buffer--------------------------*/
     assign mem_result = data_sram_rdata;
     assign mem_rf_wdata = mem_res_from_mem?mem_result:mem_alu_result;
-    assign MEM_rf = {mem_rf[5:0],mem_rf_wdata,};
+    assign MEM_rf = {mem_rf[5:0],mem_rf_wdata};
 
 
 endmodule

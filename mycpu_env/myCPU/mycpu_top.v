@@ -19,14 +19,119 @@ module mycpu_top(
     output wire [ 4:0] debug_wb_rf_wnum,
     output wire [31:0] debug_wb_rf_wdata
 );
+// Signal declarations
+wire        ID_allowin;
+wire        IF_ID_valid;
+wire [31:0] IF_inst;
+wire [31:0] IF_pc;
+wire        br_taken;
+wire [31:0] br_target;
+
+wire        EXE_allowin;
+wire        ID_EXE_valid;
+wire [31:0] ID_pc;
+wire [31:0] ID_mem;
+wire [31:0] ID_rf;
+wire [31:0] ID_alu;
+wire [31:0] WB_rf;
+
+wire        MEM_allowin;
+wire        EXE_MEM_valid;
+wire [31:0] EXE_pc;
+wire [31:0] EXE_alu_result;
+wire [31:0] EXE_rf;
+wire [31:0] EXE_mem;
+
+wire        MEM_WB_valid;
+wire        WB_allowin;
+wire [31:0] MEM_pc;
+wire [31:0] MEM_rf;
 
 reg         reset;
 always @(posedge clk) reset <= ~resetn;
 
-// debug info generate
-assign debug_wb_pc       = pc;
-assign debug_wb_rf_we   = {4{rf_we}};
-assign debug_wb_rf_wnum  = dest;
-assign debug_wb_rf_wdata = final_result;
+  IF_state  IF_state_inst (
+    .clk(clk),
+    .reset(reset),
+    .inst_sram_en(inst_sram_en),
+    .inst_sram_we(inst_sram_we),
+    .inst_sram_addr(inst_sram_addr),
+    .inst_sram_wdata(inst_sram_wdata),
+    .inst_sram_rdata(inst_sram_rdata),
+    .ID_allowin(ID_allowin),
+    .IF_ID_valid(IF_ID_valid),
+    .IF_inst(IF_inst),
+    .IF_pc(IF_pc),
+    .br_taken(br_taken),
+    .br_target(br_target)
+  );
 
+  ID_state  ID_state_inst (
+    .clk(clk),
+    .reset(reset),
+    .ID_allowin(ID_allowin),
+    .IF_ID_valid(IF_ID_valid),
+    .IF_inst(IF_inst),
+    .IF_pc(IF_pc),
+    .br_taken(br_taken),
+    .br_target(br_target),
+    .EXE_allowin(EXE_allowin),
+    .ID_EXE_valid(ID_EXE_valid),
+    .ID_pc(ID_pc),
+    .ID_mem(ID_mem),
+    .ID_rf(ID_rf),
+    .ID_alu(ID_alu),
+    .WB_rf(WB_rf)
+  );
+
+  EXE_state  EXE_state_inst (
+    .clk(clk),
+    .reset(reset),
+    .EXE_allowin(EXE_allowin),
+    .ID_EXE_valid(ID_EXE_valid),
+    .ID_pc(ID_pc),
+    .ID_mem(ID_mem),
+    .ID_rf(ID_rf),
+    .ID_alu(ID_alu),
+    .MEM_allowin(MEM_allowin),
+    .EXE_MEM_valid(EXE_MEM_valid),
+    .EXE_pc(EXE_pc),
+    .EXE_alu_result(EXE_alu_result),
+    .EXE_rf(EXE_rf),
+    .EXE_mem(EXE_mem)
+  );
+
+  MEM_state  MEM_state_inst (
+    .clk(clk),
+    .reset(reset),
+    .EXE_MEM_valid(EXE_MEM_valid),
+    .MEM_allowin(MEM_allowin),
+    .EXE_pc(EXE_pc),
+    .EXE_alu_result(EXE_alu_result),
+    .EXE_rf(EXE_rf),
+    .EXE_mem(EXE_mem),
+    .MEM_WB_valid(MEM_WB_valid),
+    .WB_allowin(WB_allowin),
+    .MEM_pc(MEM_pc),
+    .MEM_rf(MEM_rf),
+    .data_sram_en(data_sram_en),
+    .data_sram_we(data_sram_we),
+    .data_sram_addr(data_sram_addr),
+    .data_sram_wdata(data_sram_wdata),
+    .data_sram_rdata(data_sram_rdata)
+  );
+
+  WB_state  WB_state_inst (
+    .clk(clk),
+    .reset(reset),
+    .MEM_WB_valid(MEM_WB_valid),
+    .WB_allowin(WB_allowin),
+    .MEM_pc(MEM_pc),
+    .MEM_rf(MEM_rf),
+    .WB_rf(WB_rf),
+    .debug_wb_pc(debug_wb_pc),
+    .debug_wb_rf_we(debug_wb_rf_we),
+    .debug_wb_rf_wnum(debug_wb_rf_wnum),
+    .debug_wb_rf_wdata(debug_wb_rf_wdata)
+  );
 endmodule

@@ -50,7 +50,7 @@ module IF_state(
     assign inst_sram_wdata = 32'b0;
 
     /*---------------pc control-----------------*/
-    assign seq_pc       = pc + 3'h4;
+    assign seq_pc       = IF_pc + 3'h4;
     assign nextpc       = br_taken ? br_target : seq_pc;
 
     /*---------------IF_ID buffer-----------------*/
