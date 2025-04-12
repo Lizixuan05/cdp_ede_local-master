@@ -2,11 +2,13 @@ module mycpu_top(
     input  wire        clk,
     input  wire        resetn,
     // inst sram interface
-    output wire        inst_sram_we,
+    output wire        inst_sram_en,
+    output wire [ 3:0] inst_sram_we,
     output wire [31:0] inst_sram_addr,
     output wire [31:0] inst_sram_wdata,
     input  wire [31:0] inst_sram_rdata,
     // data sram interface
+    output wire        data_sram_en,
     output wire        data_sram_we,
     output wire [31:0] data_sram_addr,
     output wire [31:0] data_sram_wdata,
@@ -17,25 +19,10 @@ module mycpu_top(
     output wire [ 4:0] debug_wb_rf_wnum,
     output wire [31:0] debug_wb_rf_wdata
 );
+
 reg         reset;
 always @(posedge clk) reset <= ~resetn;
 
-reg         valid;
-always @(posedge clk) begin
-    if (reset) begin
-        valid <= 1'b0;
-    end
-    else begin
-        valid <= 1'b1;
-    end
-end
-
-wire [31:0] seq_pc;
-wire [31:0] nextpc;
-wire        br_taken;
-wire [31:0] br_target;
-wire [31:0] inst;
-reg  [31:0] pc;
 
 wire [11:0] alu_op;
 wire        load_op;
@@ -142,22 +129,6 @@ wire [31:0] final_result;
 
 
 
-assign seq_pc       = pc + 3'h4;
-assign nextpc       = br_taken ? br_target : seq_pc;
-
-always @(posedge clk) begin
-    if (reset) begin
-        pc <= 32'h1bfffffc;     //trick: to make nextpc be 0x1c000000 during reset 
-    end
-    else begin
-        pc <= nextpc;
-    end
-end
-
-assign inst_sram_we    = 1'b0;
-assign inst_sram_addr  = pc;
-assign inst_sram_wdata = 32'b0;
-assign inst            = inst_sram_rdata;
 
 assign op_31_26  = inst[31:26];
 assign op_25_22  = inst[25:22];
@@ -337,7 +308,7 @@ assign data_sram_wdata = inst_st_w?rkd_value:
                          inst_st_h?{data_sram_rdata[31:16], rkd_value[15:0]}:
                          32'b0;
 
-assign mem_result   =  inst_ld ? data_sram_rdata :
+assign mem_result   =  inst_ld_w ? data_sram_rdata :
                        inst_ld_b ? {{24{data_sram_rdata[ 7]}}, data_sram_rdata[ 7:0]} :
                        inst_ld_h ? {{16{data_sram_rdata[15]}}, data_sram_rdata[15:0]} :
                        inst_ld_bu? {24'b0, data_sram_rdata[ 7:0]} :
@@ -353,7 +324,7 @@ assign rf_wdata = final_result;
 
 // debug info generate
 assign debug_wb_pc       = pc;
-assign debug_wb_rf_wen   = {4{rf_we}};
+assign debug_wb_rf_we   = {4{rf_we}};
 assign debug_wb_rf_wnum  = dest;
 assign debug_wb_rf_wdata = final_result;
 
