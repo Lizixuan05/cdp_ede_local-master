@@ -18,7 +18,7 @@ module MEM_state (
     input  wire        WB_allowin,
     /*buffer*/
     output reg  [31:0] MEM_pc,
-    output wire [37:0] MEM_rf,//{rf_wdata[37:6],rf_we[5],rf_waddr[4:0]}
+    output wire [37:0] MEM_rf,//{rf_we[37],rf_waddr[36:32],rf_wdata[31:0]}
 
     // data sram interface
     output wire        data_sram_en,
@@ -71,7 +71,7 @@ module MEM_state (
     /*--------------MEM_WB buffer--------------------------*/
     assign mem_result = data_sram_rdata;
     assign mem_rf_wdata = mem_res_from_mem?mem_result:mem_alu_result;
-    assign MEM_rf = {mem_rf_wdata, mem_rf[5:0]};
+    assign MEM_rf = {mem_rf[5:0],mem_rf_wdata,};
 
 
 endmodule
