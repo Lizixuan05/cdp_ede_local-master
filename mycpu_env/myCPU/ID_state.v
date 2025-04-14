@@ -22,15 +22,15 @@ module ID_state (
     output reg  [31:0] ID_pc,//reg类型
     output wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     output wire [ 5:0] ID_rf,//{rf_we[5],rf_waddr[4:0]}
-    output wire [75:0] ID_alu,//{alu_op[75:64],alu_src2[63:32],alu_src1[0:31]}
+    output wire [75:0] ID_alu,//{alu_op[75:64],alu_src2[63:32],alu_src1[31:0]}
 
-    //WB_ID interface
-    input  wire [37:0] WB_rf //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
-);
-    reg  [31:0] inst;    
-    wire        wb_rf_we;
-    wire [ 4:0] wb_rf_waddr;
-    wire [31:0] wb_rf_wdata;
+    //confict detection interface
+    input  wire [37:0] WB_rf, //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
+    input  wire [37:0] MEM_rf,//{mem_rf_we[37], mem_rf_waddr[36:32], mem_rf_wdata[31:0]}
+    input  wire [38:0] EXE_rf //{exe_res_from_mem[38], exe_rf_we[37], exe_rf_waddr[36:32], exe_rf_wdata[31:0]}
+    );
+    wire        ID_stall;
+    reg  [31:0] inst;
     wire        ID_ready_go;
     reg         ID_valid;
     wire [11:0] alu_op;
@@ -124,7 +124,29 @@ module ID_state (
     wire [ 4:0] rf_waddr;
 
     wire [31:0] alu_src1   ;
-    wire [31:0] alu_src2   ;        
+    wire [31:0] alu_src2   ;
+    
+    wire        conflict_r1_wb;
+    wire        conflict_r2_wb;
+    wire        conflict_r1_mem;
+    wire        conflict_r2_mem;
+    wire        conflict_r1_exe;
+    wire        conflict_r2_exe;
+    wire        need_r1;
+    wire        need_r2;
+
+    wire        wb_rf_we   ;
+    wire [ 4:0] wb_rf_waddr;
+    wire [31:0] wb_rf_wdata;
+    wire        mem_rf_we   ;
+    wire [ 4:0] mem_rf_waddr;
+    wire [31:0] mem_rf_wdata;
+    wire        exe_rf_we   ;
+    wire [ 4:0] exe_rf_waddr;
+    wire [31:0] exe_rf_wdata;
+    wire        exe_res_from_mem;
+
+
     /*---------------IF_ID buffer-----------------*/
     always @(posedge clk) begin
         if (IF_ID_valid & ID_allowin) begin
@@ -134,7 +156,8 @@ module ID_state (
     end
     /*---------------state control-----------------*/
 
-    assign ID_ready_go = 1'b1;
+    assign ID_ready_go = ~ID_stall;
+    assign ID_stall = exe_res_from_mem & (conflict_r1_exe & need_r1|conflict_r2_exe & need_r2);
     assign ID_allowin = ~ID_valid | ID_ready_go & EXE_allowin;
     assign ID_EXE_valid = ID_valid & ID_ready_go;
 
@@ -142,11 +165,13 @@ module ID_state (
         if (reset) begin
             ID_valid <= 1'b0;
         end
-        else begin
-            ID_valid <= ID_allowin & IF_ID_valid & ~br_taken;
+        else if (br_taken) begin
+            ID_valid <= 1'b0;
+        end
+        else if (ID_allowin) begin
+            ID_valid <= IF_ID_valid;
         end
     end
-
     /*---------------decode instruction-----------------*/
 
     assign op_31_26  = inst[31:26];
@@ -285,7 +310,7 @@ module ID_state (
     assign alu_src2 = src2_is_imm ? imm : rkd_value;
     //alu_op
 
-    assign rf_we    = gr_we && ID_valid;
+    assign rf_we    = gr_we;
     assign rf_waddr = dest;
 
     //mem_we
@@ -294,11 +319,8 @@ module ID_state (
 
     /*--------------register file control----------------*/
 
-    //read
     assign rf_raddr1 = rj;
     assign rf_raddr2 = src_reg_is_rd ? rd :rk;
-    //write
-    assign {wb_rf_we,wb_rf_waddr,wb_rf_wdata} = WB_rf;
 
     regfile u_regfile(
         .clk    (clk      ),
@@ -311,8 +333,28 @@ module ID_state (
         .wdata  (wb_rf_wdata)
         );
     
-    assign rj_value  = rf_rdata1;
-    assign rkd_value = rf_rdata2;
+
+    /*-------------------conflict detection-----------------*/
+
+    assign {wb_rf_we,wb_rf_waddr,wb_rf_wdata} = WB_rf;
+    assign {mem_rf_we, mem_rf_waddr, mem_rf_wdata} = MEM_rf;
+    assign {exe_res_from_mem, exe_rf_we, exe_rf_waddr, exe_rf_wdata} = EXE_rf;
+
+    assign conflict_r1_wb = (|rf_raddr1) & (rf_raddr1 == wb_rf_waddr) & wb_rf_we;
+    assign conflict_r2_wb = (|rf_raddr2) & (rf_raddr2 == wb_rf_waddr) & wb_rf_we;
+    assign conflict_r1_mem = (|rf_raddr1) & (rf_raddr1 == mem_rf_waddr) & mem_rf_we;
+    assign conflict_r2_mem = (|rf_raddr2) & (rf_raddr2 == mem_rf_waddr) & mem_rf_we;
+    assign conflict_r1_exe = (|rf_raddr1) & (rf_raddr1 == exe_rf_waddr) & exe_rf_we;
+    assign conflict_r2_exe = (|rf_raddr2) & (rf_raddr2 == exe_rf_waddr) & exe_rf_we;
+    assign need_r1         = ~src1_is_pc & (|alu_op);
+    assign need_r2         = ~src2_is_imm & (|alu_op);
+    // 数据冲突时处理有优先级
+    assign rj_value  =  conflict_r1_exe ? exe_rf_wdata:
+                        conflict_r1_mem ? mem_rf_wdata:
+                        conflict_r1_wb  ? wb_rf_wdata : rf_rdata1; 
+    assign rkd_value =  conflict_r2_exe ? exe_rf_wdata:
+                        conflict_r2_mem ? mem_rf_wdata:
+                        conflict_r2_wb  ? wb_rf_wdata : rf_rdata2; 
 
     /*--------------------brunch control-----------------*/
     assign rj_eq_rd = (rj_value == rkd_value);

@@ -37,15 +37,18 @@ module IF_state(
         if (reset) begin
             IF_valid <= 1'b0;
         end
-        else begin
-            IF_valid <= IF_allowin;
+        else if (IF_allowin) begin
+            IF_valid <= ~reset;
+        end
+        else if (br_taken) begin
+            IF_valid <= 1'b0;
         end
     end
 
     /*---------------inst sram -----------------*/
 
-    assign inst_sram_en   = IF_valid;
-    assign inst_sram_we   = 4'b0000;
+    assign inst_sram_en   = IF_allowin & ~reset;
+    assign inst_sram_we   = 4'b0;
     assign inst_sram_addr = nextpc;
     assign inst_sram_wdata = 32'b0;
 

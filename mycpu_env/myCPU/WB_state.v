@@ -8,7 +8,7 @@ module WB_state (
     output wire        WB_allowin,
     /*buffer*/
     input  wire [31:0] MEM_pc,
-    input  wire [37:0] MEM_rf,
+    input  wire [37:0] MEM_rf,//{rf_we[37],rf_waddr[36:32],rf_wdata[31:0]}
 
     //WB_ID interface
     output wire [37:0] WB_rf,//{rf_we[37],rf_waddr[36:32],rf_wdata[31:0]}
@@ -39,8 +39,8 @@ module WB_state (
         if (reset) begin
             WB_valid <= 1'b0;
         end
-        else begin
-            WB_valid <= MEM_WB_valid & WB_allowin;
+        else if (WB_allowin)begin
+            WB_valid <= MEM_WB_valid ;
         end
     end
 
@@ -49,7 +49,7 @@ module WB_state (
 
     /*-------------------debug info generate--------------------*/
     assign debug_wb_pc       = WB_pc;
-    assign debug_wb_rf_we   = {4{wb_rf_buffer[37]}};
+    assign debug_wb_rf_we   = {4{wb_rf_buffer[37] & WB_valid}};
     assign debug_wb_rf_wnum  = wb_rf_buffer[36:32];
     assign debug_wb_rf_wdata = wb_rf_buffer[31:0];
 

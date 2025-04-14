@@ -30,27 +30,27 @@ wire [31:0] br_target;
 wire        EXE_allowin;
 wire        ID_EXE_valid;
 wire [31:0] ID_pc;
-wire [31:0] ID_mem;
-wire [31:0] ID_rf;
-wire [31:0] ID_alu;
-wire [31:0] WB_rf;
+wire [33:0] ID_mem;
+wire [ 5:0] ID_rf;
+wire [75:0] ID_alu;
+wire [37:0] WB_rf;
 
 wire        MEM_allowin;
 wire        EXE_MEM_valid;
 wire [31:0] EXE_pc;
 wire [31:0] EXE_alu_result;
-wire [31:0] EXE_rf;
-wire [31:0] EXE_mem;
+wire [38:0] EXE_rf;
+wire [33:0] EXE_mem;
 
 wire        MEM_WB_valid;
 wire        WB_allowin;
 wire [31:0] MEM_pc;
-wire [31:0] MEM_rf;
+wire [37:0] MEM_rf;
 
 reg         reset;
 always @(posedge clk) reset <= ~resetn;
 
-  IF_state  IF_state_inst (
+IF_state  IF_state_inst (
     .clk(clk),
     .reset(reset),
     .inst_sram_en(inst_sram_en),
@@ -65,7 +65,6 @@ always @(posedge clk) reset <= ~resetn;
     .br_taken(br_taken),
     .br_target(br_target)
   );
-
   ID_state  ID_state_inst (
     .clk(clk),
     .reset(reset),
@@ -81,9 +80,10 @@ always @(posedge clk) reset <= ~resetn;
     .ID_mem(ID_mem),
     .ID_rf(ID_rf),
     .ID_alu(ID_alu),
-    .WB_rf(WB_rf)
+    .WB_rf(WB_rf),
+    .MEM_rf(MEM_rf),
+    .EXE_rf(EXE_rf)
   );
-
   EXE_state  EXE_state_inst (
     .clk(clk),
     .reset(reset),
@@ -96,28 +96,23 @@ always @(posedge clk) reset <= ~resetn;
     .MEM_allowin(MEM_allowin),
     .EXE_MEM_valid(EXE_MEM_valid),
     .EXE_pc(EXE_pc),
-    .EXE_alu_result(EXE_alu_result),
     .EXE_rf(EXE_rf),
-    .EXE_mem(EXE_mem)
+    .data_sram_en(data_sram_en),
+    .data_sram_we(data_sram_we),
+    .data_sram_addr(data_sram_addr),
+    .data_sram_wdata(data_sram_wdata)
   );
-
   MEM_state  MEM_state_inst (
     .clk(clk),
     .reset(reset),
     .EXE_MEM_valid(EXE_MEM_valid),
     .MEM_allowin(MEM_allowin),
     .EXE_pc(EXE_pc),
-    .EXE_alu_result(EXE_alu_result),
     .EXE_rf(EXE_rf),
-    .EXE_mem(EXE_mem),
     .MEM_WB_valid(MEM_WB_valid),
     .WB_allowin(WB_allowin),
     .MEM_pc(MEM_pc),
     .MEM_rf(MEM_rf),
-    .data_sram_en(data_sram_en),
-    .data_sram_we(data_sram_we),
-    .data_sram_addr(data_sram_addr),
-    .data_sram_wdata(data_sram_wdata),
     .data_sram_rdata(data_sram_rdata)
   );
 
