@@ -22,7 +22,7 @@ module ID_state (
     output reg  [31:0] ID_pc,//reg类型
     output wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     output wire [ 5:0] ID_rf,//{rf_we[5],rf_waddr[4:0]}
-    output wire [75:0] ID_alu,//{alu_op[75:64],alu_src2[63:32],alu_src1[31:0]}
+    output wire [81:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
 
     //confict detection interface
     input  wire [37:0] WB_rf, //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
@@ -33,7 +33,7 @@ module ID_state (
     reg  [31:0] inst;
     wire        ID_ready_go;
     reg         ID_valid;
-    wire [11:0] alu_op;
+    wire [18:0] alu_op;
     wire        src1_is_pc;
     wire        src2_is_imm;
     wire        res_from_mem;
@@ -107,6 +107,13 @@ module ID_state (
     wire        inst_ld_hu;
     wire        inst_st_b;
     wire        inst_st_h;
+    wire        inst_mul_w;
+    wire        inst_mulh_w;
+    wire        inst_mulh_wu;
+    wire        inst_div_w;
+    wire        inst_mod_w;
+    wire        inst_div_wu;
+    wire        inst_mod_wu;
 
     wire        need_ui12;
     wire        need_ui5;
@@ -232,6 +239,13 @@ module ID_state (
     assign inst_ld_hu  = op_31_26_d[6'h0a] & op_25_22_d[4'h9];
     assign inst_st_b   = op_31_26_d[6'h0a] & op_25_22_d[4'h4];
     assign inst_st_h   = op_31_26_d[6'h0a] & op_25_22_d[4'h5];
+    assign inst_mul_w  = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h1] & op_19_15_d[5'h18];
+    assign inst_mulh_w = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h1] & op_19_15_d[5'h19];
+    assign inst_mulh_wu= op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h1] & op_19_15_d[5'h1a];
+    assign inst_div_w  = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h00];
+    assign inst_mod_w  = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h01];
+    assign inst_div_wu = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h02];
+    assign inst_mod_wu = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h03];
 
     /*--------------signal from inst--------------*/
 
@@ -250,6 +264,13 @@ module ID_state (
     assign alu_op[ 9] = inst_srli_w|inst_srl_w;
     assign alu_op[10] = inst_srai_w|inst_sra_w;
     assign alu_op[11] = inst_lu12i_w;
+    assign alu_op[12] = inst_mul_w;
+    assign alu_op[13] = inst_mulh_w;
+    assign alu_op[14] = inst_mulh_wu;
+    assign alu_op[15] = inst_div_w;
+    assign alu_op[16] = inst_div_wu;
+    assign alu_op[17] = inst_mod_w;
+    assign alu_op[18] = inst_mod_wu;
 
     assign need_ui5   =  inst_slli_w | inst_srli_w | inst_srai_w;
     assign need_ui12  =  inst_andi   | inst_ori    | inst_xori; 

@@ -10,7 +10,7 @@ module EXE_state (
     input  wire [31:0] ID_pc,
     input  wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     input  wire [ 5:0] ID_rf,
-    input  wire [75:0] ID_alu,//{alu_op[75:64],alu_src2[63:32],alu_src1[0:31]}
+    input  wire [81:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
 
     //EXE_MEM interface
     /*state control*/
@@ -29,7 +29,7 @@ module EXE_state (
 );
     wire EXE_ready_go;
     reg  EXE_valid;
-    reg [11:0] EXE_alu_op;
+    reg [18:0] EXE_alu_op;
     reg [31:0] EXE_alu_src1;
     reg [31:0] EXE_alu_src2;
     reg exe_mem_we;
