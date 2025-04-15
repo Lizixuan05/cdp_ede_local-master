@@ -1,10 +1,14 @@
 module alu(
   input  wire        clk,
-
+  input  wire        rst,
   input  wire [18:0] alu_op,
   input  wire [31:0] alu_src1,
   input  wire [31:0] alu_src2,
   output wire [31:0] alu_result,
+
+  input  wire        es_valid,
+  input  wire        es_ready_go,
+  input  wire        ms_allowin,
 
   output wire        alu_complete
 );
@@ -121,29 +125,211 @@ assign mulh_result = signed_prod[63:32];
 assign mulhu_result = signed_prod[63:32];
 
 // DIV, MOD
-wire divs_divisor_tvalid;
-wire divs_divisor_tready;
-wire [31:0] divs_divisor_tdata;
-wire divs_dividend_tvalid;
-wire divs_dividend_tready;
-wire [31:0] divs_dividend_tdata;
-wire divs_dout_tvalid;
-wire [63:0] divs_dout_tdata;
+// reg  divs_ready;
+// reg  divs_divisor_tvalid;
+// wire divs_divisor_tready;
+// reg  divs_dividend_tvalid;
+// wire divs_dividend_tready;
+// wire divs_dout_tvalid;
+// wire [63:0] divs_dout_tdata;
 
-assign divs_divisor_tvalid = op_div | op_mod;
+// always @(posedge clk) begin
+//   if (rst) begin
+//     divs_ready <= 1'b1;
+//     divs_divisor_tvalid <= 1'b0;
+//     divs_dividend_tvalid <= 1'b0;
+//   end
+//   else if ((op_div | op_mod) & divs_ready) begin
+//     divs_divisor_tvalid <= 1'b1;
+//     divs_dividend_tvalid <= 1'b1;
+//   end
+//   else if (divs_divisor_tready & divs_divisor_tvalid & divs_dividend_tready & divs_dividend_tvalid) begin
+//     divs_divisor_tvalid <= 1'b0;
+//     divs_dividend_tvalid <= 1'b0;
+//     divs_ready <= 1'b0;
+//   end
+//   else if (divs_dout_tvalid) begin
+//     divs_ready <= 1'b1;
+//   end
+//   else begin
+//     divs_divisor_tvalid <= divs_divisor_tvalid;
+//     divs_dividend_tvalid <= divs_dividend_tvalid;
+//     divs_ready <= divs_ready;
+//   end
+// end
 
-my_div_s  my_div_s_inst (
-    .aclk(clk),
-    .s_axis_divisor_tvalid(divs_divisor_tvalid),
-    .s_axis_divisor_tready(divs_divisor_tready),
-    .s_axis_divisor_tdata(divs_divisor_tdata),
-    .s_axis_dividend_tvalid(divs_dividend_tvalid),
-    .s_axis_dividend_tready(divs_dividend_tready),
-    .s_axis_dividend_tdata(divs_dividend_tdata),
-    .m_axis_dout_tvalid(divs_dout_tvalid),
-    .m_axis_dout_tdata(divs_dout_tdata)
+// my_div_s  my_div_s_inst (
+//     .aclk(clk),
+//     .s_axis_divisor_tvalid(divs_divisor_tvalid),
+//     .s_axis_divisor_tready(divs_divisor_tready),
+//     .s_axis_divisor_tdata(alu_src2),
+//     .s_axis_dividend_tvalid(divs_dividend_tvalid),
+//     .s_axis_dividend_tready(divs_dividend_tready),
+//     .s_axis_dividend_tdata(alu_src1),
+//     .m_axis_dout_tvalid(divs_dout_tvalid),
+//     .m_axis_dout_tdata(divs_dout_tdata)
+//   );
+
+// // DIVU, MODU
+// reg  divu_ready;
+// reg  divu_divisor_tvalid;
+// wire divu_divisor_tready;
+// reg  divu_dividend_tvalid;
+// wire divu_dividend_tready;
+// wire divu_dout_tvalid;
+// wire [63:0] divu_dout_tdata;
+
+
+
+// always @(posedge clk) begin
+//   if (rst) begin
+//     divu_ready <= 1'b1;
+//     divu_divisor_tvalid <= 1'b0;
+//     divu_dividend_tvalid <= 1'b0;
+//   end
+//   else if ((op_divu | op_modu) & divu_ready) begin
+//     divu_divisor_tvalid <= 1'b1;
+//     divu_dividend_tvalid <= 1'b1;
+//   end
+//   else if (divu_divisor_tready & divu_divisor_tvalid & divu_dividend_tready & divu_dividend_tvalid) begin
+//     divu_divisor_tvalid <= 1'b0;
+//     divu_dividend_tvalid <= 1'b0;
+//     divu_ready <= 1'b0;
+//   end
+//   else if (divu_dout_tvalid) begin
+//     divu_ready <= 1'b1;
+//   end
+//   else begin
+//     divu_divisor_tvalid <= divu_divisor_tvalid;
+//     divu_dividend_tvalid <= divu_dividend_tvalid;
+//     divu_ready <= divu_ready;
+//   end
+// end
+
+// my_div_u  my_div_u_inst (
+//     .aclk(clk),
+//     .s_axis_divisor_tvalid(divu_divisor_tvalid),
+//     .s_axis_divisor_tready(divu_divisor_tready),
+//     .s_axis_divisor_tdata(alu_src2),
+//     .s_axis_dividend_tvalid(divu_dividend_tvalid),
+//     .s_axis_dividend_tready(divu_dividend_tready),
+//     .s_axis_dividend_tdata(alu_src1),
+//     .m_axis_dout_tvalid(divu_dout_tvalid),
+//     .m_axis_dout_tdata(divu_dout_tdata)
+//   );
+
+
+// Div & Divu
+  wire [31:0] divider_dividend;
+  wire [31:0] divider_divisor;
+  wire [63:0] unsigned_divider_res;
+  wire [63:0] signed_divider_res;
+  
+  assign divider_dividend = alu_src1;
+  assign divider_divisor  = alu_src2;
+  
+  wire unsigned_dividend_tready;
+  wire unsigned_dividend_tvalid;
+  wire unsigned_divisor_tready;
+  wire unsigned_divisor_tvalid;
+  wire unsigned_dout_tvalid;
+  
+  wire signed_dividend_tready;
+  wire signed_dividend_tvalid;
+  wire signed_divisor_tready;
+  wire signed_divisor_tvalid;
+  wire signed_dout_tvalid;
+  
+my_div_u u_unsigned_divider (
+      .aclk                   (clk),
+      .s_axis_dividend_tdata  (divider_dividend),
+      .s_axis_dividend_tready (unsigned_dividend_tready),
+      .s_axis_dividend_tvalid (unsigned_dividend_tvalid),
+      .s_axis_divisor_tdata   (divider_divisor),
+      .s_axis_divisor_tready  (unsigned_divisor_tready),
+      .s_axis_divisor_tvalid  (unsigned_divisor_tvalid),
+      .m_axis_dout_tdata      (unsigned_divider_res),
+      .m_axis_dout_tvalid     (unsigned_dout_tvalid)
   );
-
+  
+my_div_s u_signed_divider (
+      .aclk                   (clk),
+      .s_axis_dividend_tdata  (divider_dividend),
+      .s_axis_dividend_tready (signed_dividend_tready),
+      .s_axis_dividend_tvalid (signed_dividend_tvalid),
+      .s_axis_divisor_tdata   (divider_divisor),
+      .s_axis_divisor_tready  (signed_divisor_tready),
+      .s_axis_divisor_tvalid  (signed_divisor_tvalid),
+      .m_axis_dout_tdata      (signed_divider_res),
+      .m_axis_dout_tvalid     (signed_dout_tvalid)
+  );
+  
+  // Divider status control
+  reg  unsigned_dividend_sent;
+  reg  unsigned_divisor_sent;
+  reg  unsigned_divider_done;
+  
+  assign unsigned_dividend_tvalid = es_valid && (op_divu | op_modu) && !unsigned_dividend_sent;
+  assign unsigned_divisor_tvalid = es_valid && (op_divu | op_modu) && !unsigned_divisor_sent;
+  
+  always @ (posedge clk) begin
+      if (rst) begin
+          unsigned_dividend_sent <= 1'b0;
+      end else if (unsigned_dividend_tready && unsigned_dividend_tvalid) begin
+          unsigned_dividend_sent <= 1'b1;
+      end else if (es_ready_go && ms_allowin) begin
+          unsigned_dividend_sent <= 1'b0;
+      end
+      
+      if (rst) begin
+          unsigned_divisor_sent <= 1'b0;
+      end else if (unsigned_divisor_tready && unsigned_divisor_tvalid) begin
+          unsigned_divisor_sent <= 1'b1;
+      end else if (es_ready_go && ms_allowin) begin
+          unsigned_divisor_sent <= 1'b0;
+      end
+  
+      if (rst) begin
+          unsigned_divider_done <= 1'b0;
+      end else if (es_ready_go && !ms_allowin) begin
+          unsigned_divider_done <= 1'b1;
+      end else if (ms_allowin) begin
+          unsigned_divider_done <= 1'b0;
+      end
+  end
+  
+  reg  signed_dividend_sent;
+  reg  signed_divisor_sent;
+  reg  signed_divider_done;
+  
+  assign signed_dividend_tvalid = es_valid && (op_div | op_mod) && !signed_dividend_sent;
+  assign signed_divisor_tvalid = es_valid && (op_div | op_mod) && !signed_divisor_sent;
+  
+  always @ (posedge clk) begin
+      if (rst) begin
+          signed_dividend_sent <= 1'b0;
+      end else if (signed_dividend_tready && signed_dividend_tvalid) begin
+          signed_dividend_sent <= 1'b1;
+      end else if (es_ready_go && ms_allowin) begin
+          signed_dividend_sent <= 1'b0;
+      end
+      
+      if (rst) begin
+          signed_divisor_sent <= 1'b0;
+      end else if (signed_divisor_tready && signed_divisor_tvalid) begin
+          signed_divisor_sent <= 1'b1;
+      end else if (es_ready_go && ms_allowin) begin
+          signed_divisor_sent <= 1'b0;
+      end
+  
+      if (rst) begin
+          signed_divider_done <= 1'b0;
+      end else if (es_ready_go && !ms_allowin) begin
+          signed_divider_done <= 1'b1;
+      end else if (ms_allowin) begin
+          signed_divider_done <= 1'b0;
+      end
+  end
 
 
 // final result mux
@@ -159,6 +345,13 @@ assign alu_result = ({32{op_add|op_sub}} & add_sub_result)
                   | ({32{op_srl|op_sra}} & sr_result)
                   | ({32{op_mul       }} & mul_result)
                   | ({32{op_mulh      }} & mulh_result)
-                  | ({32{op_mulhu     }} & mulhu_result);
+                  | ({32{op_mulhu     }} & mulhu_result)
+                  | ({32{op_div       }} & signed_divider_res[63:32])
+                  | ({32{op_divu      }} & unsigned_divider_res[63:32])
+                  | ({32{op_mod       }} & signed_divider_res[31:0])
+                  | ({32{op_modu      }} & unsigned_divider_res[31:0]);
+
+assign alu_complete = op_div | op_divu | op_mod | op_modu ? 
+                      signed_dout_tvalid | unsigned_dout_tvalid : 1'b1 ;
 
 endmodule

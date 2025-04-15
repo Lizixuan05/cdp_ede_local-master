@@ -10,7 +10,7 @@ module EXE_state (
     input  wire [31:0] ID_pc,
     input  wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     input  wire [ 5:0] ID_rf,
-    input  wire [81:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
+    input  wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
 
     //EXE_MEM interface
     /*state control*/
@@ -67,10 +67,14 @@ module EXE_state (
 
     alu u_alu(
     .clk        (clk           ),
+    .rst        (reset         ),
     .alu_op     (EXE_alu_op    ),
     .alu_src1   (EXE_alu_src1  ),
     .alu_src2   (EXE_alu_src2  ),
     .alu_result (EXE_alu_result),
+    .es_valid(EXE_valid),
+    .es_ready_go(EXE_ready_go),
+    .ms_allowin(MEM_allowin),
     .alu_complete(alu_complete)
     );
 
