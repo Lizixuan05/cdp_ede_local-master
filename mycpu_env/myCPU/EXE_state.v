@@ -38,6 +38,7 @@ module EXE_state (
     wire [31:0] EXE_alu_result;
     reg exe_rf_we;
     reg [4:0] exe_rf_waddr;
+    wire alu_complete;
 
     /*---------------ID_EXE buffer--------------------*/
     always @(posedge clk) begin
@@ -50,7 +51,7 @@ module EXE_state (
     end
 
     /*-----------------state control------------------*/
-    assign EXE_ready_go = 1'b1;
+    assign EXE_ready_go = alu_complete;
     assign EXE_allowin = ~EXE_valid | EXE_ready_go & MEM_allowin;
     assign EXE_MEM_valid = EXE_valid & EXE_ready_go;
     always @(posedge clk) begin
@@ -65,10 +66,12 @@ module EXE_state (
     /*--------------------alu control-----------------*/
 
     alu u_alu(
+    .clk        (clk           ),
     .alu_op     (EXE_alu_op    ),
     .alu_src1   (EXE_alu_src1  ),
     .alu_src2   (EXE_alu_src2  ),
-    .alu_result (EXE_alu_result)
+    .alu_result (EXE_alu_result),
+    .alu_complete(alu_complete)
     );
 
     /*-------------------EXE_MEM buffer---------------*/

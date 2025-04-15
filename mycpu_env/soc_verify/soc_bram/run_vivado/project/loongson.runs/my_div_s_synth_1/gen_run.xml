@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="my_div_s_synth_1" LaunchPart="xc7a200tfbg676-1" LaunchTime="1744690519">
+  <File Type="PA-TCL" Name="my_div_s.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="my_div_s_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="my_div_s_reports.tcl"/>
+  <File Type="RDS-RDS" Name="my_div_s.vds"/>
+  <File Type="RDS-UTIL" Name="my_div_s_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="my_div_s_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="my_div_s.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="my_div_s_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="my_div_s_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/my_div_s" RelGenDir="$PGENDIR/my_div_s">
+    <File Path="$PSRCDIR/sources_1/ip/my_div_s/my_div_s.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="my_div_s"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/my_div_s" RelGenDir="$PGENDIR/my_div_s">
+    <File Path="$PSRCDIR/sources_1/ip/my_div_s/my_div_s.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="my_div_s"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

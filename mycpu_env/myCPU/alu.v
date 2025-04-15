@@ -1,8 +1,12 @@
 module alu(
+  input  wire        clk,
+
   input  wire [18:0] alu_op,
   input  wire [31:0] alu_src1,
   input  wire [31:0] alu_src2,
-  output wire [31:0] alu_result
+  output wire [31:0] alu_result,
+
+  output wire        alu_complete
 );
 
 wire op_add;   //add operation
@@ -17,6 +21,13 @@ wire op_sll;   //logic left shift
 wire op_srl;   //logic right shift
 wire op_sra;   //arithmetic right shift
 wire op_lui;   //Load Upper Immediate
+wire op_mul;   //multiply
+wire op_mulh;  //multiply high
+wire op_mulhu; //multiply high unsigned
+wire op_div;   //divide
+wire op_divu;  //divide unsigned
+wire op_mod;   //modulus
+wire op_modu; //modulus unsigned
 
 // control code decomposition
 assign op_add  = alu_op[ 0];
@@ -108,6 +119,32 @@ assign signed_prod = $signed(mul_src1) * $signed(mul_src2);
 assign mul_result = signed_prod[31:0];
 assign mulh_result = signed_prod[63:32];
 assign mulhu_result = signed_prod[63:32];
+
+// DIV, MOD
+wire divs_divisor_tvalid;
+wire divs_divisor_tready;
+wire [31:0] divs_divisor_tdata;
+wire divs_dividend_tvalid;
+wire divs_dividend_tready;
+wire [31:0] divs_dividend_tdata;
+wire divs_dout_tvalid;
+wire [63:0] divs_dout_tdata;
+
+assign divs_divisor_tvalid = op_div | op_mod;
+
+my_div_s  my_div_s_inst (
+    .aclk(clk),
+    .s_axis_divisor_tvalid(divs_divisor_tvalid),
+    .s_axis_divisor_tready(divs_divisor_tready),
+    .s_axis_divisor_tdata(divs_divisor_tdata),
+    .s_axis_dividend_tvalid(divs_dividend_tvalid),
+    .s_axis_dividend_tready(divs_dividend_tready),
+    .s_axis_dividend_tdata(divs_dividend_tdata),
+    .m_axis_dout_tvalid(divs_dout_tvalid),
+    .m_axis_dout_tdata(divs_dout_tdata)
+  );
+
+
 
 // final result mux
 assign alu_result = ({32{op_add|op_sub}} & add_sub_result)
