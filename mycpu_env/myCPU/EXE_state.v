@@ -11,6 +11,7 @@ module EXE_state (
     input  wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     input  wire [ 5:0] ID_rf,
     input  wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
+    input  wire [ 7:0] ID_inst,
 
     //EXE_MEM interface
     /*state control*/
@@ -19,6 +20,7 @@ module EXE_state (
     /*buffer*/
     output reg  [31:0] EXE_pc,//reg类型为级间缓存
     output wire [38:0] EXE_rf,//{res_from_mem[38],rf_we[37],rf_waddr[36:32],alu_result[31:0]}
+    output wire [ 6:0]  EXE_load,//{EXE_alu_result[6:5],inst_ld_hu[4],inst_ld_bu[3],inst_ld_h[2],inst_ld_b[1],inst_ld_w[0]}
 
     // data sram interface
     output wire        data_sram_en,
@@ -39,6 +41,17 @@ module EXE_state (
     reg exe_rf_we;
     reg [4:0] exe_rf_waddr;
     wire alu_complete;
+    //inst
+    reg inst_ld_w;
+    reg inst_ld_b;
+    reg inst_ld_h;
+    reg inst_ld_bu;
+    reg inst_ld_hu;
+    reg inst_st_w;
+    reg inst_st_b;
+    reg inst_st_h;
+    wire [31:0] st_data;
+    wire [3:0] st_data_byte_en;
 
     /*---------------ID_EXE buffer--------------------*/
     always @(posedge clk) begin
@@ -47,6 +60,7 @@ module EXE_state (
             {EXE_alu_op,EXE_alu_src2,EXE_alu_src1} <= ID_alu;
             {exe_mem_we,exe_res_from_mem,exe_rkd_value} <= ID_mem;
             {exe_rf_we,exe_rf_waddr} <= ID_rf;
+            {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w} <= ID_inst;
         end
     end
 
@@ -79,12 +93,24 @@ module EXE_state (
     );
 
     /*-------------------EXE_MEM buffer---------------*/
+
     assign EXE_rf = {exe_res_from_mem&EXE_valid,exe_rf_we&EXE_valid,exe_rf_waddr,EXE_alu_result};
+    assign EXE_load = {EXE_alu_result[1:0],inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
+
+    /*------------------byte enable control---------------------*/
+    assign st_data = inst_st_b ? {4{exe_rkd_value[7:0]}}:
+                     inst_st_h ? {2{exe_rkd_value[15:0]}}:
+                                    exe_rkd_value;
+    assign st_data_byte_en = inst_st_w ? 4'b1111:
+                             inst_st_b ? 4'b0001<<EXE_alu_result[1:0]:
+                             inst_st_h ? 4'b0011<<EXE_alu_result[1:0]:
+                             4'b0000;
+    
 
     /*---------------data sram control---------------------*/
     assign data_sram_en = (exe_mem_we | exe_res_from_mem) & EXE_valid;
-    assign data_sram_we = {4{exe_mem_we & EXE_valid}};
+    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid}};
     assign data_sram_addr = EXE_alu_result;
-    assign data_sram_wdata = exe_rkd_value;
+    assign data_sram_wdata = st_data;
 
 endmodule

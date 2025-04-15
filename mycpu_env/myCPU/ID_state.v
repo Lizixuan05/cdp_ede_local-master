@@ -23,7 +23,7 @@ module ID_state (
     output wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
     output wire [ 5:0] ID_rf,//{rf_we[5],rf_waddr[4:0]}
     output wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
-    output wire [ 5:0] ID_inst ;//{inst_ld_w[5],inst_[4],inst_slt[3],inst_ld_[2],inst_ld_b[1],inst_ld_w[0]}
+    output wire [ 7:0] ID_inst,//{inst_st_h[7],inst_st_b[6],inst_st_w[5],inst_ld_hu[4],inst_ld_bu[3],inst_ld_h[2],inst_ld_b[1],inst_ld_w[0]}
 
     //confict detection interface
     input  wire [37:0] WB_rf, //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
@@ -401,5 +401,6 @@ module ID_state (
     assign ID_rf = {rf_we,rf_waddr};
     assign ID_mem = {mem_we,res_from_mem,rkd_value};
     assign ID_alu = {alu_op,alu_src2,alu_src1};
+    assign ID_inst = {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
 
 endmodule

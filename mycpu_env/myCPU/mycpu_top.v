@@ -34,6 +34,8 @@ wire [33:0] ID_mem;
 wire [ 5:0] ID_rf;
 wire [82:0] ID_alu;
 wire [37:0] WB_rf;
+wire [ 7:0] ID_inst;
+wire [ 6:0] EXE_load;
 
 wire        MEM_allowin;
 wire        EXE_MEM_valid;
@@ -80,6 +82,7 @@ IF_state  IF_state_inst (
     .ID_mem(ID_mem),
     .ID_rf(ID_rf),
     .ID_alu(ID_alu),
+    .ID_inst(ID_inst),
     .WB_rf(WB_rf),
     .MEM_rf(MEM_rf),
     .EXE_rf(EXE_rf)
@@ -93,10 +96,12 @@ IF_state  IF_state_inst (
     .ID_mem(ID_mem),
     .ID_rf(ID_rf),
     .ID_alu(ID_alu),
+    .ID_inst(ID_inst),
     .MEM_allowin(MEM_allowin),
     .EXE_MEM_valid(EXE_MEM_valid),
     .EXE_pc(EXE_pc),
     .EXE_rf(EXE_rf),
+    .EXE_load(EXE_load),
     .data_sram_en(data_sram_en),
     .data_sram_we(data_sram_we),
     .data_sram_addr(data_sram_addr),
@@ -109,6 +114,7 @@ IF_state  IF_state_inst (
     .MEM_allowin(MEM_allowin),
     .EXE_pc(EXE_pc),
     .EXE_rf(EXE_rf),
+    .EXE_load(EXE_load),
     .MEM_WB_valid(MEM_WB_valid),
     .WB_allowin(WB_allowin),
     .MEM_pc(MEM_pc),
