@@ -537,6 +537,7 @@ locate():
 
 1c010050 <inst_test>:
 inst_test():
+<<<<<<< HEAD
 1c010050:	56379800 	bl	145304(0x23798) # 1c0337e8 <n1_lu12i_w_test>
 1c010054:	5401d400 	bl	468(0x1d4) # 1c010228 <idle_1s>
 1c010058:	57b21800 	bl	242200(0x3b218) # 1c04b270 <n2_add_w_test>
@@ -628,6 +629,99 @@ inst_test():
 1c0101b0:	55dd2801 	bl	384296(0x5dd28) # 1c06ded8 <n45_st_b_test>
 1c0101b4:	54007400 	bl	116(0x74) # 1c010228 <idle_1s>
 1c0101b8:	55fed001 	bl	392912(0x5fed0) # 1c070088 <n46_st_h_test>
+=======
+1c010050:	5411e000 	bl	4576(0x11e0) # 1c011230 <n1_lu12i_w_test>
+1c010054:	5401d400 	bl	468(0x1d4) # 1c010228 <idle_1s>
+1c010058:	54188000 	bl	6272(0x1880) # 1c0118d8 <n2_add_w_test>
+1c01005c:	5401cc00 	bl	460(0x1cc) # 1c010228 <idle_1s>
+1c010060:	541ee000 	bl	7904(0x1ee0) # 1c011f40 <n3_addi_w_test>
+1c010064:	5401c400 	bl	452(0x1c4) # 1c010228 <idle_1s>
+1c010068:	54260800 	bl	9736(0x2608) # 1c012670 <n4_sub_w_test>
+1c01006c:	5401bc00 	bl	444(0x1bc) # 1c010228 <idle_1s>
+1c010070:	5426e000 	bl	9952(0x26e0) # 1c012750 <n5_slt_test>
+1c010074:	5401b400 	bl	436(0x1b4) # 1c010228 <idle_1s>
+1c010078:	54279800 	bl	10136(0x2798) # 1c012810 <n6_sltu_test>
+1c01007c:	5401ac00 	bl	428(0x1ac) # 1c010228 <idle_1s>
+1c010080:	54287000 	bl	10352(0x2870) # 1c0128f0 <n7_and_test>
+1c010084:	5401a400 	bl	420(0x1a4) # 1c010228 <idle_1s>
+1c010088:	54290800 	bl	10504(0x2908) # 1c012990 <n8_or_test>
+1c01008c:	54019c00 	bl	412(0x19c) # 1c010228 <idle_1s>
+1c010090:	5429a000 	bl	10656(0x29a0) # 1c012a30 <n9_xor_test>
+1c010094:	54019400 	bl	404(0x194) # 1c010228 <idle_1s>
+1c010098:	54069800 	bl	1688(0x698) # 1c010730 <n10_nor_test>
+1c01009c:	54018c00 	bl	396(0x18c) # 1c010228 <idle_1s>
+1c0100a0:	54073000 	bl	1840(0x730) # 1c0107d0 <n11_slli_w_test>
+1c0100a4:	54018400 	bl	388(0x184) # 1c010228 <idle_1s>
+1c0100a8:	5407a800 	bl	1960(0x7a8) # 1c010850 <n12_srli_w_test>
+1c0100ac:	54017c00 	bl	380(0x17c) # 1c010228 <idle_1s>
+1c0100b0:	54082000 	bl	2080(0x820) # 1c0108d0 <n13_srai_w_test>
+1c0100b4:	54017400 	bl	372(0x174) # 1c010228 <idle_1s>
+1c0100b8:	54089800 	bl	2200(0x898) # 1c010950 <n14_ld_w_test>
+1c0100bc:	54016c00 	bl	364(0x16c) # 1c010228 <idle_1s>
+1c0100c0:	5409b000 	bl	2480(0x9b0) # 1c010a70 <n15_st_w_test>
+1c0100c4:	54016400 	bl	356(0x164) # 1c010228 <idle_1s>
+1c0100c8:	540ac800 	bl	2760(0xac8) # 1c010b90 <n16_beq_test>
+1c0100cc:	54015c00 	bl	348(0x15c) # 1c010228 <idle_1s>
+1c0100d0:	540c1000 	bl	3088(0xc10) # 1c010ce0 <n17_bne_test>
+1c0100d4:	54015400 	bl	340(0x154) # 1c010228 <idle_1s>
+1c0100d8:	540db800 	bl	3512(0xdb8) # 1c010e90 <n18_bl_test>
+1c0100dc:	54014c00 	bl	332(0x14c) # 1c010228 <idle_1s>
+1c0100e0:	540f9000 	bl	3984(0xf90) # 1c011070 <n19_jirl_test>
+1c0100e4:	54014400 	bl	324(0x144) # 1c010228 <idle_1s>
+1c0100e8:	5411c000 	bl	4544(0x11c0) # 1c0112a8 <n20_b_test>
+1c0100ec:	54013c00 	bl	316(0x13c) # 1c010228 <idle_1s>
+1c0100f0:	54132800 	bl	4904(0x1328) # 1c011418 <n21_pcaddu12i_test>
+1c0100f4:	54013400 	bl	308(0x134) # 1c010228 <idle_1s>
+1c0100f8:	5413d000 	bl	5072(0x13d0) # 1c0114c8 <n22_slti_test>
+1c0100fc:	54012c00 	bl	300(0x12c) # 1c010228 <idle_1s>
+1c010100:	54143000 	bl	5168(0x1430) # 1c011530 <n23_sltui_test>
+1c010104:	54012400 	bl	292(0x124) # 1c010228 <idle_1s>
+1c010108:	54149000 	bl	5264(0x1490) # 1c011598 <n24_andi_test>
+1c01010c:	54011c00 	bl	284(0x11c) # 1c010228 <idle_1s>
+1c010110:	54150800 	bl	5384(0x1508) # 1c011618 <n25_ori_test>
+1c010114:	54011400 	bl	276(0x114) # 1c010228 <idle_1s>
+1c010118:	54158000 	bl	5504(0x1580) # 1c011698 <n26_xori_test>
+1c01011c:	54010c00 	bl	268(0x10c) # 1c010228 <idle_1s>
+1c010120:	5415f800 	bl	5624(0x15f8) # 1c011718 <n27_sll_w_test>
+1c010124:	54010400 	bl	260(0x104) # 1c010228 <idle_1s>
+1c010128:	54167000 	bl	5744(0x1670) # 1c011798 <n28_sra_w_test>
+1c01012c:	5400fc00 	bl	252(0xfc) # 1c010228 <idle_1s>
+1c010130:	54170800 	bl	5896(0x1708) # 1c011838 <n29_srl_w_test>
+1c010134:	5400f400 	bl	244(0xf4) # 1c010228 <idle_1s>
+1c010138:	54188000 	bl	6272(0x1880) # 1c0119b8 <n30_div_w_test>
+1c01013c:	5400ec00 	bl	236(0xec) # 1c010228 <idle_1s>
+1c010140:	5418f000 	bl	6384(0x18f0) # 1c011a30 <n31_div_wu_test>
+1c010144:	5400e400 	bl	228(0xe4) # 1c010228 <idle_1s>
+1c010148:	54194000 	bl	6464(0x1940) # 1c011a88 <n32_mul_w_test>
+1c01014c:	5400dc00 	bl	220(0xdc) # 1c010228 <idle_1s>
+1c010150:	5419d000 	bl	6608(0x19d0) # 1c011b20 <n33_mulh_w_test>
+1c010154:	5400d400 	bl	212(0xd4) # 1c010228 <idle_1s>
+1c010158:	541a4000 	bl	6720(0x1a40) # 1c011b98 <n34_mulh_wu_test>
+1c01015c:	5400cc00 	bl	204(0xcc) # 1c010228 <idle_1s>
+1c010160:	541ab000 	bl	6832(0x1ab0) # 1c011c10 <n35_mod_w_test>
+1c010164:	5400c400 	bl	196(0xc4) # 1c010228 <idle_1s>
+1c010168:	541b2000 	bl	6944(0x1b20) # 1c011c88 <n36_mod_wu_test>
+1c01016c:	5400bc00 	bl	188(0xbc) # 1c010228 <idle_1s>
+1c010170:	541b9000 	bl	7056(0x1b90) # 1c011d00 <n37_blt_test>
+1c010174:	5400b400 	bl	180(0xb4) # 1c010228 <idle_1s>
+1c010178:	541c4800 	bl	7240(0x1c48) # 1c011dc0 <n38_bge_test>
+1c01017c:	5400ac00 	bl	172(0xac) # 1c010228 <idle_1s>
+1c010180:	541d0000 	bl	7424(0x1d00) # 1c011e80 <n39_bltu_test>
+1c010184:	5400a400 	bl	164(0xa4) # 1c010228 <idle_1s>
+1c010188:	541e9800 	bl	7832(0x1e98) # 1c012020 <n40_bgeu_test>
+1c01018c:	54009c00 	bl	156(0x9c) # 1c010228 <idle_1s>
+1c010190:	541f5000 	bl	8016(0x1f50) # 1c0120e0 <n41_ld_b_test>
+1c010194:	54009400 	bl	148(0x94) # 1c010228 <idle_1s>
+1c010198:	54202800 	bl	8232(0x2028) # 1c0121c0 <n42_ld_h_test>
+1c01019c:	54008c00 	bl	140(0x8c) # 1c010228 <idle_1s>
+1c0101a0:	54210000 	bl	8448(0x2100) # 1c0122a0 <n43_ld_bu_test>
+1c0101a4:	54008400 	bl	132(0x84) # 1c010228 <idle_1s>
+1c0101a8:	5421d800 	bl	8664(0x21d8) # 1c012380 <n44_ld_hu_test>
+1c0101ac:	54007c00 	bl	124(0x7c) # 1c010228 <idle_1s>
+1c0101b0:	5422b000 	bl	8880(0x22b0) # 1c012460 <n45_st_b_test>
+1c0101b4:	54007400 	bl	116(0x74) # 1c010228 <idle_1s>
+1c0101b8:	5423b000 	bl	9136(0x23b0) # 1c012568 <n46_st_h_test>
+>>>>>>> main
 1c0101bc:	54006c00 	bl	108(0x6c) # 1c010228 <idle_1s>
 
 1c0101c0 <test_end>:
@@ -1013,7 +1107,11 @@ n10_nor_test():
 1c010748:	1484802b 	lu12i.w	$r11,271361(0x42401)
 1c01074c:	028f456b 	addi.w	$r11,$r11,977(0x3d1)
 1c010750:	0014358a 	nor	$r10,$r12,$r13
+<<<<<<< HEAD
 1c010754:	5c258d4b 	bne	$r10,$r11,9612(0x258c) # 1c012ce0 <inst_error>
+=======
+1c010754:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c0107c0 <inst_error>
+>>>>>>> main
 1c010758:	14cd1acc 	lu12i.w	$r12,420054(0x668d6)
 1c01075c:	02b6c18c 	addi.w	$r12,$r12,-592(0xdb0)
 1c010760:	154128cd 	lu12i.w	$r13,-390842(0xa0946)
@@ -1021,7 +1119,11 @@ n10_nor_test():
 1c010768:	1432c54b 	lu12i.w	$r11,103978(0x1962a)
 1c01076c:	02803d6b 	addi.w	$r11,$r11,15(0xf)
 1c010770:	0014358a 	nor	$r10,$r12,$r13
+<<<<<<< HEAD
 1c010774:	5c256d4b 	bne	$r10,$r11,9580(0x256c) # 1c012ce0 <inst_error>
+=======
+1c010774:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c0107c0 <inst_error>
+>>>>>>> main
 1c010778:	14db062c 	lu12i.w	$r12,448561(0x6d831)
 1c01077c:	02be418c 	addi.w	$r12,$r12,-112(0xf90)
 1c010780:	14cd662d 	lu12i.w	$r13,420657(0x66b31)
@@ -1029,6 +1131,7 @@ n10_nor_test():
 1c010788:	152099cb 	lu12i.w	$r11,-457522(0x904ce)
 1c01078c:	02803d6b 	addi.w	$r11,$r11,15(0xf)
 1c010790:	0014358a 	nor	$r10,$r12,$r13
+<<<<<<< HEAD
 1c010794:	5c254d4b 	bne	$r10,$r11,9548(0x254c) # 1c012ce0 <inst_error>
 1c010798:	14c011ec 	lu12i.w	$r12,393359(0x6008f)
 1c01079c:	028d7d8c 	addi.w	$r12,$r12,863(0x35f)
@@ -115847,3 +115950,2758 @@ Disassembly of section .eh_frame:
 1c0805c4:	1c07dc00 	pcaddu12i	$r0,16096(0x3ee0)
 1c0805c8:	000025c0 	clz.d	$r0,$r14
 1c0805cc:	00000000 	0x00000000
+=======
+1c010794:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c0107c0 <inst_error>
+1c010798:	1400000c 	lu12i.w	$r12,0
+1c01079c:	0280018c 	addi.w	$r12,$r12,0
+1c0107a0:	1400000d 	lu12i.w	$r13,0
+1c0107a4:	028001ad 	addi.w	$r13,$r13,0
+1c0107a8:	1400000b 	lu12i.w	$r11,0
+1c0107ac:	02bffd6b 	addi.w	$r11,$r11,-1(0xfff)
+1c0107b0:	0014358a 	nor	$r10,$r12,$r13
+1c0107b4:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c0107c0 <inst_error>
+1c0107b8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0107c0 <inst_error>
+1c0107bc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0107c0 <inst_error>:
+1c0107c0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0107c4:	001569ac 	or	$r12,$r13,$r26
+1c0107c8:	2980030c 	st.w	$r12,$r24,0
+1c0107cc:	4c000020 	jirl	$r0,$r1,0
+
+1c0107d0 <n11_slli_w_test>:
+n11_slli_w_test():
+1c0107d0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0107d4:	00150019 	move	$r25,$r0
+1c0107d8:	148f32ac 	lu12i.w	$r12,293269(0x47995)
+1c0107dc:	02b9798c 	addi.w	$r12,$r12,-418(0xe5e)
+1c0107e0:	151e654b 	lu12i.w	$r11,-462038(0x8f32a)
+1c0107e4:	02b2f16b 	addi.w	$r11,$r11,-836(0xcbc)
+1c0107e8:	0040858a 	slli.w	$r10,$r12,0x1
+1c0107ec:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c010840 <inst_error>
+1c0107f0:	1490558c 	lu12i.w	$r12,295596(0x482ac)
+1c0107f4:	0295e18c 	addi.w	$r12,$r12,1400(0x578)
+1c0107f8:	14ab15eb 	lu12i.w	$r11,350383(0x558af)
+1c0107fc:	0280016b 	addi.w	$r11,$r11,0
+1c010800:	0040a58a 	slli.w	$r10,$r12,0x9
+1c010804:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c010840 <inst_error>
+1c010808:	14e8322c 	lu12i.w	$r12,475537(0x74191)
+1c01080c:	02a4698c 	addi.w	$r12,$r12,-1766(0x91a)
+1c010810:	159091ab 	lu12i.w	$r11,-228211(0xc848d)
+1c010814:	0280016b 	addi.w	$r11,$r11,0
+1c010818:	0040ad8a 	slli.w	$r10,$r12,0xb
+1c01081c:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c010840 <inst_error>
+1c010820:	1400000c 	lu12i.w	$r12,0
+1c010824:	0280018c 	addi.w	$r12,$r12,0
+1c010828:	1400000b 	lu12i.w	$r11,0
+1c01082c:	0280016b 	addi.w	$r11,$r11,0
+1c010830:	0040818a 	slli.w	$r10,$r12,0x0
+1c010834:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c010840 <inst_error>
+1c010838:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010840 <inst_error>
+1c01083c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010840 <inst_error>:
+1c010840:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010844:	001569ac 	or	$r12,$r13,$r26
+1c010848:	2980030c 	st.w	$r12,$r24,0
+1c01084c:	4c000020 	jirl	$r0,$r1,0
+
+1c010850 <n12_srli_w_test>:
+n12_srli_w_test():
+1c010850:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010854:	00150019 	move	$r25,$r0
+1c010858:	151d200c 	lu12i.w	$r12,-464640(0x8e900)
+1c01085c:	02b3818c 	addi.w	$r12,$r12,-800(0xce0)
+1c010860:	1447480b 	lu12i.w	$r11,145984(0x23a40)
+1c010864:	02bce16b 	addi.w	$r11,$r11,-200(0xf38)
+1c010868:	0044898a 	srli.w	$r10,$r12,0x2
+1c01086c:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c0108c0 <inst_error>
+1c010870:	1492522c 	lu12i.w	$r12,299665(0x49291)
+1c010874:	0288c18c 	addi.w	$r12,$r12,560(0x230)
+1c010878:	1400012b 	lu12i.w	$r11,9(0x9)
+1c01087c:	0289496b 	addi.w	$r11,$r11,594(0x252)
+1c010880:	0044bd8a 	srli.w	$r10,$r12,0xf
+1c010884:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c0108c0 <inst_error>
+1c010888:	144bb4ec 	lu12i.w	$r12,155047(0x25da7)
+1c01088c:	02a2818c 	addi.w	$r12,$r12,-1888(0x8a0)
+1c010890:	1404bb4b 	lu12i.w	$r11,9690(0x25da)
+1c010894:	029a296b 	addi.w	$r11,$r11,1674(0x68a)
+1c010898:	0044918a 	srli.w	$r10,$r12,0x4
+1c01089c:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c0108c0 <inst_error>
+1c0108a0:	1400000c 	lu12i.w	$r12,0
+1c0108a4:	0280018c 	addi.w	$r12,$r12,0
+1c0108a8:	1400000b 	lu12i.w	$r11,0
+1c0108ac:	0280016b 	addi.w	$r11,$r11,0
+1c0108b0:	0044818a 	srli.w	$r10,$r12,0x0
+1c0108b4:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c0108c0 <inst_error>
+1c0108b8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0108c0 <inst_error>
+1c0108bc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0108c0 <inst_error>:
+1c0108c0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0108c4:	001569ac 	or	$r12,$r13,$r26
+1c0108c8:	2980030c 	st.w	$r12,$r24,0
+1c0108cc:	4c000020 	jirl	$r0,$r1,0
+
+1c0108d0 <n13_srai_w_test>:
+n13_srai_w_test():
+1c0108d0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0108d4:	00150019 	move	$r25,$r0
+1c0108d8:	14fc010c 	lu12i.w	$r12,516104(0x7e008)
+1c0108dc:	028fc18c 	addi.w	$r12,$r12,1008(0x3f0)
+1c0108e0:	14007e0b 	lu12i.w	$r11,1008(0x3f0)
+1c0108e4:	0281056b 	addi.w	$r11,$r11,65(0x41)
+1c0108e8:	0048a58a 	srai.w	$r10,$r12,0x9
+1c0108ec:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c010940 <inst_error>
+1c0108f0:	1427cd0c 	lu12i.w	$r12,81512(0x13e68)
+1c0108f4:	0283018c 	addi.w	$r12,$r12,192(0xc0)
+1c0108f8:	1400000b 	lu12i.w	$r11,0
+1c0108fc:	02804d6b 	addi.w	$r11,$r11,19(0x13)
+1c010900:	0048e18a 	srai.w	$r10,$r12,0x18
+1c010904:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c010940 <inst_error>
+1c010908:	14dae72c 	lu12i.w	$r12,448313(0x6d739)
+1c01090c:	02a3b18c 	addi.w	$r12,$r12,-1812(0x8ec)
+1c010910:	140000eb 	lu12i.w	$r11,7(0x7)
+1c010914:	02b5cd6b 	addi.w	$r11,$r11,-653(0xd73)
+1c010918:	0048c18a 	srai.w	$r10,$r12,0x10
+1c01091c:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c010940 <inst_error>
+1c010920:	1400000c 	lu12i.w	$r12,0
+1c010924:	0280018c 	addi.w	$r12,$r12,0
+1c010928:	1400000b 	lu12i.w	$r11,0
+1c01092c:	0280016b 	addi.w	$r11,$r11,0
+1c010930:	0048818a 	srai.w	$r10,$r12,0x0
+1c010934:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c010940 <inst_error>
+1c010938:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010940 <inst_error>
+1c01093c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010940 <inst_error>:
+1c010940:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010944:	001569ac 	or	$r12,$r13,$r26
+1c010948:	2980030c 	st.w	$r12,$r24,0
+1c01094c:	4c000020 	jirl	$r0,$r1,0
+
+1c010950 <n14_ld_w_test>:
+n14_ld_w_test():
+1c010950:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010954:	00150019 	move	$r25,$r0
+1c010958:	1590458d 	lu12i.w	$r13,-228820(0xc822c)
+1c01095c:	029fa1ad 	addi.w	$r13,$r13,2024(0x7e8)
+1c010960:	14001a6c 	lu12i.w	$r12,211(0xd3)
+1c010964:	0293018c 	addi.w	$r12,$r12,1216(0x4c0)
+1c010968:	1590458b 	lu12i.w	$r11,-228820(0xc822c)
+1c01096c:	029fa16b 	addi.w	$r11,$r11,2024(0x7e8)
+1c010970:	299aa18d 	st.w	$r13,$r12,1704(0x6a8)
+1c010974:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010978:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01097c:	299aa084 	st.w	$r4,$r4,1704(0x6a8)
+1c010980:	299aa0a5 	st.w	$r5,$r5,1704(0x6a8)
+1c010984:	289aa18a 	ld.w	$r10,$r12,1704(0x6a8)
+1c010988:	289aa086 	ld.w	$r6,$r4,1704(0x6a8)
+1c01098c:	289aa0a4 	ld.w	$r4,$r5,1704(0x6a8)
+1c010990:	289aa0a6 	ld.w	$r6,$r5,1704(0x6a8)
+1c010994:	5c00cd4b 	bne	$r10,$r11,204(0xcc) # 1c010a60 <inst_error>
+1c010998:	14e2e70d 	lu12i.w	$r13,464696(0x71738)
+1c01099c:	02b041ad 	addi.w	$r13,$r13,-1008(0xc10)
+1c0109a0:	14001bec 	lu12i.w	$r12,223(0xdf)
+1c0109a4:	0299818c 	addi.w	$r12,$r12,1632(0x660)
+1c0109a8:	14e2e70b 	lu12i.w	$r11,464696(0x71738)
+1c0109ac:	02b0416b 	addi.w	$r11,$r11,-1008(0xc10)
+1c0109b0:	2983918d 	st.w	$r13,$r12,228(0xe4)
+1c0109b4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0109b8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0109bc:	29839084 	st.w	$r4,$r4,228(0xe4)
+1c0109c0:	298390a5 	st.w	$r5,$r5,228(0xe4)
+1c0109c4:	2883918a 	ld.w	$r10,$r12,228(0xe4)
+1c0109c8:	28839086 	ld.w	$r6,$r4,228(0xe4)
+1c0109cc:	288390a4 	ld.w	$r4,$r5,228(0xe4)
+1c0109d0:	288390a6 	ld.w	$r6,$r5,228(0xe4)
+1c0109d4:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c010a60 <inst_error>
+1c0109d8:	1406d04d 	lu12i.w	$r13,13954(0x3682)
+1c0109dc:	029081ad 	addi.w	$r13,$r13,1056(0x420)
+1c0109e0:	14001a4c 	lu12i.w	$r12,210(0xd2)
+1c0109e4:	0293918c 	addi.w	$r12,$r12,1252(0x4e4)
+1c0109e8:	1406d04b 	lu12i.w	$r11,13954(0x3682)
+1c0109ec:	0290816b 	addi.w	$r11,$r11,1056(0x420)
+1c0109f0:	2986018d 	st.w	$r13,$r12,384(0x180)
+1c0109f4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0109f8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0109fc:	29860084 	st.w	$r4,$r4,384(0x180)
+1c010a00:	298600a5 	st.w	$r5,$r5,384(0x180)
+1c010a04:	2886018a 	ld.w	$r10,$r12,384(0x180)
+1c010a08:	28860086 	ld.w	$r6,$r4,384(0x180)
+1c010a0c:	288600a4 	ld.w	$r4,$r5,384(0x180)
+1c010a10:	288600a6 	ld.w	$r6,$r5,384(0x180)
+1c010a14:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c010a60 <inst_error>
+1c010a18:	1400000d 	lu12i.w	$r13,0
+1c010a1c:	028001ad 	addi.w	$r13,$r13,0
+1c010a20:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c010a24:	0280018c 	addi.w	$r12,$r12,0
+1c010a28:	1400000b 	lu12i.w	$r11,0
+1c010a2c:	0280016b 	addi.w	$r11,$r11,0
+1c010a30:	2980018d 	st.w	$r13,$r12,0
+1c010a34:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010a38:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c010a3c:	29800084 	st.w	$r4,$r4,0
+1c010a40:	298000a5 	st.w	$r5,$r5,0
+1c010a44:	2880018a 	ld.w	$r10,$r12,0
+1c010a48:	28800086 	ld.w	$r6,$r4,0
+1c010a4c:	288000a4 	ld.w	$r4,$r5,0
+1c010a50:	288000a6 	ld.w	$r6,$r5,0
+1c010a54:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c010a60 <inst_error>
+1c010a58:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010a60 <inst_error>
+1c010a5c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010a60 <inst_error>:
+1c010a60:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010a64:	001569ac 	or	$r12,$r13,$r26
+1c010a68:	2980030c 	st.w	$r12,$r24,0
+1c010a6c:	4c000020 	jirl	$r0,$r1,0
+
+1c010a70 <n15_st_w_test>:
+n15_st_w_test():
+1c010a70:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010a74:	00150019 	move	$r25,$r0
+1c010a78:	14c2ea8d 	lu12i.w	$r13,399188(0x61754)
+1c010a7c:	02910dad 	addi.w	$r13,$r13,1091(0x443)
+1c010a80:	14001aec 	lu12i.w	$r12,215(0xd7)
+1c010a84:	029e818c 	addi.w	$r12,$r12,1952(0x7a0)
+1c010a88:	14c2ea8b 	lu12i.w	$r11,399188(0x61754)
+1c010a8c:	02910d6b 	addi.w	$r11,$r11,1091(0x443)
+1c010a90:	299c518d 	st.w	$r13,$r12,1812(0x714)
+1c010a94:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010a98:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c010a9c:	299c5084 	st.w	$r4,$r4,1812(0x714)
+1c010aa0:	299c50a5 	st.w	$r5,$r5,1812(0x714)
+1c010aa4:	289c518a 	ld.w	$r10,$r12,1812(0x714)
+1c010aa8:	289c5086 	ld.w	$r6,$r4,1812(0x714)
+1c010aac:	289c50a4 	ld.w	$r4,$r5,1812(0x714)
+1c010ab0:	289c50a6 	ld.w	$r6,$r5,1812(0x714)
+1c010ab4:	5c00cd4b 	bne	$r10,$r11,204(0xcc) # 1c010b80 <inst_error>
+1c010ab8:	14b89f6d 	lu12i.w	$r13,378107(0x5c4fb)
+1c010abc:	029169ad 	addi.w	$r13,$r13,1114(0x45a)
+1c010ac0:	14001aac 	lu12i.w	$r12,213(0xd5)
+1c010ac4:	02aab18c 	addi.w	$r12,$r12,-1364(0xaac)
+1c010ac8:	14b89f6b 	lu12i.w	$r11,378107(0x5c4fb)
+1c010acc:	0291696b 	addi.w	$r11,$r11,1114(0x45a)
+1c010ad0:	299db18d 	st.w	$r13,$r12,1900(0x76c)
+1c010ad4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010ad8:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c010adc:	299db084 	st.w	$r4,$r4,1900(0x76c)
+1c010ae0:	299db0a5 	st.w	$r5,$r5,1900(0x76c)
+1c010ae4:	289db18a 	ld.w	$r10,$r12,1900(0x76c)
+1c010ae8:	289db086 	ld.w	$r6,$r4,1900(0x76c)
+1c010aec:	289db0a4 	ld.w	$r4,$r5,1900(0x76c)
+1c010af0:	289db0a6 	ld.w	$r6,$r5,1900(0x76c)
+1c010af4:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c010b80 <inst_error>
+1c010af8:	1429210d 	lu12i.w	$r13,84232(0x14908)
+1c010afc:	028c01ad 	addi.w	$r13,$r13,768(0x300)
+1c010b00:	14001aac 	lu12i.w	$r12,213(0xd5)
+1c010b04:	02aba18c 	addi.w	$r12,$r12,-1304(0xae8)
+1c010b08:	1429210b 	lu12i.w	$r11,84232(0x14908)
+1c010b0c:	028c016b 	addi.w	$r11,$r11,768(0x300)
+1c010b10:	2997618d 	st.w	$r13,$r12,1496(0x5d8)
+1c010b14:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010b18:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c010b1c:	29976084 	st.w	$r4,$r4,1496(0x5d8)
+1c010b20:	299760a5 	st.w	$r5,$r5,1496(0x5d8)
+1c010b24:	2897618a 	ld.w	$r10,$r12,1496(0x5d8)
+1c010b28:	28976086 	ld.w	$r6,$r4,1496(0x5d8)
+1c010b2c:	289760a4 	ld.w	$r4,$r5,1496(0x5d8)
+1c010b30:	289760a6 	ld.w	$r6,$r5,1496(0x5d8)
+1c010b34:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c010b80 <inst_error>
+1c010b38:	1400000d 	lu12i.w	$r13,0
+1c010b3c:	028001ad 	addi.w	$r13,$r13,0
+1c010b40:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c010b44:	0280018c 	addi.w	$r12,$r12,0
+1c010b48:	1400000b 	lu12i.w	$r11,0
+1c010b4c:	0280016b 	addi.w	$r11,$r11,0
+1c010b50:	2980018d 	st.w	$r13,$r12,0
+1c010b54:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c010b58:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c010b5c:	29800084 	st.w	$r4,$r4,0
+1c010b60:	298000a5 	st.w	$r5,$r5,0
+1c010b64:	2880018a 	ld.w	$r10,$r12,0
+1c010b68:	28800086 	ld.w	$r6,$r4,0
+1c010b6c:	288000a4 	ld.w	$r4,$r5,0
+1c010b70:	288000a6 	ld.w	$r6,$r5,0
+1c010b74:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c010b80 <inst_error>
+1c010b78:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010b80 <inst_error>
+1c010b7c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010b80 <inst_error>:
+1c010b80:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010b84:	001569ac 	or	$r12,$r13,$r26
+1c010b88:	2980030c 	st.w	$r12,$r24,0
+1c010b8c:	4c000020 	jirl	$r0,$r1,0
+
+1c010b90 <n16_beq_test>:
+n16_beq_test():
+1c010b90:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010b94:	00150019 	move	$r25,$r0
+1c010b98:	141f62f0 	lu12i.w	$r16,64279(0xfb17)
+1c010b9c:	02aa0210 	addi.w	$r16,$r16,-1408(0xa80)
+1c010ba0:	15be44d1 	lu12i.w	$r17,-134618(0xdf226)
+1c010ba4:	02b77231 	addi.w	$r17,$r17,-548(0xddc)
+1c010ba8:	1400000a 	lu12i.w	$r10,0
+1c010bac:	1400000b 	lu12i.w	$r11,0
+1c010bb0:	50001400 	b	20(0x14) # 1c010bc4 <n16_beq_test+0x34>
+1c010bb4:	141f62ea 	lu12i.w	$r10,64279(0xfb17)
+1c010bb8:	02aa014a 	addi.w	$r10,$r10,-1408(0xa80)
+1c010bbc:	580021ac 	beq	$r13,$r12,32(0x20) # 1c010bdc <n16_beq_test+0x4c>
+1c010bc0:	50002400 	b	36(0x24) # 1c010be4 <n16_beq_test+0x54>
+1c010bc4:	14a5232c 	lu12i.w	$r12,338201(0x52919)
+1c010bc8:	0281e18c 	addi.w	$r12,$r12,120(0x78)
+1c010bcc:	15028d0d 	lu12i.w	$r13,-519064(0x81468)
+1c010bd0:	029001ad 	addi.w	$r13,$r13,1024(0x400)
+1c010bd4:	5bffe18d 	beq	$r12,$r13,-32(0x3ffe0) # 1c010bb4 <n16_beq_test+0x24>
+1c010bd8:	50000c00 	b	12(0xc) # 1c010be4 <n16_beq_test+0x54>
+1c010bdc:	15be44cb 	lu12i.w	$r11,-134618(0xdf226)
+1c010be0:	02b7716b 	addi.w	$r11,$r11,-548(0xddc)
+1c010be4:	1400001c 	lu12i.w	$r28,0
+1c010be8:	0280039c 	addi.w	$r28,$r28,0
+1c010bec:	1400001d 	lu12i.w	$r29,0
+1c010bf0:	028003bd 	addi.w	$r29,$r29,0
+1c010bf4:	5c00d95c 	bne	$r10,$r28,216(0xd8) # 1c010ccc <inst_error>
+1c010bf8:	5c00d57d 	bne	$r11,$r29,212(0xd4) # 1c010ccc <inst_error>
+1c010bfc:	145fb590 	lu12i.w	$r16,196012(0x2fdac)
+1c010c00:	029e4210 	addi.w	$r16,$r16,1936(0x790)
+1c010c04:	15c94411 	lu12i.w	$r17,-112096(0xe4a20)
+1c010c08:	028b4e31 	addi.w	$r17,$r17,723(0x2d3)
+1c010c0c:	1400000a 	lu12i.w	$r10,0
+1c010c10:	1400000b 	lu12i.w	$r11,0
+1c010c14:	50001400 	b	20(0x14) # 1c010c28 <n16_beq_test+0x98>
+1c010c18:	145fb58a 	lu12i.w	$r10,196012(0x2fdac)
+1c010c1c:	029e414a 	addi.w	$r10,$r10,1936(0x790)
+1c010c20:	580021ac 	beq	$r13,$r12,32(0x20) # 1c010c40 <n16_beq_test+0xb0>
+1c010c24:	50002400 	b	36(0x24) # 1c010c48 <n16_beq_test+0xb8>
+1c010c28:	1521b62c 	lu12i.w	$r12,-455247(0x90db1)
+1c010c2c:	0293618c 	addi.w	$r12,$r12,1240(0x4d8)
+1c010c30:	155034ed 	lu12i.w	$r13,-360025(0xa81a7)
+1c010c34:	029001ad 	addi.w	$r13,$r13,1024(0x400)
+1c010c38:	5bffe18d 	beq	$r12,$r13,-32(0x3ffe0) # 1c010c18 <n16_beq_test+0x88>
+1c010c3c:	50000c00 	b	12(0xc) # 1c010c48 <n16_beq_test+0xb8>
+1c010c40:	15c9440b 	lu12i.w	$r11,-112096(0xe4a20)
+1c010c44:	028b4d6b 	addi.w	$r11,$r11,723(0x2d3)
+1c010c48:	1400001c 	lu12i.w	$r28,0
+1c010c4c:	0280039c 	addi.w	$r28,$r28,0
+1c010c50:	1400001d 	lu12i.w	$r29,0
+1c010c54:	028003bd 	addi.w	$r29,$r29,0
+1c010c58:	5c00755c 	bne	$r10,$r28,116(0x74) # 1c010ccc <inst_error>
+1c010c5c:	5c00717d 	bne	$r11,$r29,112(0x70) # 1c010ccc <inst_error>
+1c010c60:	15f931b0 	lu12i.w	$r16,-13939(0xfc98d)
+1c010c64:	02954a10 	addi.w	$r16,$r16,1362(0x552)
+1c010c68:	15952111 	lu12i.w	$r17,-218872(0xca908)
+1c010c6c:	029fb231 	addi.w	$r17,$r17,2028(0x7ec)
+1c010c70:	1400000a 	lu12i.w	$r10,0
+1c010c74:	1400000b 	lu12i.w	$r11,0
+1c010c78:	50001400 	b	20(0x14) # 1c010c8c <n16_beq_test+0xfc>
+1c010c7c:	15f931aa 	lu12i.w	$r10,-13939(0xfc98d)
+1c010c80:	0295494a 	addi.w	$r10,$r10,1362(0x552)
+1c010c84:	580021ac 	beq	$r13,$r12,32(0x20) # 1c010ca4 <n16_beq_test+0x114>
+1c010c88:	50002400 	b	36(0x24) # 1c010cac <n16_beq_test+0x11c>
+1c010c8c:	1400000c 	lu12i.w	$r12,0
+1c010c90:	0280018c 	addi.w	$r12,$r12,0
+1c010c94:	1400000d 	lu12i.w	$r13,0
+1c010c98:	028001ad 	addi.w	$r13,$r13,0
+1c010c9c:	5bffe18d 	beq	$r12,$r13,-32(0x3ffe0) # 1c010c7c <n16_beq_test+0xec>
+1c010ca0:	50000c00 	b	12(0xc) # 1c010cac <n16_beq_test+0x11c>
+1c010ca4:	1595210b 	lu12i.w	$r11,-218872(0xca908)
+1c010ca8:	029fb16b 	addi.w	$r11,$r11,2028(0x7ec)
+1c010cac:	15f931bc 	lu12i.w	$r28,-13939(0xfc98d)
+1c010cb0:	02954b9c 	addi.w	$r28,$r28,1362(0x552)
+1c010cb4:	1595211d 	lu12i.w	$r29,-218872(0xca908)
+1c010cb8:	029fb3bd 	addi.w	$r29,$r29,2028(0x7ec)
+1c010cbc:	5c00115c 	bne	$r10,$r28,16(0x10) # 1c010ccc <inst_error>
+1c010cc0:	5c000d7d 	bne	$r11,$r29,12(0xc) # 1c010ccc <inst_error>
+1c010cc4:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010ccc <inst_error>
+1c010cc8:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010ccc <inst_error>:
+1c010ccc:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010cd0:	001569ac 	or	$r12,$r13,$r26
+1c010cd4:	2980030c 	st.w	$r12,$r24,0
+1c010cd8:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c010cdc:	03400000 	andi	$r0,$r0,0x0
+
+1c010ce0 <n17_bne_test>:
+n17_bne_test():
+1c010ce0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010ce4:	00150019 	move	$r25,$r0
+1c010ce8:	1446bfd0 	lu12i.w	$r16,144894(0x235fe)
+1c010cec:	02b80210 	addi.w	$r16,$r16,-512(0xe00)
+1c010cf0:	15bab311 	lu12i.w	$r17,-141928(0xdd598)
+1c010cf4:	02b77a31 	addi.w	$r17,$r17,-546(0xdde)
+1c010cf8:	1400000a 	lu12i.w	$r10,0
+1c010cfc:	1400000b 	lu12i.w	$r11,0
+1c010d00:	50001400 	b	20(0x14) # 1c010d14 <n17_bne_test+0x34>
+1c010d04:	1446bfca 	lu12i.w	$r10,144894(0x235fe)
+1c010d08:	02b8014a 	addi.w	$r10,$r10,-512(0xe00)
+1c010d0c:	5c0021ac 	bne	$r13,$r12,32(0x20) # 1c010d2c <n17_bne_test+0x4c>
+1c010d10:	50002400 	b	36(0x24) # 1c010d34 <n17_bne_test+0x54>
+1c010d14:	1579558c 	lu12i.w	$r12,-275796(0xbcaac)
+1c010d18:	02b49d8c 	addi.w	$r12,$r12,-729(0xd27)
+1c010d1c:	15054f0d 	lu12i.w	$r13,-513416(0x82a78)
+1c010d20:	02aa75ad 	addi.w	$r13,$r13,-1379(0xa9d)
+1c010d24:	5fffe18d 	bne	$r12,$r13,-32(0x3ffe0) # 1c010d04 <n17_bne_test+0x24>
+1c010d28:	50000c00 	b	12(0xc) # 1c010d34 <n17_bne_test+0x54>
+1c010d2c:	15bab30b 	lu12i.w	$r11,-141928(0xdd598)
+1c010d30:	02b7796b 	addi.w	$r11,$r11,-546(0xdde)
+1c010d34:	1446bfdc 	lu12i.w	$r28,144894(0x235fe)
+1c010d38:	02b8039c 	addi.w	$r28,$r28,-512(0xe00)
+1c010d3c:	15bab31d 	lu12i.w	$r29,-141928(0xdd598)
+1c010d40:	02b77bbd 	addi.w	$r29,$r29,-546(0xdde)
+1c010d44:	5c013d5c 	bne	$r10,$r28,316(0x13c) # 1c010e80 <inst_error>
+1c010d48:	5c01397d 	bne	$r11,$r29,312(0x138) # 1c010e80 <inst_error>
+1c010d4c:	1528cd10 	lu12i.w	$r16,-440728(0x94668)
+1c010d50:	02800210 	addi.w	$r16,$r16,0
+1c010d54:	15c72731 	lu12i.w	$r17,-116423(0xe3939)
+1c010d58:	0295a231 	addi.w	$r17,$r17,1384(0x568)
+1c010d5c:	1400000a 	lu12i.w	$r10,0
+1c010d60:	1400000b 	lu12i.w	$r11,0
+1c010d64:	50001400 	b	20(0x14) # 1c010d78 <n17_bne_test+0x98>
+1c010d68:	1528cd0a 	lu12i.w	$r10,-440728(0x94668)
+1c010d6c:	0280014a 	addi.w	$r10,$r10,0
+1c010d70:	5c0021ac 	bne	$r13,$r12,32(0x20) # 1c010d90 <n17_bne_test+0xb0>
+1c010d74:	50002400 	b	36(0x24) # 1c010d98 <n17_bne_test+0xb8>
+1c010d78:	15b670cc 	lu12i.w	$r12,-150650(0xdb386)
+1c010d7c:	0281098c 	addi.w	$r12,$r12,66(0x42)
+1c010d80:	149eda0d 	lu12i.w	$r13,325328(0x4f6d0)
+1c010d84:	028d7dad 	addi.w	$r13,$r13,863(0x35f)
+1c010d88:	5fffe18d 	bne	$r12,$r13,-32(0x3ffe0) # 1c010d68 <n17_bne_test+0x88>
+1c010d8c:	50000c00 	b	12(0xc) # 1c010d98 <n17_bne_test+0xb8>
+1c010d90:	15c7272b 	lu12i.w	$r11,-116423(0xe3939)
+1c010d94:	0295a16b 	addi.w	$r11,$r11,1384(0x568)
+1c010d98:	1528cd1c 	lu12i.w	$r28,-440728(0x94668)
+1c010d9c:	0280039c 	addi.w	$r28,$r28,0
+1c010da0:	15c7273d 	lu12i.w	$r29,-116423(0xe3939)
+1c010da4:	0295a3bd 	addi.w	$r29,$r29,1384(0x568)
+1c010da8:	5c00d95c 	bne	$r10,$r28,216(0xd8) # 1c010e80 <inst_error>
+1c010dac:	5c00d57d 	bne	$r11,$r29,212(0xd4) # 1c010e80 <inst_error>
+1c010db0:	153afcb0 	lu12i.w	$r16,-403483(0x9d7e5)
+1c010db4:	028a6210 	addi.w	$r16,$r16,664(0x298)
+1c010db8:	15bb5651 	lu12i.w	$r17,-140622(0xddab2)
+1c010dbc:	028ce231 	addi.w	$r17,$r17,824(0x338)
+1c010dc0:	1400000a 	lu12i.w	$r10,0
+1c010dc4:	1400000b 	lu12i.w	$r11,0
+1c010dc8:	50001400 	b	20(0x14) # 1c010ddc <n17_bne_test+0xfc>
+1c010dcc:	153afcaa 	lu12i.w	$r10,-403483(0x9d7e5)
+1c010dd0:	028a614a 	addi.w	$r10,$r10,664(0x298)
+1c010dd4:	5c0021ac 	bne	$r13,$r12,32(0x20) # 1c010df4 <n17_bne_test+0x114>
+1c010dd8:	50002400 	b	36(0x24) # 1c010dfc <n17_bne_test+0x11c>
+1c010ddc:	149b0c0c 	lu12i.w	$r12,317536(0x4d860)
+1c010de0:	0288318c 	addi.w	$r12,$r12,524(0x20c)
+1c010de4:	154e3f0d 	lu12i.w	$r13,-364040(0xa71f8)
+1c010de8:	02b601ad 	addi.w	$r13,$r13,-640(0xd80)
+1c010dec:	5fffe18d 	bne	$r12,$r13,-32(0x3ffe0) # 1c010dcc <n17_bne_test+0xec>
+1c010df0:	50000c00 	b	12(0xc) # 1c010dfc <n17_bne_test+0x11c>
+1c010df4:	15bb564b 	lu12i.w	$r11,-140622(0xddab2)
+1c010df8:	028ce16b 	addi.w	$r11,$r11,824(0x338)
+1c010dfc:	153afcbc 	lu12i.w	$r28,-403483(0x9d7e5)
+1c010e00:	028a639c 	addi.w	$r28,$r28,664(0x298)
+1c010e04:	15bb565d 	lu12i.w	$r29,-140622(0xddab2)
+1c010e08:	028ce3bd 	addi.w	$r29,$r29,824(0x338)
+1c010e0c:	5c00755c 	bne	$r10,$r28,116(0x74) # 1c010e80 <inst_error>
+1c010e10:	5c00717d 	bne	$r11,$r29,112(0x70) # 1c010e80 <inst_error>
+1c010e14:	142e8850 	lu12i.w	$r16,95298(0x17442)
+1c010e18:	02a4b210 	addi.w	$r16,$r16,-1748(0x92c)
+1c010e1c:	141691f1 	lu12i.w	$r17,46223(0xb48f)
+1c010e20:	0287c231 	addi.w	$r17,$r17,496(0x1f0)
+1c010e24:	1400000a 	lu12i.w	$r10,0
+1c010e28:	1400000b 	lu12i.w	$r11,0
+1c010e2c:	50001400 	b	20(0x14) # 1c010e40 <n17_bne_test+0x160>
+1c010e30:	142e884a 	lu12i.w	$r10,95298(0x17442)
+1c010e34:	02a4b14a 	addi.w	$r10,$r10,-1748(0x92c)
+1c010e38:	5c0021ac 	bne	$r13,$r12,32(0x20) # 1c010e58 <n17_bne_test+0x178>
+1c010e3c:	50002400 	b	36(0x24) # 1c010e60 <n17_bne_test+0x180>
+1c010e40:	1400000c 	lu12i.w	$r12,0
+1c010e44:	0280018c 	addi.w	$r12,$r12,0
+1c010e48:	1400000d 	lu12i.w	$r13,0
+1c010e4c:	028001ad 	addi.w	$r13,$r13,0
+1c010e50:	5fffe18d 	bne	$r12,$r13,-32(0x3ffe0) # 1c010e30 <n17_bne_test+0x150>
+1c010e54:	50000c00 	b	12(0xc) # 1c010e60 <n17_bne_test+0x180>
+1c010e58:	141691eb 	lu12i.w	$r11,46223(0xb48f)
+1c010e5c:	0287c16b 	addi.w	$r11,$r11,496(0x1f0)
+1c010e60:	1400001c 	lu12i.w	$r28,0
+1c010e64:	0280039c 	addi.w	$r28,$r28,0
+1c010e68:	1400001d 	lu12i.w	$r29,0
+1c010e6c:	028003bd 	addi.w	$r29,$r29,0
+1c010e70:	5c00115c 	bne	$r10,$r28,16(0x10) # 1c010e80 <inst_error>
+1c010e74:	5c000d7d 	bne	$r11,$r29,12(0xc) # 1c010e80 <inst_error>
+1c010e78:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c010e80 <inst_error>
+1c010e7c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c010e80 <inst_error>:
+1c010e80:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c010e84:	001569ac 	or	$r12,$r13,$r26
+1c010e88:	2980030c 	st.w	$r12,$r24,0
+1c010e8c:	4c000020 	jirl	$r0,$r1,0
+
+1c010e90 <n18_bl_test>:
+n18_bl_test():
+1c010e90:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c010e94:	00150019 	move	$r25,$r0
+1c010e98:	0010041e 	add.w	$r30,$r0,$r1
+1c010e9c:	15187c50 	lu12i.w	$r16,-474142(0x8c3e2)
+1c010ea0:	02bbea10 	addi.w	$r16,$r16,-262(0xefa)
+1c010ea4:	15d657b1 	lu12i.w	$r17,-85315(0xeb2bd)
+1c010ea8:	0295f231 	addi.w	$r17,$r17,1404(0x57c)
+1c010eac:	1400000a 	lu12i.w	$r10,0
+1c010eb0:	1400000b 	lu12i.w	$r11,0
+1c010eb4:	54001800 	bl	24(0x18) # 1c010ecc <n18_bl_test+0x3c>
+1c010eb8:	00100025 	add.w	$r5,$r1,$r0
+1c010ebc:	15187c4a 	lu12i.w	$r10,-474142(0x8c3e2)
+1c010ec0:	02bbe94a 	addi.w	$r10,$r10,-262(0xefa)
+1c010ec4:	54001400 	bl	20(0x14) # 1c010ed8 <n18_bl_test+0x48>
+1c010ec8:	50001c00 	b	28(0x1c) # 1c010ee4 <n18_bl_test+0x54>
+1c010ecc:	00100024 	add.w	$r4,$r1,$r0
+1c010ed0:	57ffebff 	bl	-24(0xfffffe8) # 1c010eb8 <n18_bl_test+0x28>
+1c010ed4:	50001000 	b	16(0x10) # 1c010ee4 <n18_bl_test+0x54>
+1c010ed8:	00100026 	add.w	$r6,$r1,$r0
+1c010edc:	15d657ab 	lu12i.w	$r11,-85315(0xeb2bd)
+1c010ee0:	0295f16b 	addi.w	$r11,$r11,1404(0x57c)
+1c010ee4:	00107801 	add.w	$r1,$r0,$r30
+1c010ee8:	15187c51 	lu12i.w	$r17,-474142(0x8c3e2)
+1c010eec:	02bbea31 	addi.w	$r17,$r17,-262(0xefa)
+1c010ef0:	15d657b0 	lu12i.w	$r16,-85315(0xeb2bd)
+1c010ef4:	0295f210 	addi.w	$r16,$r16,1404(0x57c)
+1c010ef8:	5c016951 	bne	$r10,$r17,360(0x168) # 1c011060 <inst_error>
+1c010efc:	028030c6 	addi.w	$r6,$r6,12(0xc)
+1c010f00:	5c016170 	bne	$r11,$r16,352(0x160) # 1c011060 <inst_error>
+1c010f04:	5c015cc5 	bne	$r6,$r5,348(0x15c) # 1c011060 <inst_error>
+1c010f08:	0010041e 	add.w	$r30,$r0,$r1
+1c010f0c:	15f783f0 	lu12i.w	$r16,-17377(0xfbc1f)
+1c010f10:	02974210 	addi.w	$r16,$r16,1488(0x5d0)
+1c010f14:	15723791 	lu12i.w	$r17,-290372(0xb91bc)
+1c010f18:	0282c231 	addi.w	$r17,$r17,176(0xb0)
+1c010f1c:	1400000a 	lu12i.w	$r10,0
+1c010f20:	1400000b 	lu12i.w	$r11,0
+1c010f24:	54001800 	bl	24(0x18) # 1c010f3c <n18_bl_test+0xac>
+1c010f28:	00100025 	add.w	$r5,$r1,$r0
+1c010f2c:	15f783ea 	lu12i.w	$r10,-17377(0xfbc1f)
+1c010f30:	0297414a 	addi.w	$r10,$r10,1488(0x5d0)
+1c010f34:	54001400 	bl	20(0x14) # 1c010f48 <n18_bl_test+0xb8>
+1c010f38:	50001c00 	b	28(0x1c) # 1c010f54 <n18_bl_test+0xc4>
+1c010f3c:	00100024 	add.w	$r4,$r1,$r0
+1c010f40:	57ffebff 	bl	-24(0xfffffe8) # 1c010f28 <n18_bl_test+0x98>
+1c010f44:	50001000 	b	16(0x10) # 1c010f54 <n18_bl_test+0xc4>
+1c010f48:	00100026 	add.w	$r6,$r1,$r0
+1c010f4c:	1572378b 	lu12i.w	$r11,-290372(0xb91bc)
+1c010f50:	0282c16b 	addi.w	$r11,$r11,176(0xb0)
+1c010f54:	00107801 	add.w	$r1,$r0,$r30
+1c010f58:	15f783f1 	lu12i.w	$r17,-17377(0xfbc1f)
+1c010f5c:	02974231 	addi.w	$r17,$r17,1488(0x5d0)
+1c010f60:	15723790 	lu12i.w	$r16,-290372(0xb91bc)
+1c010f64:	0282c210 	addi.w	$r16,$r16,176(0xb0)
+1c010f68:	5c00f951 	bne	$r10,$r17,248(0xf8) # 1c011060 <inst_error>
+1c010f6c:	028030c6 	addi.w	$r6,$r6,12(0xc)
+1c010f70:	5c00f170 	bne	$r11,$r16,240(0xf0) # 1c011060 <inst_error>
+1c010f74:	5c00ecc5 	bne	$r6,$r5,236(0xec) # 1c011060 <inst_error>
+1c010f78:	0010041e 	add.w	$r30,$r0,$r1
+1c010f7c:	15820c50 	lu12i.w	$r16,-257950(0xc1062)
+1c010f80:	028d5a10 	addi.w	$r16,$r16,854(0x356)
+1c010f84:	15f1ac31 	lu12i.w	$r17,-29343(0xf8d61)
+1c010f88:	02b18231 	addi.w	$r17,$r17,-928(0xc60)
+1c010f8c:	1400000a 	lu12i.w	$r10,0
+1c010f90:	1400000b 	lu12i.w	$r11,0
+1c010f94:	54001800 	bl	24(0x18) # 1c010fac <n18_bl_test+0x11c>
+1c010f98:	00100025 	add.w	$r5,$r1,$r0
+1c010f9c:	15820c4a 	lu12i.w	$r10,-257950(0xc1062)
+1c010fa0:	028d594a 	addi.w	$r10,$r10,854(0x356)
+1c010fa4:	54001400 	bl	20(0x14) # 1c010fb8 <n18_bl_test+0x128>
+1c010fa8:	50001c00 	b	28(0x1c) # 1c010fc4 <n18_bl_test+0x134>
+1c010fac:	00100024 	add.w	$r4,$r1,$r0
+1c010fb0:	57ffebff 	bl	-24(0xfffffe8) # 1c010f98 <n18_bl_test+0x108>
+1c010fb4:	50001000 	b	16(0x10) # 1c010fc4 <n18_bl_test+0x134>
+1c010fb8:	00100026 	add.w	$r6,$r1,$r0
+1c010fbc:	15f1ac2b 	lu12i.w	$r11,-29343(0xf8d61)
+1c010fc0:	02b1816b 	addi.w	$r11,$r11,-928(0xc60)
+1c010fc4:	00107801 	add.w	$r1,$r0,$r30
+1c010fc8:	15820c51 	lu12i.w	$r17,-257950(0xc1062)
+1c010fcc:	028d5a31 	addi.w	$r17,$r17,854(0x356)
+1c010fd0:	15f1ac30 	lu12i.w	$r16,-29343(0xf8d61)
+1c010fd4:	02b18210 	addi.w	$r16,$r16,-928(0xc60)
+1c010fd8:	5c008951 	bne	$r10,$r17,136(0x88) # 1c011060 <inst_error>
+1c010fdc:	028030c6 	addi.w	$r6,$r6,12(0xc)
+1c010fe0:	5c008170 	bne	$r11,$r16,128(0x80) # 1c011060 <inst_error>
+1c010fe4:	5c007cc5 	bne	$r6,$r5,124(0x7c) # 1c011060 <inst_error>
+1c010fe8:	0010041e 	add.w	$r30,$r0,$r1
+1c010fec:	1431c130 	lu12i.w	$r16,101897(0x18e09)
+1c010ff0:	02b40210 	addi.w	$r16,$r16,-768(0xd00)
+1c010ff4:	14df46d1 	lu12i.w	$r17,457270(0x6fa36)
+1c010ff8:	02867a31 	addi.w	$r17,$r17,414(0x19e)
+1c010ffc:	1400000a 	lu12i.w	$r10,0
+1c011000:	1400000b 	lu12i.w	$r11,0
+1c011004:	54001800 	bl	24(0x18) # 1c01101c <n18_bl_test+0x18c>
+1c011008:	00100025 	add.w	$r5,$r1,$r0
+1c01100c:	1431c12a 	lu12i.w	$r10,101897(0x18e09)
+1c011010:	02b4014a 	addi.w	$r10,$r10,-768(0xd00)
+1c011014:	54001400 	bl	20(0x14) # 1c011028 <n18_bl_test+0x198>
+1c011018:	50001c00 	b	28(0x1c) # 1c011034 <n18_bl_test+0x1a4>
+1c01101c:	00100024 	add.w	$r4,$r1,$r0
+1c011020:	57ffebff 	bl	-24(0xfffffe8) # 1c011008 <n18_bl_test+0x178>
+1c011024:	50001000 	b	16(0x10) # 1c011034 <n18_bl_test+0x1a4>
+1c011028:	00100026 	add.w	$r6,$r1,$r0
+1c01102c:	14df46cb 	lu12i.w	$r11,457270(0x6fa36)
+1c011030:	0286796b 	addi.w	$r11,$r11,414(0x19e)
+1c011034:	00107801 	add.w	$r1,$r0,$r30
+1c011038:	1431c131 	lu12i.w	$r17,101897(0x18e09)
+1c01103c:	02b40231 	addi.w	$r17,$r17,-768(0xd00)
+1c011040:	14df46d0 	lu12i.w	$r16,457270(0x6fa36)
+1c011044:	02867a10 	addi.w	$r16,$r16,414(0x19e)
+1c011048:	5c001951 	bne	$r10,$r17,24(0x18) # 1c011060 <inst_error>
+1c01104c:	028030c6 	addi.w	$r6,$r6,12(0xc)
+1c011050:	5c001170 	bne	$r11,$r16,16(0x10) # 1c011060 <inst_error>
+1c011054:	5c000cc5 	bne	$r6,$r5,12(0xc) # 1c011060 <inst_error>
+1c011058:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011060 <inst_error>
+1c01105c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011060 <inst_error>:
+1c011060:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011064:	001569ac 	or	$r12,$r13,$r26
+1c011068:	2980030c 	st.w	$r12,$r24,0
+1c01106c:	4c000020 	jirl	$r0,$r1,0
+
+1c011070 <n19_jirl_test>:
+n19_jirl_test():
+1c011070:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011074:	00150019 	move	$r25,$r0
+1c011078:	0010041e 	add.w	$r30,$r0,$r1
+1c01107c:	15843cf0 	lu12i.w	$r16,-253465(0xc21e7)
+1c011080:	02b9e210 	addi.w	$r16,$r16,-392(0xe78)
+1c011084:	141c5d51 	lu12i.w	$r17,58090(0xe2ea)
+1c011088:	02892231 	addi.w	$r17,$r17,584(0x248)
+1c01108c:	1400000a 	lu12i.w	$r10,0
+1c011090:	1400000b 	lu12i.w	$r11,0
+1c011094:	54000400 	bl	4(0x4) # 1c011098 <n19_jirl_test+0x28>
+1c011098:	0280302c 	addi.w	$r12,$r1,12(0xc)
+1c01109c:	0280902d 	addi.w	$r13,$r1,36(0x24)
+1c0110a0:	50001400 	b	20(0x14) # 1c0110b4 <n19_jirl_test+0x44>
+1c0110a4:	15843cea 	lu12i.w	$r10,-253465(0xc21e7)
+1c0110a8:	02b9e14a 	addi.w	$r10,$r10,-392(0xe78)
+1c0110ac:	4c0001a0 	jirl	$r0,$r13,0
+1c0110b0:	50001400 	b	20(0x14) # 1c0110c4 <n19_jirl_test+0x54>
+1c0110b4:	4c000180 	jirl	$r0,$r12,0
+1c0110b8:	50000c00 	b	12(0xc) # 1c0110c4 <n19_jirl_test+0x54>
+1c0110bc:	141c5d4b 	lu12i.w	$r11,58090(0xe2ea)
+1c0110c0:	0289216b 	addi.w	$r11,$r11,584(0x248)
+1c0110c4:	15843cfc 	lu12i.w	$r28,-253465(0xc21e7)
+1c0110c8:	02b9e39c 	addi.w	$r28,$r28,-392(0xe78)
+1c0110cc:	141c5d5d 	lu12i.w	$r29,58090(0xe2ea)
+1c0110d0:	028923bd 	addi.w	$r29,$r29,584(0x248)
+1c0110d4:	00107801 	add.w	$r1,$r0,$r30
+1c0110d8:	5c01495c 	bne	$r10,$r28,328(0x148) # 1c011220 <inst_error>
+1c0110dc:	5c01457d 	bne	$r11,$r29,324(0x144) # 1c011220 <inst_error>
+1c0110e0:	0010041e 	add.w	$r30,$r0,$r1
+1c0110e4:	14cf2790 	lu12i.w	$r16,424252(0x6793c)
+1c0110e8:	02927210 	addi.w	$r16,$r16,1180(0x49c)
+1c0110ec:	14ca9671 	lu12i.w	$r17,414899(0x654b3)
+1c0110f0:	02b5c231 	addi.w	$r17,$r17,-656(0xd70)
+1c0110f4:	1400000a 	lu12i.w	$r10,0
+1c0110f8:	1400000b 	lu12i.w	$r11,0
+1c0110fc:	54000400 	bl	4(0x4) # 1c011100 <n19_jirl_test+0x90>
+1c011100:	0280302c 	addi.w	$r12,$r1,12(0xc)
+1c011104:	0280902d 	addi.w	$r13,$r1,36(0x24)
+1c011108:	50001400 	b	20(0x14) # 1c01111c <n19_jirl_test+0xac>
+1c01110c:	14cf278a 	lu12i.w	$r10,424252(0x6793c)
+1c011110:	0292714a 	addi.w	$r10,$r10,1180(0x49c)
+1c011114:	4c0001a0 	jirl	$r0,$r13,0
+1c011118:	50001400 	b	20(0x14) # 1c01112c <n19_jirl_test+0xbc>
+1c01111c:	4c000180 	jirl	$r0,$r12,0
+1c011120:	50000c00 	b	12(0xc) # 1c01112c <n19_jirl_test+0xbc>
+1c011124:	14ca966b 	lu12i.w	$r11,414899(0x654b3)
+1c011128:	02b5c16b 	addi.w	$r11,$r11,-656(0xd70)
+1c01112c:	14cf279c 	lu12i.w	$r28,424252(0x6793c)
+1c011130:	0292739c 	addi.w	$r28,$r28,1180(0x49c)
+1c011134:	14ca967d 	lu12i.w	$r29,414899(0x654b3)
+1c011138:	02b5c3bd 	addi.w	$r29,$r29,-656(0xd70)
+1c01113c:	00107801 	add.w	$r1,$r0,$r30
+1c011140:	5c00e15c 	bne	$r10,$r28,224(0xe0) # 1c011220 <inst_error>
+1c011144:	5c00dd7d 	bne	$r11,$r29,220(0xdc) # 1c011220 <inst_error>
+1c011148:	0010041e 	add.w	$r30,$r0,$r1
+1c01114c:	15fe1430 	lu12i.w	$r16,-3935(0xff0a1)
+1c011150:	02a2c210 	addi.w	$r16,$r16,-1872(0x8b0)
+1c011154:	14a1a591 	lu12i.w	$r17,331052(0x50d2c)
+1c011158:	02ace231 	addi.w	$r17,$r17,-1224(0xb38)
+1c01115c:	1400000a 	lu12i.w	$r10,0
+1c011160:	1400000b 	lu12i.w	$r11,0
+1c011164:	54000400 	bl	4(0x4) # 1c011168 <n19_jirl_test+0xf8>
+1c011168:	0280302c 	addi.w	$r12,$r1,12(0xc)
+1c01116c:	0280902d 	addi.w	$r13,$r1,36(0x24)
+1c011170:	50001400 	b	20(0x14) # 1c011184 <n19_jirl_test+0x114>
+1c011174:	15fe142a 	lu12i.w	$r10,-3935(0xff0a1)
+1c011178:	02a2c14a 	addi.w	$r10,$r10,-1872(0x8b0)
+1c01117c:	4c0001a0 	jirl	$r0,$r13,0
+1c011180:	50001400 	b	20(0x14) # 1c011194 <n19_jirl_test+0x124>
+1c011184:	4c000180 	jirl	$r0,$r12,0
+1c011188:	50000c00 	b	12(0xc) # 1c011194 <n19_jirl_test+0x124>
+1c01118c:	14a1a58b 	lu12i.w	$r11,331052(0x50d2c)
+1c011190:	02ace16b 	addi.w	$r11,$r11,-1224(0xb38)
+1c011194:	15fe143c 	lu12i.w	$r28,-3935(0xff0a1)
+1c011198:	02a2c39c 	addi.w	$r28,$r28,-1872(0x8b0)
+1c01119c:	14a1a59d 	lu12i.w	$r29,331052(0x50d2c)
+1c0111a0:	02ace3bd 	addi.w	$r29,$r29,-1224(0xb38)
+1c0111a4:	00107801 	add.w	$r1,$r0,$r30
+1c0111a8:	5c00795c 	bne	$r10,$r28,120(0x78) # 1c011220 <inst_error>
+1c0111ac:	5c00757d 	bne	$r11,$r29,116(0x74) # 1c011220 <inst_error>
+1c0111b0:	0010041e 	add.w	$r30,$r0,$r1
+1c0111b4:	150e2a50 	lu12i.w	$r16,-495278(0x87152)
+1c0111b8:	02a61210 	addi.w	$r16,$r16,-1660(0x984)
+1c0111bc:	14703fb1 	lu12i.w	$r17,229885(0x381fd)
+1c0111c0:	029dc231 	addi.w	$r17,$r17,1904(0x770)
+1c0111c4:	1400000a 	lu12i.w	$r10,0
+1c0111c8:	1400000b 	lu12i.w	$r11,0
+1c0111cc:	54000400 	bl	4(0x4) # 1c0111d0 <n19_jirl_test+0x160>
+1c0111d0:	0280302c 	addi.w	$r12,$r1,12(0xc)
+1c0111d4:	0280902d 	addi.w	$r13,$r1,36(0x24)
+1c0111d8:	50001400 	b	20(0x14) # 1c0111ec <n19_jirl_test+0x17c>
+1c0111dc:	150e2a4a 	lu12i.w	$r10,-495278(0x87152)
+1c0111e0:	02a6114a 	addi.w	$r10,$r10,-1660(0x984)
+1c0111e4:	4c0001a0 	jirl	$r0,$r13,0
+1c0111e8:	50001400 	b	20(0x14) # 1c0111fc <n19_jirl_test+0x18c>
+1c0111ec:	4c000180 	jirl	$r0,$r12,0
+1c0111f0:	50000c00 	b	12(0xc) # 1c0111fc <n19_jirl_test+0x18c>
+1c0111f4:	14703fab 	lu12i.w	$r11,229885(0x381fd)
+1c0111f8:	029dc16b 	addi.w	$r11,$r11,1904(0x770)
+1c0111fc:	150e2a5c 	lu12i.w	$r28,-495278(0x87152)
+1c011200:	02a6139c 	addi.w	$r28,$r28,-1660(0x984)
+1c011204:	14703fbd 	lu12i.w	$r29,229885(0x381fd)
+1c011208:	029dc3bd 	addi.w	$r29,$r29,1904(0x770)
+1c01120c:	00107801 	add.w	$r1,$r0,$r30
+1c011210:	5c00115c 	bne	$r10,$r28,16(0x10) # 1c011220 <inst_error>
+1c011214:	5c000d7d 	bne	$r11,$r29,12(0xc) # 1c011220 <inst_error>
+1c011218:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011220 <inst_error>
+1c01121c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011220 <inst_error>:
+1c011220:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011224:	001569ac 	or	$r12,$r13,$r26
+1c011228:	2980030c 	st.w	$r12,$r24,0
+1c01122c:	4c000020 	jirl	$r0,$r1,0
+
+1c011230 <n1_lu12i_w_test>:
+n1_lu12i_w_test():
+1c011230:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011234:	02800019 	addi.w	$r25,$r0,0
+1c011238:	1400002e 	lu12i.w	$r14,1(0x1)
+1c01123c:	0280000d 	addi.w	$r13,$r0,0
+1c011240:	14000004 	lu12i.w	$r4,0
+1c011244:	1400000c 	lu12i.w	$r12,0
+1c011248:	00103484 	add.w	$r4,$r4,$r13
+1c01124c:	001039ad 	add.w	$r13,$r13,$r14
+1c011250:	5c004984 	bne	$r12,$r4,72(0x48) # 1c011298 <inst_error>
+1c011254:	14000004 	lu12i.w	$r4,0
+1c011258:	1400002c 	lu12i.w	$r12,1(0x1)
+1c01125c:	00103484 	add.w	$r4,$r4,$r13
+1c011260:	001039ad 	add.w	$r13,$r13,$r14
+1c011264:	5c003584 	bne	$r12,$r4,52(0x34) # 1c011298 <inst_error>
+1c011268:	14000004 	lu12i.w	$r4,0
+1c01126c:	1400004c 	lu12i.w	$r12,2(0x2)
+1c011270:	00103484 	add.w	$r4,$r4,$r13
+1c011274:	001039ad 	add.w	$r13,$r13,$r14
+1c011278:	5c002184 	bne	$r12,$r4,32(0x20) # 1c011298 <inst_error>
+1c01127c:	14000004 	lu12i.w	$r4,0
+1c011280:	1400006c 	lu12i.w	$r12,3(0x3)
+1c011284:	00103484 	add.w	$r4,$r4,$r13
+1c011288:	001039ad 	add.w	$r13,$r13,$r14
+1c01128c:	5c000d84 	bne	$r12,$r4,12(0xc) # 1c011298 <inst_error>
+1c011290:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011298 <inst_error>
+1c011294:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011298 <inst_error>:
+1c011298:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01129c:	001569ac 	or	$r12,$r13,$r26
+1c0112a0:	2980030c 	st.w	$r12,$r24,0
+1c0112a4:	4c000020 	jirl	$r0,$r1,0
+
+1c0112a8 <n20_b_test>:
+n20_b_test():
+1c0112a8:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0112ac:	00150019 	move	$r25,$r0
+1c0112b0:	15187c50 	lu12i.w	$r16,-474142(0x8c3e2)
+1c0112b4:	02bbea10 	addi.w	$r16,$r16,-262(0xefa)
+1c0112b8:	15d657b1 	lu12i.w	$r17,-85315(0xeb2bd)
+1c0112bc:	0295f231 	addi.w	$r17,$r17,1404(0x57c)
+1c0112c0:	1400000a 	lu12i.w	$r10,0
+1c0112c4:	1400000b 	lu12i.w	$r11,0
+1c0112c8:	50001400 	b	20(0x14) # 1c0112dc <n20_b_test+0x34>
+1c0112cc:	15187c4a 	lu12i.w	$r10,-474142(0x8c3e2)
+1c0112d0:	02bbe94a 	addi.w	$r10,$r10,-262(0xefa)
+1c0112d4:	50001000 	b	16(0x10) # 1c0112e4 <n20_b_test+0x3c>
+1c0112d8:	50001400 	b	20(0x14) # 1c0112ec <n20_b_test+0x44>
+1c0112dc:	53fff3ff 	b	-16(0xffffff0) # 1c0112cc <n20_b_test+0x24>
+1c0112e0:	50000c00 	b	12(0xc) # 1c0112ec <n20_b_test+0x44>
+1c0112e4:	15d657ab 	lu12i.w	$r11,-85315(0xeb2bd)
+1c0112e8:	0295f16b 	addi.w	$r11,$r11,1404(0x57c)
+1c0112ec:	15187c51 	lu12i.w	$r17,-474142(0x8c3e2)
+1c0112f0:	02bbea31 	addi.w	$r17,$r17,-262(0xefa)
+1c0112f4:	15d657b0 	lu12i.w	$r16,-85315(0xeb2bd)
+1c0112f8:	0295f210 	addi.w	$r16,$r16,1404(0x57c)
+1c0112fc:	5c010d51 	bne	$r10,$r17,268(0x10c) # 1c011408 <inst_error>
+1c011300:	5c010970 	bne	$r11,$r16,264(0x108) # 1c011408 <inst_error>
+1c011304:	15f783f0 	lu12i.w	$r16,-17377(0xfbc1f)
+1c011308:	02974210 	addi.w	$r16,$r16,1488(0x5d0)
+1c01130c:	15723791 	lu12i.w	$r17,-290372(0xb91bc)
+1c011310:	0282c231 	addi.w	$r17,$r17,176(0xb0)
+1c011314:	1400000a 	lu12i.w	$r10,0
+1c011318:	1400000b 	lu12i.w	$r11,0
+1c01131c:	50001400 	b	20(0x14) # 1c011330 <n20_b_test+0x88>
+1c011320:	15f783ea 	lu12i.w	$r10,-17377(0xfbc1f)
+1c011324:	0297414a 	addi.w	$r10,$r10,1488(0x5d0)
+1c011328:	50001000 	b	16(0x10) # 1c011338 <n20_b_test+0x90>
+1c01132c:	50001400 	b	20(0x14) # 1c011340 <n20_b_test+0x98>
+1c011330:	53fff3ff 	b	-16(0xffffff0) # 1c011320 <n20_b_test+0x78>
+1c011334:	50000c00 	b	12(0xc) # 1c011340 <n20_b_test+0x98>
+1c011338:	1572378b 	lu12i.w	$r11,-290372(0xb91bc)
+1c01133c:	0282c16b 	addi.w	$r11,$r11,176(0xb0)
+1c011340:	15f783f1 	lu12i.w	$r17,-17377(0xfbc1f)
+1c011344:	02974231 	addi.w	$r17,$r17,1488(0x5d0)
+1c011348:	15723790 	lu12i.w	$r16,-290372(0xb91bc)
+1c01134c:	0282c210 	addi.w	$r16,$r16,176(0xb0)
+1c011350:	5c00b951 	bne	$r10,$r17,184(0xb8) # 1c011408 <inst_error>
+1c011354:	5c00b570 	bne	$r11,$r16,180(0xb4) # 1c011408 <inst_error>
+1c011358:	15820c50 	lu12i.w	$r16,-257950(0xc1062)
+1c01135c:	028d5a10 	addi.w	$r16,$r16,854(0x356)
+1c011360:	15f1ac31 	lu12i.w	$r17,-29343(0xf8d61)
+1c011364:	02b18231 	addi.w	$r17,$r17,-928(0xc60)
+1c011368:	1400000a 	lu12i.w	$r10,0
+1c01136c:	1400000b 	lu12i.w	$r11,0
+1c011370:	50001400 	b	20(0x14) # 1c011384 <n20_b_test+0xdc>
+1c011374:	15820c4a 	lu12i.w	$r10,-257950(0xc1062)
+1c011378:	028d594a 	addi.w	$r10,$r10,854(0x356)
+1c01137c:	50001000 	b	16(0x10) # 1c01138c <n20_b_test+0xe4>
+1c011380:	50001400 	b	20(0x14) # 1c011394 <n20_b_test+0xec>
+1c011384:	53fff3ff 	b	-16(0xffffff0) # 1c011374 <n20_b_test+0xcc>
+1c011388:	50000c00 	b	12(0xc) # 1c011394 <n20_b_test+0xec>
+1c01138c:	15f1ac2b 	lu12i.w	$r11,-29343(0xf8d61)
+1c011390:	02b1816b 	addi.w	$r11,$r11,-928(0xc60)
+1c011394:	15820c51 	lu12i.w	$r17,-257950(0xc1062)
+1c011398:	028d5a31 	addi.w	$r17,$r17,854(0x356)
+1c01139c:	15f1ac30 	lu12i.w	$r16,-29343(0xf8d61)
+1c0113a0:	02b18210 	addi.w	$r16,$r16,-928(0xc60)
+1c0113a4:	5c006551 	bne	$r10,$r17,100(0x64) # 1c011408 <inst_error>
+1c0113a8:	5c006170 	bne	$r11,$r16,96(0x60) # 1c011408 <inst_error>
+1c0113ac:	1431c130 	lu12i.w	$r16,101897(0x18e09)
+1c0113b0:	02b40210 	addi.w	$r16,$r16,-768(0xd00)
+1c0113b4:	14df46d1 	lu12i.w	$r17,457270(0x6fa36)
+1c0113b8:	02867a31 	addi.w	$r17,$r17,414(0x19e)
+1c0113bc:	1400000a 	lu12i.w	$r10,0
+1c0113c0:	1400000b 	lu12i.w	$r11,0
+1c0113c4:	50001400 	b	20(0x14) # 1c0113d8 <n20_b_test+0x130>
+1c0113c8:	1431c12a 	lu12i.w	$r10,101897(0x18e09)
+1c0113cc:	02b4014a 	addi.w	$r10,$r10,-768(0xd00)
+1c0113d0:	50001000 	b	16(0x10) # 1c0113e0 <n20_b_test+0x138>
+1c0113d4:	50001400 	b	20(0x14) # 1c0113e8 <n20_b_test+0x140>
+1c0113d8:	53fff3ff 	b	-16(0xffffff0) # 1c0113c8 <n20_b_test+0x120>
+1c0113dc:	50000c00 	b	12(0xc) # 1c0113e8 <n20_b_test+0x140>
+1c0113e0:	14df46cb 	lu12i.w	$r11,457270(0x6fa36)
+1c0113e4:	0286796b 	addi.w	$r11,$r11,414(0x19e)
+1c0113e8:	1431c131 	lu12i.w	$r17,101897(0x18e09)
+1c0113ec:	02b40231 	addi.w	$r17,$r17,-768(0xd00)
+1c0113f0:	14df46d0 	lu12i.w	$r16,457270(0x6fa36)
+1c0113f4:	02867a10 	addi.w	$r16,$r16,414(0x19e)
+1c0113f8:	5c001151 	bne	$r10,$r17,16(0x10) # 1c011408 <inst_error>
+1c0113fc:	5c000d70 	bne	$r11,$r16,12(0xc) # 1c011408 <inst_error>
+1c011400:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011408 <inst_error>
+1c011404:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011408 <inst_error>:
+1c011408:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01140c:	001569ac 	or	$r12,$r13,$r26
+1c011410:	2980030c 	st.w	$r12,$r24,0
+1c011414:	4c000020 	jirl	$r0,$r1,0
+
+1c011418 <n21_pcaddu12i_test>:
+n21_pcaddu12i_test():
+1c011418:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01141c:	02800019 	addi.w	$r25,$r0,0
+1c011420:	0010040f 	add.w	$r15,$r0,$r1
+1c011424:	15897bcc 	lu12i.w	$r12,-242722(0xc4bde)
+1c011428:	54000c00 	bl	12(0xc) # 1c011434 <n21_pcaddu12i_test+0x1c>
+1c01142c:	1d897bcd 	pcaddu12i	$r13,-242722(0xc4bde)
+1c011430:	50000c00 	b	12(0xc) # 1c01143c <n21_pcaddu12i_test+0x24>
+1c011434:	0010302c 	add.w	$r12,$r1,$r12
+1c011438:	4c000020 	jirl	$r0,$r1,0
+1c01143c:	00103c01 	add.w	$r1,$r0,$r15
+1c011440:	5c0079ac 	bne	$r13,$r12,120(0x78) # 1c0114b8 <inst_error>
+1c011444:	0010040f 	add.w	$r15,$r0,$r1
+1c011448:	15883e4c 	lu12i.w	$r12,-245262(0xc41f2)
+1c01144c:	54000c00 	bl	12(0xc) # 1c011458 <n21_pcaddu12i_test+0x40>
+1c011450:	1d883e4d 	pcaddu12i	$r13,-245262(0xc41f2)
+1c011454:	50000c00 	b	12(0xc) # 1c011460 <n21_pcaddu12i_test+0x48>
+1c011458:	0010302c 	add.w	$r12,$r1,$r12
+1c01145c:	4c000020 	jirl	$r0,$r1,0
+1c011460:	00103c01 	add.w	$r1,$r0,$r15
+1c011464:	5c0055ac 	bne	$r13,$r12,84(0x54) # 1c0114b8 <inst_error>
+1c011468:	0010040f 	add.w	$r15,$r0,$r1
+1c01146c:	1490340c 	lu12i.w	$r12,295328(0x481a0)
+1c011470:	54000c00 	bl	12(0xc) # 1c01147c <n21_pcaddu12i_test+0x64>
+1c011474:	1c90340d 	pcaddu12i	$r13,295328(0x481a0)
+1c011478:	50000c00 	b	12(0xc) # 1c011484 <n21_pcaddu12i_test+0x6c>
+1c01147c:	0010302c 	add.w	$r12,$r1,$r12
+1c011480:	4c000020 	jirl	$r0,$r1,0
+1c011484:	00103c01 	add.w	$r1,$r0,$r15
+1c011488:	5c0031ac 	bne	$r13,$r12,48(0x30) # 1c0114b8 <inst_error>
+1c01148c:	0010040f 	add.w	$r15,$r0,$r1
+1c011490:	1400000c 	lu12i.w	$r12,0
+1c011494:	54000c00 	bl	12(0xc) # 1c0114a0 <n21_pcaddu12i_test+0x88>
+1c011498:	1c00000d 	pcaddu12i	$r13,0
+1c01149c:	50000c00 	b	12(0xc) # 1c0114a8 <n21_pcaddu12i_test+0x90>
+1c0114a0:	0010302c 	add.w	$r12,$r1,$r12
+1c0114a4:	4c000020 	jirl	$r0,$r1,0
+1c0114a8:	00103c01 	add.w	$r1,$r0,$r15
+1c0114ac:	5c000dac 	bne	$r13,$r12,12(0xc) # 1c0114b8 <inst_error>
+1c0114b0:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0114b8 <inst_error>
+1c0114b4:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0114b8 <inst_error>:
+1c0114b8:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0114bc:	001569ac 	or	$r12,$r13,$r26
+1c0114c0:	2980030c 	st.w	$r12,$r24,0
+1c0114c4:	4c000020 	jirl	$r0,$r1,0
+
+1c0114c8 <n22_slti_test>:
+n22_slti_test():
+1c0114c8:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0114cc:	00150019 	move	$r25,$r0
+1c0114d0:	15b3a26c 	lu12i.w	$r12,-156397(0xd9d13)
+1c0114d4:	02a6d58c 	addi.w	$r12,$r12,-1611(0x9b5)
+1c0114d8:	1400000b 	lu12i.w	$r11,0
+1c0114dc:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c0114e0:	0226218a 	slti	$r10,$r12,-1656(0x988)
+1c0114e4:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c011520 <inst_error>
+1c0114e8:	157827ac 	lu12i.w	$r12,-278211(0xbc13d)
+1c0114ec:	02a4318c 	addi.w	$r12,$r12,-1780(0x90c)
+1c0114f0:	1400000b 	lu12i.w	$r11,0
+1c0114f4:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c0114f8:	0217a58a 	slti	$r10,$r12,1513(0x5e9)
+1c0114fc:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c011520 <inst_error>
+1c011500:	1400000c 	lu12i.w	$r12,0
+1c011504:	0280018c 	addi.w	$r12,$r12,0
+1c011508:	1400000b 	lu12i.w	$r11,0
+1c01150c:	0280016b 	addi.w	$r11,$r11,0
+1c011510:	0200018a 	slti	$r10,$r12,0
+1c011514:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011520 <inst_error>
+1c011518:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011520 <inst_error>
+1c01151c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011520 <inst_error>:
+1c011520:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011524:	001569ac 	or	$r12,$r13,$r26
+1c011528:	2980030c 	st.w	$r12,$r24,0
+1c01152c:	4c000020 	jirl	$r0,$r1,0
+
+1c011530 <n23_sltui_test>:
+n23_sltui_test():
+1c011530:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011534:	00150019 	move	$r25,$r0
+1c011538:	1584a9cc 	lu12i.w	$r12,-252594(0xc254e)
+1c01153c:	028f618c 	addi.w	$r12,$r12,984(0x3d8)
+1c011540:	1400000b 	lu12i.w	$r11,0
+1c011544:	0280016b 	addi.w	$r11,$r11,0
+1c011548:	0251a58a 	sltui	$r10,$r12,1129(0x469)
+1c01154c:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c011588 <inst_error>
+1c011550:	14f4ac6c 	lu12i.w	$r12,501091(0x7a563)
+1c011554:	028d318c 	addi.w	$r12,$r12,844(0x34c)
+1c011558:	1400000b 	lu12i.w	$r11,0
+1c01155c:	0280016b 	addi.w	$r11,$r11,0
+1c011560:	024bd58a 	sltui	$r10,$r12,757(0x2f5)
+1c011564:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c011588 <inst_error>
+1c011568:	1400000c 	lu12i.w	$r12,0
+1c01156c:	0280018c 	addi.w	$r12,$r12,0
+1c011570:	1400000b 	lu12i.w	$r11,0
+1c011574:	0280016b 	addi.w	$r11,$r11,0
+1c011578:	0240018a 	sltui	$r10,$r12,0
+1c01157c:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011588 <inst_error>
+1c011580:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011588 <inst_error>
+1c011584:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011588 <inst_error>:
+1c011588:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01158c:	001569ac 	or	$r12,$r13,$r26
+1c011590:	2980030c 	st.w	$r12,$r24,0
+1c011594:	4c000020 	jirl	$r0,$r1,0
+
+1c011598 <n24_andi_test>:
+n24_andi_test():
+1c011598:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01159c:	00150019 	move	$r25,$r0
+1c0115a0:	149847ac 	lu12i.w	$r12,311869(0x4c23d)
+1c0115a4:	02b7518c 	addi.w	$r12,$r12,-556(0xdd4)
+1c0115a8:	1400002b 	lu12i.w	$r11,1(0x1)
+1c0115ac:	02b2016b 	addi.w	$r11,$r11,-896(0xc80)
+1c0115b0:	037a258a 	andi	$r10,$r12,0xe89
+1c0115b4:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c011608 <inst_error>
+1c0115b8:	154250cc 	lu12i.w	$r12,-388474(0xa1286)
+1c0115bc:	0298018c 	addi.w	$r12,$r12,1536(0x600)
+1c0115c0:	1400000b 	lu12i.w	$r11,0
+1c0115c4:	0280016b 	addi.w	$r11,$r11,0
+1c0115c8:	0362a98a 	andi	$r10,$r12,0x8aa
+1c0115cc:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c011608 <inst_error>
+1c0115d0:	15d4860c 	lu12i.w	$r12,-89040(0xea430)
+1c0115d4:	02a3018c 	addi.w	$r12,$r12,-1856(0x8c0)
+1c0115d8:	1400002b 	lu12i.w	$r11,1(0x1)
+1c0115dc:	02a0016b 	addi.w	$r11,$r11,-2048(0x800)
+1c0115e0:	0374f98a 	andi	$r10,$r12,0xd3e
+1c0115e4:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c011608 <inst_error>
+1c0115e8:	1400000c 	lu12i.w	$r12,0
+1c0115ec:	0280018c 	addi.w	$r12,$r12,0
+1c0115f0:	1400000b 	lu12i.w	$r11,0
+1c0115f4:	0280016b 	addi.w	$r11,$r11,0
+1c0115f8:	0340018a 	andi	$r10,$r12,0x0
+1c0115fc:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011608 <inst_error>
+1c011600:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011608 <inst_error>
+1c011604:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011608 <inst_error>:
+1c011608:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01160c:	001569ac 	or	$r12,$r13,$r26
+1c011610:	2980030c 	st.w	$r12,$r24,0
+1c011614:	4c000020 	jirl	$r0,$r1,0
+
+1c011618 <n25_ori_test>:
+n25_ori_test():
+1c011618:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01161c:	00150019 	move	$r25,$r0
+1c011620:	141a912c 	lu12i.w	$r12,54409(0xd489)
+1c011624:	0286298c 	addi.w	$r12,$r12,394(0x18a)
+1c011628:	141a914b 	lu12i.w	$r11,54410(0xd48a)
+1c01162c:	02bfb96b 	addi.w	$r11,$r11,-18(0xfee)
+1c011630:	03bf998a 	ori	$r10,$r12,0xfe6
+1c011634:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c011688 <inst_error>
+1c011638:	15123a2c 	lu12i.w	$r12,-486959(0x891d1)
+1c01163c:	029e818c 	addi.w	$r12,$r12,1952(0x7a0)
+1c011640:	15123a2b 	lu12i.w	$r11,-486959(0x891d1)
+1c011644:	029ed16b 	addi.w	$r11,$r11,1972(0x7b4)
+1c011648:	0380d18a 	ori	$r10,$r12,0x34
+1c01164c:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c011688 <inst_error>
+1c011650:	1517d9ec 	lu12i.w	$r12,-475441(0x8becf)
+1c011654:	0288818c 	addi.w	$r12,$r12,544(0x220)
+1c011658:	1517da0b 	lu12i.w	$r11,-475440(0x8bed0)
+1c01165c:	02a8816b 	addi.w	$r11,$r11,-1504(0xa20)
+1c011660:	03a0018a 	ori	$r10,$r12,0x800
+1c011664:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c011688 <inst_error>
+1c011668:	1400000c 	lu12i.w	$r12,0
+1c01166c:	0280018c 	addi.w	$r12,$r12,0
+1c011670:	1400000b 	lu12i.w	$r11,0
+1c011674:	0280016b 	addi.w	$r11,$r11,0
+1c011678:	0380018a 	ori	$r10,$r12,0x0
+1c01167c:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011688 <inst_error>
+1c011680:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011688 <inst_error>
+1c011684:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011688 <inst_error>:
+1c011688:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01168c:	001569ac 	or	$r12,$r13,$r26
+1c011690:	2980030c 	st.w	$r12,$r24,0
+1c011694:	4c000020 	jirl	$r0,$r1,0
+
+1c011698 <n26_xori_test>:
+n26_xori_test():
+1c011698:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01169c:	00150019 	move	$r25,$r0
+1c0116a0:	14880d4c 	lu12i.w	$r12,278634(0x4406a)
+1c0116a4:	0294018c 	addi.w	$r12,$r12,1280(0x500)
+1c0116a8:	14880d4b 	lu12i.w	$r11,278634(0x4406a)
+1c0116ac:	0286fd6b 	addi.w	$r11,$r11,447(0x1bf)
+1c0116b0:	03d2fd8a 	xori	$r10,$r12,0x4bf
+1c0116b4:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c011708 <inst_error>
+1c0116b8:	156bea4c 	lu12i.w	$r12,-303278(0xb5f52)
+1c0116bc:	0291818c 	addi.w	$r12,$r12,1120(0x460)
+1c0116c0:	156bea6b 	lu12i.w	$r11,-303277(0xb5f53)
+1c0116c4:	02bb796b 	addi.w	$r11,$r11,-290(0xede)
+1c0116c8:	03eaf98a 	xori	$r10,$r12,0xabe
+1c0116cc:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c011708 <inst_error>
+1c0116d0:	1468a90c 	lu12i.w	$r12,214344(0x34548)
+1c0116d4:	02bfb98c 	addi.w	$r12,$r12,-18(0xfee)
+1c0116d8:	1468a8eb 	lu12i.w	$r11,214343(0x34547)
+1c0116dc:	028c516b 	addi.w	$r11,$r11,788(0x314)
+1c0116e0:	03f3e98a 	xori	$r10,$r12,0xcfa
+1c0116e4:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c011708 <inst_error>
+1c0116e8:	1400000c 	lu12i.w	$r12,0
+1c0116ec:	0280018c 	addi.w	$r12,$r12,0
+1c0116f0:	1400000b 	lu12i.w	$r11,0
+1c0116f4:	0280016b 	addi.w	$r11,$r11,0
+1c0116f8:	03c0018a 	xori	$r10,$r12,0x0
+1c0116fc:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011708 <inst_error>
+1c011700:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011708 <inst_error>
+1c011704:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011708 <inst_error>:
+1c011708:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01170c:	001569ac 	or	$r12,$r13,$r26
+1c011710:	2980030c 	st.w	$r12,$r24,0
+1c011714:	4c000020 	jirl	$r0,$r1,0
+
+1c011718 <n27_sll_w_test>:
+n27_sll_w_test():
+1c011718:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01171c:	00150019 	move	$r25,$r0
+1c011720:	14f3b7cc 	lu12i.w	$r12,499134(0x79dbe)
+1c011724:	02acd18c 	addi.w	$r12,$r12,-1228(0xb34)
+1c011728:	1400000d 	lu12i.w	$r13,0
+1c01172c:	02801dad 	addi.w	$r13,$r13,7(0x7)
+1c011730:	15dbdb4b 	lu12i.w	$r11,-74022(0xededa)
+1c011734:	02a8016b 	addi.w	$r11,$r11,-1536(0xa00)
+1c011738:	0017358a 	sll.w	$r10,$r12,$r13
+1c01173c:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c011788 <inst_error>
+1c011740:	1552080c 	lu12i.w	$r12,-356288(0xa9040)
+1c011744:	02a8418c 	addi.w	$r12,$r12,-1520(0xa10)
+1c011748:	1400000d 	lu12i.w	$r13,0
+1c01174c:	028075ad 	addi.w	$r13,$r13,29(0x1d)
+1c011750:	1400000b 	lu12i.w	$r11,0
+1c011754:	0280016b 	addi.w	$r11,$r11,0
+1c011758:	0017358a 	sll.w	$r10,$r12,$r13
+1c01175c:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c011788 <inst_error>
+1c011760:	1400000c 	lu12i.w	$r12,0
+1c011764:	0280018c 	addi.w	$r12,$r12,0
+1c011768:	1400000d 	lu12i.w	$r13,0
+1c01176c:	028001ad 	addi.w	$r13,$r13,0
+1c011770:	1400000b 	lu12i.w	$r11,0
+1c011774:	0280016b 	addi.w	$r11,$r11,0
+1c011778:	0017358a 	sll.w	$r10,$r12,$r13
+1c01177c:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011788 <inst_error>
+1c011780:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011788 <inst_error>
+1c011784:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011788 <inst_error>:
+1c011788:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01178c:	001569ac 	or	$r12,$r13,$r26
+1c011790:	2980030c 	st.w	$r12,$r24,0
+1c011794:	4c000020 	jirl	$r0,$r1,0
+
+1c011798 <n28_sra_w_test>:
+n28_sra_w_test():
+1c011798:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01179c:	00150019 	move	$r25,$r0
+1c0117a0:	147cb28c 	lu12i.w	$r12,255380(0x3e594)
+1c0117a4:	028c018c 	addi.w	$r12,$r12,768(0x300)
+1c0117a8:	1400000d 	lu12i.w	$r13,0
+1c0117ac:	02800dad 	addi.w	$r13,$r13,3(0x3)
+1c0117b0:	140f966b 	lu12i.w	$r11,31923(0x7cb3)
+1c0117b4:	02a1816b 	addi.w	$r11,$r11,-1952(0x860)
+1c0117b8:	0018358a 	sra.w	$r10,$r12,$r13
+1c0117bc:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c011828 <inst_error>
+1c0117c0:	142e3c0c 	lu12i.w	$r12,94688(0x171e0)
+1c0117c4:	0284598c 	addi.w	$r12,$r12,278(0x116)
+1c0117c8:	1400000d 	lu12i.w	$r13,0
+1c0117cc:	028011ad 	addi.w	$r13,$r13,4(0x4)
+1c0117d0:	1402e3cb 	lu12i.w	$r11,5918(0x171e)
+1c0117d4:	0280456b 	addi.w	$r11,$r11,17(0x11)
+1c0117d8:	0018358a 	sra.w	$r10,$r12,$r13
+1c0117dc:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c011828 <inst_error>
+1c0117e0:	15f7314c 	lu12i.w	$r12,-18038(0xfb98a)
+1c0117e4:	0287118c 	addi.w	$r12,$r12,452(0x1c4)
+1c0117e8:	1400000d 	lu12i.w	$r13,0
+1c0117ec:	02805dad 	addi.w	$r13,$r13,23(0x17)
+1c0117f0:	1400000b 	lu12i.w	$r11,0
+1c0117f4:	02bfdd6b 	addi.w	$r11,$r11,-9(0xff7)
+1c0117f8:	0018358a 	sra.w	$r10,$r12,$r13
+1c0117fc:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c011828 <inst_error>
+1c011800:	1400000c 	lu12i.w	$r12,0
+1c011804:	0280018c 	addi.w	$r12,$r12,0
+1c011808:	1400000d 	lu12i.w	$r13,0
+1c01180c:	028001ad 	addi.w	$r13,$r13,0
+1c011810:	1400000b 	lu12i.w	$r11,0
+1c011814:	0280016b 	addi.w	$r11,$r11,0
+1c011818:	0018358a 	sra.w	$r10,$r12,$r13
+1c01181c:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c011828 <inst_error>
+1c011820:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011828 <inst_error>
+1c011824:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011828 <inst_error>:
+1c011828:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c01182c:	001569ac 	or	$r12,$r13,$r26
+1c011830:	2980030c 	st.w	$r12,$r24,0
+1c011834:	4c000020 	jirl	$r0,$r1,0
+
+1c011838 <n29_srl_w_test>:
+n29_srl_w_test():
+1c011838:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01183c:	00150019 	move	$r25,$r0
+1c011840:	143f1ecc 	lu12i.w	$r12,129270(0x1f8f6)
+1c011844:	0280018c 	addi.w	$r12,$r12,0
+1c011848:	1400000d 	lu12i.w	$r13,0
+1c01184c:	028071ad 	addi.w	$r13,$r13,28(0x1c)
+1c011850:	1400000b 	lu12i.w	$r11,0
+1c011854:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c011858:	0017b58a 	srl.w	$r10,$r12,$r13
+1c01185c:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c0118c8 <inst_error>
+1c011860:	15ca3eec 	lu12i.w	$r12,-110089(0xe51f7)
+1c011864:	02ba718c 	addi.w	$r12,$r12,-356(0xe9c)
+1c011868:	1400000d 	lu12i.w	$r13,0
+1c01186c:	028009ad 	addi.w	$r13,$r13,2(0x2)
+1c011870:	14728fcb 	lu12i.w	$r11,234622(0x3947e)
+1c011874:	02ae9d6b 	addi.w	$r11,$r11,-1113(0xba7)
+1c011878:	0017b58a 	srl.w	$r10,$r12,$r13
+1c01187c:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c0118c8 <inst_error>
+1c011880:	140abbec 	lu12i.w	$r12,21983(0x55df)
+1c011884:	029f818c 	addi.w	$r12,$r12,2016(0x7e0)
+1c011888:	1400000d 	lu12i.w	$r13,0
+1c01188c:	028021ad 	addi.w	$r13,$r13,8(0x8)
+1c011890:	14000acb 	lu12i.w	$r11,86(0x56)
+1c011894:	02b7dd6b 	addi.w	$r11,$r11,-521(0xdf7)
+1c011898:	0017b58a 	srl.w	$r10,$r12,$r13
+1c01189c:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c0118c8 <inst_error>
+1c0118a0:	1400000c 	lu12i.w	$r12,0
+1c0118a4:	0280018c 	addi.w	$r12,$r12,0
+1c0118a8:	1400000d 	lu12i.w	$r13,0
+1c0118ac:	028001ad 	addi.w	$r13,$r13,0
+1c0118b0:	1400000b 	lu12i.w	$r11,0
+1c0118b4:	0280016b 	addi.w	$r11,$r11,0
+1c0118b8:	0017b58a 	srl.w	$r10,$r12,$r13
+1c0118bc:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c0118c8 <inst_error>
+1c0118c0:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0118c8 <inst_error>
+1c0118c4:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0118c8 <inst_error>:
+1c0118c8:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0118cc:	001569ac 	or	$r12,$r13,$r26
+1c0118d0:	2980030c 	st.w	$r12,$r24,0
+1c0118d4:	4c000020 	jirl	$r0,$r1,0
+
+1c0118d8 <n2_add_w_test>:
+n2_add_w_test():
+1c0118d8:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0118dc:	02800019 	addi.w	$r25,$r0,0
+1c0118e0:	1435bdec 	lu12i.w	$r12,110063(0x1adef)
+1c0118e4:	028c018c 	addi.w	$r12,$r12,768(0x300)
+1c0118e8:	14a3bacd 	lu12i.w	$r13,335318(0x51dd6)
+1c0118ec:	02a379ad 	addi.w	$r13,$r13,-1826(0x8de)
+1c0118f0:	14d978ab 	lu12i.w	$r11,445381(0x6cbc5)
+1c0118f4:	02af796b 	addi.w	$r11,$r11,-1058(0xbde)
+1c0118f8:	0010358a 	add.w	$r10,$r12,$r13
+1c0118fc:	5c00ad4b 	bne	$r10,$r11,172(0xac) # 1c0119a8 <inst_error>
+1c011900:	152ce9ec 	lu12i.w	$r12,-432305(0x9674f)
+1c011904:	02a9818c 	addi.w	$r12,$r12,-1440(0xa60)
+1c011908:	15568ead 	lu12i.w	$r13,-347019(0xab475)
+1c01190c:	029e49ad 	addi.w	$r13,$r13,1938(0x792)
+1c011910:	1483788b 	lu12i.w	$r11,269252(0x41bc4)
+1c011914:	0287c96b 	addi.w	$r11,$r11,498(0x1f2)
+1c011918:	0010358a 	add.w	$r10,$r12,$r13
+1c01191c:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c0119a8 <inst_error>
+1c011920:	156c1b8c 	lu12i.w	$r12,-302884(0xb60dc)
+1c011924:	02a6198c 	addi.w	$r12,$r12,-1658(0x986)
+1c011928:	145cadad 	lu12i.w	$r13,189805(0x2e56d)
+1c01192c:	02a069ad 	addi.w	$r13,$r13,-2022(0x81a)
+1c011930:	15c8c90b 	lu12i.w	$r11,-113080(0xe4648)
+1c011934:	0286816b 	addi.w	$r11,$r11,416(0x1a0)
+1c011938:	0010358a 	add.w	$r10,$r12,$r13
+1c01193c:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c0119a8 <inst_error>
+1c011940:	15aabdcc 	lu12i.w	$r12,-174610(0xd55ee)
+1c011944:	02af018c 	addi.w	$r12,$r12,-1088(0xbc0)
+1c011948:	14c1ebad 	lu12i.w	$r13,397149(0x60f5d)
+1c01194c:	02ac31ad 	addi.w	$r13,$r13,-1268(0xb0c)
+1c011950:	146ca94b 	lu12i.w	$r11,222538(0x3654a)
+1c011954:	029b316b 	addi.w	$r11,$r11,1740(0x6cc)
+1c011958:	0010358a 	add.w	$r10,$r12,$r13
+1c01195c:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c0119a8 <inst_error>
+1c011960:	154571cc 	lu12i.w	$r12,-382066(0xa2b8e)
+1c011964:	0293818c 	addi.w	$r12,$r12,1248(0x4e0)
+1c011968:	158dcced 	lu12i.w	$r13,-233881(0xc6e67)
+1c01196c:	02aa81ad 	addi.w	$r13,$r13,-1376(0xaa0)
+1c011970:	14d33eab 	lu12i.w	$r11,432629(0x699f5)
+1c011974:	02be016b 	addi.w	$r11,$r11,-128(0xf80)
+1c011978:	0010358a 	add.w	$r10,$r12,$r13
+1c01197c:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c0119a8 <inst_error>
+1c011980:	1400000c 	lu12i.w	$r12,0
+1c011984:	0280018c 	addi.w	$r12,$r12,0
+1c011988:	1400000d 	lu12i.w	$r13,0
+1c01198c:	028001ad 	addi.w	$r13,$r13,0
+1c011990:	1400000b 	lu12i.w	$r11,0
+1c011994:	0280016b 	addi.w	$r11,$r11,0
+1c011998:	0010358a 	add.w	$r10,$r12,$r13
+1c01199c:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c0119a8 <inst_error>
+1c0119a0:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0119a8 <inst_error>
+1c0119a4:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0119a8 <inst_error>:
+1c0119a8:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0119ac:	001569ac 	or	$r12,$r13,$r26
+1c0119b0:	2980030c 	st.w	$r12,$r24,0
+1c0119b4:	4c000020 	jirl	$r0,$r1,0
+
+1c0119b8 <n30_div_w_test>:
+n30_div_w_test():
+1c0119b8:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0119bc:	00150019 	move	$r25,$r0
+1c0119c0:	14ad7dac 	lu12i.w	$r12,355309(0x56bed)
+1c0119c4:	03be918c 	ori	$r12,$r12,0xfa4
+1c0119c8:	1441062d 	lu12i.w	$r13,133169(0x20831)
+1c0119cc:	039001ad 	ori	$r13,$r13,0x400
+1c0119d0:	0020358f 	div.w	$r15,$r12,$r13
+1c0119d4:	03800810 	ori	$r16,$r0,0x2
+1c0119d8:	5c00460f 	bne	$r16,$r15,68(0x44) # 1c011a1c <inst_error>
+1c0119dc:	15fb4bcc 	lu12i.w	$r12,-9634(0xfda5e)
+1c0119e0:	03aa298c 	ori	$r12,$r12,0xa8a
+1c0119e4:	15f5830d 	lu12i.w	$r13,-21480(0xfac18)
+1c0119e8:	039cf1ad 	ori	$r13,$r13,0x73c
+1c0119ec:	0020358f 	div.w	$r15,$r12,$r13
+1c0119f0:	00150010 	move	$r16,$r0
+1c0119f4:	5c002a0f 	bne	$r16,$r15,40(0x28) # 1c011a1c <inst_error>
+1c0119f8:	14a7d68c 	lu12i.w	$r12,343732(0x53eb4)
+1c0119fc:	03a9c18c 	ori	$r12,$r12,0xa70
+1c011a00:	140fc26d 	lu12i.w	$r13,32275(0x7e13)
+1c011a04:	03b745ad 	ori	$r13,$r13,0xdd1
+1c011a08:	0020358f 	div.w	$r15,$r12,$r13
+1c011a0c:	03802810 	ori	$r16,$r0,0xa
+1c011a10:	5c000e0f 	bne	$r16,$r15,12(0xc) # 1c011a1c <inst_error>
+1c011a14:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011a1c <inst_error>
+1c011a18:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011a1c <inst_error>:
+1c011a1c:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011a20:	001569ac 	or	$r12,$r13,$r26
+1c011a24:	2980030c 	st.w	$r12,$r24,0
+1c011a28:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c011a2c:	03400000 	andi	$r0,$r0,0x0
+
+1c011a30 <n31_div_wu_test>:
+n31_div_wu_test():
+1c011a30:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011a34:	00150019 	move	$r25,$r0
+1c011a38:	149ceeac 	lu12i.w	$r12,321397(0x4e775)
+1c011a3c:	03aa018c 	ori	$r12,$r12,0xa80
+1c011a40:	1564cf2d 	lu12i.w	$r13,-317831(0xb2679)
+1c011a44:	0397b1ad 	ori	$r13,$r13,0x5ec
+1c011a48:	0021358f 	div.wu	$r15,$r12,$r13
+1c011a4c:	00150010 	move	$r16,$r0
+1c011a50:	5c002a0f 	bne	$r16,$r15,40(0x28) # 1c011a78 <inst_error>
+1c011a54:	149d110c 	lu12i.w	$r12,321672(0x4e888)
+1c011a58:	039c018c 	ori	$r12,$r12,0x700
+1c011a5c:	15e1b08d 	lu12i.w	$r13,-62076(0xf0d84)
+1c011a60:	03bf39ad 	ori	$r13,$r13,0xfce
+1c011a64:	0021358f 	div.wu	$r15,$r12,$r13
+1c011a68:	00150010 	move	$r16,$r0
+1c011a6c:	5c000e0f 	bne	$r16,$r15,12(0xc) # 1c011a78 <inst_error>
+1c011a70:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011a78 <inst_error>
+1c011a74:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011a78 <inst_error>:
+1c011a78:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011a7c:	001569ac 	or	$r12,$r13,$r26
+1c011a80:	2980030c 	st.w	$r12,$r24,0
+1c011a84:	4c000020 	jirl	$r0,$r1,0
+
+1c011a88 <n32_mul_w_test>:
+n32_mul_w_test():
+1c011a88:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011a8c:	00150019 	move	$r25,$r0
+1c011a90:	148b720c 	lu12i.w	$r12,285584(0x45b90)
+1c011a94:	039ce18c 	ori	$r12,$r12,0x738
+1c011a98:	15ae1acd 	lu12i.w	$r13,-167722(0xd70d6)
+1c011a9c:	0393c1ad 	ori	$r13,$r13,0x4f0
+1c011aa0:	001c358f 	mul.w	$r15,$r12,$r13
+1c011aa4:	14144150 	lu12i.w	$r16,41482(0xa20a)
+1c011aa8:	03920210 	ori	$r16,$r16,0x480
+1c011aac:	5c0061f0 	bne	$r15,$r16,96(0x60) # 1c011b0c <inst_error>
+1c011ab0:	153348ac 	lu12i.w	$r12,-419259(0x99a45)
+1c011ab4:	0386c18c 	ori	$r12,$r12,0x1b0
+1c011ab8:	157c7b2d 	lu12i.w	$r13,-269351(0xbe3d9)
+1c011abc:	03a661ad 	ori	$r13,$r13,0x998
+1c011ac0:	001c358f 	mul.w	$r15,$r12,$r13
+1c011ac4:	150aa570 	lu12i.w	$r16,-502485(0x8552b)
+1c011ac8:	03820210 	ori	$r16,$r16,0x80
+1c011acc:	5c0041f0 	bne	$r15,$r16,64(0x40) # 1c011b0c <inst_error>
+1c011ad0:	150b262c 	lu12i.w	$r12,-501455(0x85931)
+1c011ad4:	03b1618c 	ori	$r12,$r12,0xc58
+1c011ad8:	15f6e20d 	lu12i.w	$r13,-18672(0xfb710)
+1c011adc:	03bed5ad 	ori	$r13,$r13,0xfb5
+1c011ae0:	001c358f 	mul.w	$r15,$r12,$r13
+1c011ae4:	15b50870 	lu12i.w	$r16,-153533(0xda843)
+1c011ae8:	0388e210 	ori	$r16,$r16,0x238
+1c011aec:	5c0021f0 	bne	$r15,$r16,32(0x20) # 1c011b0c <inst_error>
+1c011af0:	0015000c 	move	$r12,$r0
+1c011af4:	0015000d 	move	$r13,$r0
+1c011af8:	001c358f 	mul.w	$r15,$r12,$r13
+1c011afc:	00150010 	move	$r16,$r0
+1c011b00:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c011b0c <inst_error>
+1c011b04:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011b0c <inst_error>
+1c011b08:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011b0c <inst_error>:
+1c011b0c:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011b10:	001569ac 	or	$r12,$r13,$r26
+1c011b14:	2980030c 	st.w	$r12,$r24,0
+1c011b18:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c011b1c:	03400000 	andi	$r0,$r0,0x0
+
+1c011b20 <n33_mulh_w_test>:
+n33_mulh_w_test():
+1c011b20:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011b24:	00150019 	move	$r25,$r0
+1c011b28:	148b720c 	lu12i.w	$r12,285584(0x45b90)
+1c011b2c:	039ce18c 	ori	$r12,$r12,0x738
+1c011b30:	15ae1acd 	lu12i.w	$r13,-167722(0xd70d6)
+1c011b34:	0393c1ad 	ori	$r13,$r13,0x4f0
+1c011b38:	001cb58f 	mulh.w	$r15,$r12,$r13
+1c011b3c:	15e9b210 	lu12i.w	$r16,-45680(0xf4d90)
+1c011b40:	038eee10 	ori	$r16,$r16,0x3bb
+1c011b44:	5c0041f0 	bne	$r15,$r16,64(0x40) # 1c011b84 <inst_error>
+1c011b48:	153348ac 	lu12i.w	$r12,-419259(0x99a45)
+1c011b4c:	0386c18c 	ori	$r12,$r12,0x1b0
+1c011b50:	157c7b2d 	lu12i.w	$r13,-269351(0xbe3d9)
+1c011b54:	03a661ad 	ori	$r13,$r13,0x998
+1c011b58:	001cb58f 	mulh.w	$r15,$r12,$r13
+1c011b5c:	14349610 	lu12i.w	$r16,107696(0x1a4b0)
+1c011b60:	0386ba10 	ori	$r16,$r16,0x1ae
+1c011b64:	5c0021f0 	bne	$r15,$r16,32(0x20) # 1c011b84 <inst_error>
+1c011b68:	0015000c 	move	$r12,$r0
+1c011b6c:	0015000d 	move	$r13,$r0
+1c011b70:	001cb58f 	mulh.w	$r15,$r12,$r13
+1c011b74:	00150010 	move	$r16,$r0
+1c011b78:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c011b84 <inst_error>
+1c011b7c:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011b84 <inst_error>
+1c011b80:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011b84 <inst_error>:
+1c011b84:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011b88:	001569ac 	or	$r12,$r13,$r26
+1c011b8c:	2980030c 	st.w	$r12,$r24,0
+1c011b90:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c011b94:	03400000 	andi	$r0,$r0,0x0
+
+1c011b98 <n34_mulh_wu_test>:
+n34_mulh_wu_test():
+1c011b98:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011b9c:	00150019 	move	$r25,$r0
+1c011ba0:	1533934c 	lu12i.w	$r12,-418662(0x99c9a)
+1c011ba4:	0394018c 	ori	$r12,$r12,0x500
+1c011ba8:	14d8342d 	lu12i.w	$r13,442785(0x6c1a1)
+1c011bac:	03ad81ad 	ori	$r13,$r13,0xb60
+1c011bb0:	001d358f 	mulh.wu	$r15,$r12,$r13
+1c011bb4:	1481e190 	lu12i.w	$r16,265996(0x40f0c)
+1c011bb8:	03822210 	ori	$r16,$r16,0x88
+1c011bbc:	5c0041f0 	bne	$r15,$r16,64(0x40) # 1c011bfc <inst_error>
+1c011bc0:	15dc04cc 	lu12i.w	$r12,-73690(0xee026)
+1c011bc4:	03b7018c 	ori	$r12,$r12,0xdc0
+1c011bc8:	15b0bc0d 	lu12i.w	$r13,-162336(0xd85e0)
+1c011bcc:	03abb1ad 	ori	$r13,$r13,0xaec
+1c011bd0:	001d358f 	mulh.wu	$r15,$r12,$r13
+1c011bd4:	159252f0 	lu12i.w	$r16,-224617(0xc9297)
+1c011bd8:	03ae9610 	ori	$r16,$r16,0xba5
+1c011bdc:	5c0021f0 	bne	$r15,$r16,32(0x20) # 1c011bfc <inst_error>
+1c011be0:	0015000c 	move	$r12,$r0
+1c011be4:	0015000d 	move	$r13,$r0
+1c011be8:	001d358f 	mulh.wu	$r15,$r12,$r13
+1c011bec:	00150010 	move	$r16,$r0
+1c011bf0:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c011bfc <inst_error>
+1c011bf4:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011bfc <inst_error>
+1c011bf8:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011bfc <inst_error>:
+1c011bfc:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011c00:	001569ac 	or	$r12,$r13,$r26
+1c011c04:	2980030c 	st.w	$r12,$r24,0
+1c011c08:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c011c0c:	03400000 	andi	$r0,$r0,0x0
+
+1c011c10 <n35_mod_w_test>:
+n35_mod_w_test():
+1c011c10:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011c14:	00150019 	move	$r25,$r0
+1c011c18:	14ad7dac 	lu12i.w	$r12,355309(0x56bed)
+1c011c1c:	03be918c 	ori	$r12,$r12,0xfa4
+1c011c20:	1441062d 	lu12i.w	$r13,133169(0x20831)
+1c011c24:	039001ad 	ori	$r13,$r13,0x400
+1c011c28:	0020b58f 	mod.w	$r15,$r12,$r13
+1c011c2c:	142b7170 	lu12i.w	$r16,88971(0x15b8b)
+1c011c30:	039e9210 	ori	$r16,$r16,0x7a4
+1c011c34:	5c00460f 	bne	$r16,$r15,68(0x44) # 1c011c78 <inst_error>
+1c011c38:	15fb4bcc 	lu12i.w	$r12,-9634(0xfda5e)
+1c011c3c:	03aa298c 	ori	$r12,$r12,0xa8a
+1c011c40:	15f5830d 	lu12i.w	$r13,-21480(0xfac18)
+1c011c44:	039cf1ad 	ori	$r13,$r13,0x73c
+1c011c48:	0020b58f 	mod.w	$r15,$r12,$r13
+1c011c4c:	15fb4bd0 	lu12i.w	$r16,-9634(0xfda5e)
+1c011c50:	03aa2a10 	ori	$r16,$r16,0xa8a
+1c011c54:	5c00260f 	bne	$r16,$r15,36(0x24) # 1c011c78 <inst_error>
+1c011c58:	0015000c 	move	$r12,$r0
+1c011c5c:	1529c52d 	lu12i.w	$r13,-438743(0x94e29)
+1c011c60:	03b001ad 	ori	$r13,$r13,0xc00
+1c011c64:	0020b58f 	mod.w	$r15,$r12,$r13
+1c011c68:	00150010 	move	$r16,$r0
+1c011c6c:	5c000e0f 	bne	$r16,$r15,12(0xc) # 1c011c78 <inst_error>
+1c011c70:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011c78 <inst_error>
+1c011c74:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011c78 <inst_error>:
+1c011c78:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011c7c:	001569ac 	or	$r12,$r13,$r26
+1c011c80:	2980030c 	st.w	$r12,$r24,0
+1c011c84:	4c000020 	jirl	$r0,$r1,0
+
+1c011c88 <n36_mod_wu_test>:
+n36_mod_wu_test():
+1c011c88:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011c8c:	00150019 	move	$r25,$r0
+1c011c90:	149ceeac 	lu12i.w	$r12,321397(0x4e775)
+1c011c94:	03aa018c 	ori	$r12,$r12,0xa80
+1c011c98:	1564cf2d 	lu12i.w	$r13,-317831(0xb2679)
+1c011c9c:	0397b1ad 	ori	$r13,$r13,0x5ec
+1c011ca0:	0021b58f 	mod.wu	$r15,$r12,$r13
+1c011ca4:	149ceeb0 	lu12i.w	$r16,321397(0x4e775)
+1c011ca8:	03aa0210 	ori	$r16,$r16,0xa80
+1c011cac:	5c00460f 	bne	$r16,$r15,68(0x44) # 1c011cf0 <inst_error>
+1c011cb0:	149d110c 	lu12i.w	$r12,321672(0x4e888)
+1c011cb4:	039c018c 	ori	$r12,$r12,0x700
+1c011cb8:	15e1b08d 	lu12i.w	$r13,-62076(0xf0d84)
+1c011cbc:	03bf39ad 	ori	$r13,$r13,0xfce
+1c011cc0:	0021b58f 	mod.wu	$r15,$r12,$r13
+1c011cc4:	149d1110 	lu12i.w	$r16,321672(0x4e888)
+1c011cc8:	039c0210 	ori	$r16,$r16,0x700
+1c011ccc:	5c00260f 	bne	$r16,$r15,36(0x24) # 1c011cf0 <inst_error>
+1c011cd0:	0015000c 	move	$r12,$r0
+1c011cd4:	1423e3cd 	lu12i.w	$r13,73502(0x11f1e)
+1c011cd8:	03b29dad 	ori	$r13,$r13,0xca7
+1c011cdc:	0021b58f 	mod.wu	$r15,$r12,$r13
+1c011ce0:	00150010 	move	$r16,$r0
+1c011ce4:	5c000e0f 	bne	$r16,$r15,12(0xc) # 1c011cf0 <inst_error>
+1c011ce8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011cf0 <inst_error>
+1c011cec:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011cf0 <inst_error>:
+1c011cf0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011cf4:	001569ac 	or	$r12,$r13,$r26
+1c011cf8:	2980030c 	st.w	$r12,$r24,0
+1c011cfc:	4c000020 	jirl	$r0,$r1,0
+
+1c011d00 <n37_blt_test>:
+n37_blt_test():
+1c011d00:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011d04:	00150019 	move	$r25,$r0
+1c011d08:	0015000f 	move	$r15,$r0
+1c011d0c:	00150010 	move	$r16,$r0
+1c011d10:	50001400 	b	20(0x14) # 1c011d24 <n37_blt_test+0x24>
+1c011d14:	15dbc36f 	lu12i.w	$r15,-74213(0xede1b)
+1c011d18:	03b681ef 	ori	$r15,$r15,0xda0
+1c011d1c:	6000218d 	blt	$r12,$r13,32(0x20) # 1c011d3c <n37_blt_test+0x3c>
+1c011d20:	50002400 	b	36(0x24) # 1c011d44 <n37_blt_test+0x44>
+1c011d24:	14a7b4ec 	lu12i.w	$r12,343463(0x53da7)
+1c011d28:	0399918c 	ori	$r12,$r12,0x664
+1c011d2c:	15a1766d 	lu12i.w	$r13,-193613(0xd0bb3)
+1c011d30:	03990dad 	ori	$r13,$r13,0x643
+1c011d34:	63ffe18d 	blt	$r12,$r13,-32(0x3ffe0) # 1c011d14 <n37_blt_test+0x14>
+1c011d38:	50000c00 	b	12(0xc) # 1c011d44 <n37_blt_test+0x44>
+1c011d3c:	15230930 	lu12i.w	$r16,-452535(0x91849)
+1c011d40:	03957a10 	ori	$r16,$r16,0x55e
+1c011d44:	0015001c 	move	$r28,$r0
+1c011d48:	0015001d 	move	$r29,$r0
+1c011d4c:	5c0065fc 	bne	$r15,$r28,100(0x64) # 1c011db0 <inst_error>
+1c011d50:	5c00621d 	bne	$r16,$r29,96(0x60) # 1c011db0 <inst_error>
+1c011d54:	0015000f 	move	$r15,$r0
+1c011d58:	00150010 	move	$r16,$r0
+1c011d5c:	50001400 	b	20(0x14) # 1c011d70 <n37_blt_test+0x70>
+1c011d60:	158dd98f 	lu12i.w	$r15,-233780(0xc6ecc)
+1c011d64:	03a691ef 	ori	$r15,$r15,0x9a4
+1c011d68:	6000218d 	blt	$r12,$r13,32(0x20) # 1c011d88 <n37_blt_test+0x88>
+1c011d6c:	50002400 	b	36(0x24) # 1c011d90 <n37_blt_test+0x90>
+1c011d70:	15902b0c 	lu12i.w	$r12,-229032(0xc8158)
+1c011d74:	0381b98c 	ori	$r12,$r12,0x6e
+1c011d78:	143b3f2d 	lu12i.w	$r13,121337(0x1d9f9)
+1c011d7c:	039455ad 	ori	$r13,$r13,0x515
+1c011d80:	63ffe18d 	blt	$r12,$r13,-32(0x3ffe0) # 1c011d60 <n37_blt_test+0x60>
+1c011d84:	50000c00 	b	12(0xc) # 1c011d90 <n37_blt_test+0x90>
+1c011d88:	14de1a70 	lu12i.w	$r16,454867(0x6f0d3)
+1c011d8c:	03a51210 	ori	$r16,$r16,0x944
+1c011d90:	158dd99c 	lu12i.w	$r28,-233780(0xc6ecc)
+1c011d94:	03a6939c 	ori	$r28,$r28,0x9a4
+1c011d98:	14de1a7d 	lu12i.w	$r29,454867(0x6f0d3)
+1c011d9c:	03a513bd 	ori	$r29,$r29,0x944
+1c011da0:	5c0011fc 	bne	$r15,$r28,16(0x10) # 1c011db0 <inst_error>
+1c011da4:	5c000e1d 	bne	$r16,$r29,12(0xc) # 1c011db0 <inst_error>
+1c011da8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011db0 <inst_error>
+1c011dac:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011db0 <inst_error>:
+1c011db0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011db4:	001569ac 	or	$r12,$r13,$r26
+1c011db8:	2980030c 	st.w	$r12,$r24,0
+1c011dbc:	4c000020 	jirl	$r0,$r1,0
+
+1c011dc0 <n38_bge_test>:
+n38_bge_test():
+1c011dc0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011dc4:	00150019 	move	$r25,$r0
+1c011dc8:	0015000f 	move	$r15,$r0
+1c011dcc:	00150010 	move	$r16,$r0
+1c011dd0:	50001400 	b	20(0x14) # 1c011de4 <n38_bge_test+0x24>
+1c011dd4:	15d026cf 	lu12i.w	$r15,-97994(0xe8136)
+1c011dd8:	03bacdef 	ori	$r15,$r15,0xeb3
+1c011ddc:	6400218d 	bge	$r12,$r13,32(0x20) # 1c011dfc <n38_bge_test+0x3c>
+1c011de0:	50002400 	b	36(0x24) # 1c011e04 <n38_bge_test+0x44>
+1c011de4:	149d84cc 	lu12i.w	$r12,322598(0x4ec26)
+1c011de8:	0394498c 	ori	$r12,$r12,0x512
+1c011dec:	1458a8ad 	lu12i.w	$r13,181573(0x2c545)
+1c011df0:	038d65ad 	ori	$r13,$r13,0x359
+1c011df4:	67ffe18d 	bge	$r12,$r13,-32(0x3ffe0) # 1c011dd4 <n38_bge_test+0x14>
+1c011df8:	50000c00 	b	12(0xc) # 1c011e04 <n38_bge_test+0x44>
+1c011dfc:	150d35f0 	lu12i.w	$r16,-497233(0x869af)
+1c011e00:	03970a10 	ori	$r16,$r16,0x5c2
+1c011e04:	15d026dc 	lu12i.w	$r28,-97994(0xe8136)
+1c011e08:	03bacf9c 	ori	$r28,$r28,0xeb3
+1c011e0c:	150d35fd 	lu12i.w	$r29,-497233(0x869af)
+1c011e10:	03970bbd 	ori	$r29,$r29,0x5c2
+1c011e14:	5c005dfc 	bne	$r15,$r28,92(0x5c) # 1c011e70 <inst_error>
+1c011e18:	5c005a1d 	bne	$r16,$r29,88(0x58) # 1c011e70 <inst_error>
+1c011e1c:	0015000f 	move	$r15,$r0
+1c011e20:	00150010 	move	$r16,$r0
+1c011e24:	50001400 	b	20(0x14) # 1c011e38 <n38_bge_test+0x78>
+1c011e28:	14c0758f 	lu12i.w	$r15,394156(0x603ac)
+1c011e2c:	0381b1ef 	ori	$r15,$r15,0x6c
+1c011e30:	6400218d 	bge	$r12,$r13,32(0x20) # 1c011e50 <n38_bge_test+0x90>
+1c011e34:	50002400 	b	36(0x24) # 1c011e58 <n38_bge_test+0x98>
+1c011e38:	15c1d1cc 	lu12i.w	$r12,-127346(0xe0e8e)
+1c011e3c:	03a5598c 	ori	$r12,$r12,0x956
+1c011e40:	1477434d 	lu12i.w	$r13,244250(0x3ba1a)
+1c011e44:	038941ad 	ori	$r13,$r13,0x250
+1c011e48:	67ffe18d 	bge	$r12,$r13,-32(0x3ffe0) # 1c011e28 <n38_bge_test+0x68>
+1c011e4c:	50000c00 	b	12(0xc) # 1c011e58 <n38_bge_test+0x98>
+1c011e50:	14899f90 	lu12i.w	$r16,281852(0x44cfc)
+1c011e54:	03aad210 	ori	$r16,$r16,0xab4
+1c011e58:	0015001c 	move	$r28,$r0
+1c011e5c:	0015001d 	move	$r29,$r0
+1c011e60:	5c0011fc 	bne	$r15,$r28,16(0x10) # 1c011e70 <inst_error>
+1c011e64:	5c000e1d 	bne	$r16,$r29,12(0xc) # 1c011e70 <inst_error>
+1c011e68:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011e70 <inst_error>
+1c011e6c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011e70 <inst_error>:
+1c011e70:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011e74:	001569ac 	or	$r12,$r13,$r26
+1c011e78:	2980030c 	st.w	$r12,$r24,0
+1c011e7c:	4c000020 	jirl	$r0,$r1,0
+
+1c011e80 <n39_bltu_test>:
+n39_bltu_test():
+1c011e80:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011e84:	00150019 	move	$r25,$r0
+1c011e88:	0015000f 	move	$r15,$r0
+1c011e8c:	00150010 	move	$r16,$r0
+1c011e90:	50001400 	b	20(0x14) # 1c011ea4 <n39_bltu_test+0x24>
+1c011e94:	1410f5af 	lu12i.w	$r15,34733(0x87ad)
+1c011e98:	039ca9ef 	ori	$r15,$r15,0x72a
+1c011e9c:	6800218d 	bltu	$r12,$r13,32(0x20) # 1c011ebc <n39_bltu_test+0x3c>
+1c011ea0:	50002400 	b	36(0x24) # 1c011ec4 <n39_bltu_test+0x44>
+1c011ea4:	155c0aec 	lu12i.w	$r12,-335785(0xae057)
+1c011ea8:	0399018c 	ori	$r12,$r12,0x640
+1c011eac:	1547e7ed 	lu12i.w	$r13,-377025(0xa3f3f)
+1c011eb0:	038151ad 	ori	$r13,$r13,0x54
+1c011eb4:	6bffe18d 	bltu	$r12,$r13,-32(0x3ffe0) # 1c011e94 <n39_bltu_test+0x14>
+1c011eb8:	50000c00 	b	12(0xc) # 1c011ec4 <n39_bltu_test+0x44>
+1c011ebc:	15f2ee50 	lu12i.w	$r16,-26766(0xf9772)
+1c011ec0:	039e0210 	ori	$r16,$r16,0x780
+1c011ec4:	0015001c 	move	$r28,$r0
+1c011ec8:	0015001d 	move	$r29,$r0
+1c011ecc:	5c0065fc 	bne	$r15,$r28,100(0x64) # 1c011f30 <inst_error>
+1c011ed0:	5c00621d 	bne	$r16,$r29,96(0x60) # 1c011f30 <inst_error>
+1c011ed4:	0015000f 	move	$r15,$r0
+1c011ed8:	00150010 	move	$r16,$r0
+1c011edc:	50001400 	b	20(0x14) # 1c011ef0 <n39_bltu_test+0x70>
+1c011ee0:	14beddcf 	lu12i.w	$r15,390894(0x5f6ee)
+1c011ee4:	03aff1ef 	ori	$r15,$r15,0xbfc
+1c011ee8:	6800218d 	bltu	$r12,$r13,32(0x20) # 1c011f08 <n39_bltu_test+0x88>
+1c011eec:	50002400 	b	36(0x24) # 1c011f10 <n39_bltu_test+0x90>
+1c011ef0:	1542662c 	lu12i.w	$r12,-388303(0xa1331)
+1c011ef4:	03bc1d8c 	ori	$r12,$r12,0xf07
+1c011ef8:	159d0f0d 	lu12i.w	$r13,-202632(0xce878)
+1c011efc:	03a155ad 	ori	$r13,$r13,0x855
+1c011f00:	6bffe18d 	bltu	$r12,$r13,-32(0x3ffe0) # 1c011ee0 <n39_bltu_test+0x60>
+1c011f04:	50000c00 	b	12(0xc) # 1c011f10 <n39_bltu_test+0x90>
+1c011f08:	15f7e6f0 	lu12i.w	$r16,-16585(0xfbf37)
+1c011f0c:	03bef210 	ori	$r16,$r16,0xfbc
+1c011f10:	14bedddc 	lu12i.w	$r28,390894(0x5f6ee)
+1c011f14:	03aff39c 	ori	$r28,$r28,0xbfc
+1c011f18:	15f7e6fd 	lu12i.w	$r29,-16585(0xfbf37)
+1c011f1c:	03bef3bd 	ori	$r29,$r29,0xfbc
+1c011f20:	5c0011fc 	bne	$r15,$r28,16(0x10) # 1c011f30 <inst_error>
+1c011f24:	5c000e1d 	bne	$r16,$r29,12(0xc) # 1c011f30 <inst_error>
+1c011f28:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c011f30 <inst_error>
+1c011f2c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c011f30 <inst_error>:
+1c011f30:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c011f34:	001569ac 	or	$r12,$r13,$r26
+1c011f38:	2980030c 	st.w	$r12,$r24,0
+1c011f3c:	4c000020 	jirl	$r0,$r1,0
+
+1c011f40 <n3_addi_w_test>:
+n3_addi_w_test():
+1c011f40:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c011f44:	00150019 	move	$r25,$r0
+1c011f48:	15f64c8c 	lu12i.w	$r12,-19868(0xfb264)
+1c011f4c:	02b4418c 	addi.w	$r12,$r12,-752(0xd10)
+1c011f50:	15f64c8b 	lu12i.w	$r11,-19868(0xfb264)
+1c011f54:	02a6996b 	addi.w	$r11,$r11,-1626(0x9a6)
+1c011f58:	02b2598a 	addi.w	$r10,$r12,-874(0xc96)
+1c011f5c:	5c00b54b 	bne	$r10,$r11,180(0xb4) # 1c012010 <inst_error>
+1c011f60:	14fd820c 	lu12i.w	$r12,519184(0x7ec10)
+1c011f64:	0294e18c 	addi.w	$r12,$r12,1336(0x538)
+1c011f68:	14fd820b 	lu12i.w	$r11,519184(0x7ec10)
+1c011f6c:	02bb396b 	addi.w	$r11,$r11,-306(0xece)
+1c011f70:	02a6598a 	addi.w	$r10,$r12,-1642(0x996)
+1c011f74:	5c009d4b 	bne	$r10,$r11,156(0x9c) # 1c012010 <inst_error>
+1c011f78:	141ca0cc 	lu12i.w	$r12,58630(0xe506)
+1c011f7c:	02a8018c 	addi.w	$r12,$r12,-1536(0xa00)
+1c011f80:	141ca0cb 	lu12i.w	$r11,58630(0xe506)
+1c011f84:	0284616b 	addi.w	$r11,$r11,280(0x118)
+1c011f88:	029c618a 	addi.w	$r10,$r12,1816(0x718)
+1c011f8c:	5c00854b 	bne	$r10,$r11,132(0x84) # 1c012010 <inst_error>
+1c011f90:	154a458c 	lu12i.w	$r12,-372180(0xa522c)
+1c011f94:	02a75d8c 	addi.w	$r12,$r12,-1577(0x9d7)
+1c011f98:	154a458b 	lu12i.w	$r11,-372180(0xa522c)
+1c011f9c:	02856d6b 	addi.w	$r11,$r11,347(0x15b)
+1c011fa0:	029e118a 	addi.w	$r10,$r12,1924(0x784)
+1c011fa4:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012010 <inst_error>
+1c011fa8:	15368bac 	lu12i.w	$r12,-412579(0x9b45d)
+1c011fac:	029f018c 	addi.w	$r12,$r12,1984(0x7c0)
+1c011fb0:	15368bcb 	lu12i.w	$r11,-412578(0x9b45e)
+1c011fb4:	02ba496b 	addi.w	$r11,$r11,-366(0xe92)
+1c011fb8:	029b498a 	addi.w	$r10,$r12,1746(0x6d2)
+1c011fbc:	5c00554b 	bne	$r10,$r11,84(0x54) # 1c012010 <inst_error>
+1c011fc0:	15498cac 	lu12i.w	$r12,-373659(0xa4c65)
+1c011fc4:	0296e18c 	addi.w	$r12,$r12,1464(0x5b8)
+1c011fc8:	15498cab 	lu12i.w	$r11,-373659(0xa4c65)
+1c011fcc:	0288696b 	addi.w	$r11,$r11,538(0x21a)
+1c011fd0:	02b1898a 	addi.w	$r10,$r12,-926(0xc62)
+1c011fd4:	5c003d4b 	bne	$r10,$r11,60(0x3c) # 1c012010 <inst_error>
+1c011fd8:	1400000c 	lu12i.w	$r12,0
+1c011fdc:	0280018c 	addi.w	$r12,$r12,0
+1c011fe0:	1400000b 	lu12i.w	$r11,0
+1c011fe4:	02b7216b 	addi.w	$r11,$r11,-568(0xdc8)
+1c011fe8:	02b7218a 	addi.w	$r10,$r12,-568(0xdc8)
+1c011fec:	5c00254b 	bne	$r10,$r11,36(0x24) # 1c012010 <inst_error>
+1c011ff0:	1400000c 	lu12i.w	$r12,0
+1c011ff4:	0280018c 	addi.w	$r12,$r12,0
+1c011ff8:	1400000b 	lu12i.w	$r11,0
+1c011ffc:	0280016b 	addi.w	$r11,$r11,0
+1c012000:	0280018a 	addi.w	$r10,$r12,0
+1c012004:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012010 <inst_error>
+1c012008:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012010 <inst_error>
+1c01200c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012010 <inst_error>:
+1c012010:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012014:	001569ac 	or	$r12,$r13,$r26
+1c012018:	2980030c 	st.w	$r12,$r24,0
+1c01201c:	4c000020 	jirl	$r0,$r1,0
+
+1c012020 <n40_bgeu_test>:
+n40_bgeu_test():
+1c012020:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012024:	00150019 	move	$r25,$r0
+1c012028:	0015000f 	move	$r15,$r0
+1c01202c:	00150010 	move	$r16,$r0
+1c012030:	50001400 	b	20(0x14) # 1c012044 <n40_bgeu_test+0x24>
+1c012034:	144d70ef 	lu12i.w	$r15,158599(0x26b87)
+1c012038:	03802def 	ori	$r15,$r15,0xb
+1c01203c:	6c00218d 	bgeu	$r12,$r13,32(0x20) # 1c01205c <n40_bgeu_test+0x3c>
+1c012040:	50002400 	b	36(0x24) # 1c012064 <n40_bgeu_test+0x44>
+1c012044:	147c520c 	lu12i.w	$r12,254608(0x3e290)
+1c012048:	03ad858c 	ori	$r12,$r12,0xb61
+1c01204c:	153afb0d 	lu12i.w	$r13,-403496(0x9d7d8)
+1c012050:	03aa0dad 	ori	$r13,$r13,0xa83
+1c012054:	6fffe18d 	bgeu	$r12,$r13,-32(0x3ffe0) # 1c012034 <n40_bgeu_test+0x14>
+1c012058:	50000c00 	b	12(0xc) # 1c012064 <n40_bgeu_test+0x44>
+1c01205c:	15b7fcd0 	lu12i.w	$r16,-147482(0xdbfe6)
+1c012060:	03939610 	ori	$r16,$r16,0x4e5
+1c012064:	0015001c 	move	$r28,$r0
+1c012068:	0015001d 	move	$r29,$r0
+1c01206c:	5c0065fc 	bne	$r15,$r28,100(0x64) # 1c0120d0 <inst_error>
+1c012070:	5c00621d 	bne	$r16,$r29,96(0x60) # 1c0120d0 <inst_error>
+1c012074:	0015000f 	move	$r15,$r0
+1c012078:	00150010 	move	$r16,$r0
+1c01207c:	50001400 	b	20(0x14) # 1c012090 <n40_bgeu_test+0x70>
+1c012080:	15c7588f 	lu12i.w	$r15,-116028(0xe3ac4)
+1c012084:	03865def 	ori	$r15,$r15,0x197
+1c012088:	6c00218d 	bgeu	$r12,$r13,32(0x20) # 1c0120a8 <n40_bgeu_test+0x88>
+1c01208c:	50002400 	b	36(0x24) # 1c0120b0 <n40_bgeu_test+0x90>
+1c012090:	15fabe8c 	lu12i.w	$r12,-10764(0xfd5f4)
+1c012094:	0380258c 	ori	$r12,$r12,0x9
+1c012098:	14ff592d 	lu12i.w	$r13,522953(0x7fac9)
+1c01209c:	03967dad 	ori	$r13,$r13,0x59f
+1c0120a0:	6fffe18d 	bgeu	$r12,$r13,-32(0x3ffe0) # 1c012080 <n40_bgeu_test+0x60>
+1c0120a4:	50000c00 	b	12(0xc) # 1c0120b0 <n40_bgeu_test+0x90>
+1c0120a8:	14d80170 	lu12i.w	$r16,442379(0x6c00b)
+1c0120ac:	03bef610 	ori	$r16,$r16,0xfbd
+1c0120b0:	15c7589c 	lu12i.w	$r28,-116028(0xe3ac4)
+1c0120b4:	03865f9c 	ori	$r28,$r28,0x197
+1c0120b8:	14d8017d 	lu12i.w	$r29,442379(0x6c00b)
+1c0120bc:	03bef7bd 	ori	$r29,$r29,0xfbd
+1c0120c0:	5c0011fc 	bne	$r15,$r28,16(0x10) # 1c0120d0 <inst_error>
+1c0120c4:	5c000e1d 	bne	$r16,$r29,12(0xc) # 1c0120d0 <inst_error>
+1c0120c8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0120d0 <inst_error>
+1c0120cc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0120d0 <inst_error>:
+1c0120d0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0120d4:	001569ac 	or	$r12,$r13,$r26
+1c0120d8:	2980030c 	st.w	$r12,$r24,0
+1c0120dc:	4c000020 	jirl	$r0,$r1,0
+
+1c0120e0 <n41_ld_b_test>:
+n41_ld_b_test():
+1c0120e0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0120e4:	00150019 	move	$r25,$r0
+1c0120e8:	1590762d 	lu12i.w	$r13,-228431(0xc83b1)
+1c0120ec:	02af81ad 	addi.w	$r13,$r13,-1056(0xbe0)
+1c0120f0:	14001acc 	lu12i.w	$r12,214(0xd6)
+1c0120f4:	029d818c 	addi.w	$r12,$r12,1888(0x760)
+1c0120f8:	1400000f 	lu12i.w	$r15,0
+1c0120fc:	02802def 	addi.w	$r15,$r15,11(0xb)
+1c012100:	299e818d 	st.w	$r13,$r12,1952(0x7a0)
+1c012104:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012108:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01210c:	299e8084 	st.w	$r4,$r4,1952(0x7a0)
+1c012110:	299e80a5 	st.w	$r5,$r5,1952(0x7a0)
+1c012114:	281e8590 	ld.b	$r16,$r12,1953(0x7a1)
+1c012118:	289e8085 	ld.w	$r5,$r4,1952(0x7a0)
+1c01211c:	289e80a4 	ld.w	$r4,$r5,1952(0x7a0)
+1c012120:	289e80a6 	ld.w	$r6,$r5,1952(0x7a0)
+1c012124:	5c008df0 	bne	$r15,$r16,140(0x8c) # 1c0121b0 <inst_error>
+1c012128:	143dd86d 	lu12i.w	$r13,126659(0x1eec3)
+1c01212c:	02a031ad 	addi.w	$r13,$r13,-2036(0x80c)
+1c012130:	14001a8c 	lu12i.w	$r12,212(0xd4)
+1c012134:	0296618c 	addi.w	$r12,$r12,1432(0x598)
+1c012138:	1400000f 	lu12i.w	$r15,0
+1c01213c:	028031ef 	addi.w	$r15,$r15,12(0xc)
+1c012140:	29a0318d 	st.w	$r13,$r12,-2036(0x80c)
+1c012144:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012148:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01214c:	29a03084 	st.w	$r4,$r4,-2036(0x80c)
+1c012150:	29a030a5 	st.w	$r5,$r5,-2036(0x80c)
+1c012154:	28203190 	ld.b	$r16,$r12,-2036(0x80c)
+1c012158:	28a03085 	ld.w	$r5,$r4,-2036(0x80c)
+1c01215c:	28a030a4 	ld.w	$r4,$r5,-2036(0x80c)
+1c012160:	28a030a6 	ld.w	$r6,$r5,-2036(0x80c)
+1c012164:	5c004df0 	bne	$r15,$r16,76(0x4c) # 1c0121b0 <inst_error>
+1c012168:	1400000d 	lu12i.w	$r13,0
+1c01216c:	028001ad 	addi.w	$r13,$r13,0
+1c012170:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c012174:	0280018c 	addi.w	$r12,$r12,0
+1c012178:	1400000f 	lu12i.w	$r15,0
+1c01217c:	028001ef 	addi.w	$r15,$r15,0
+1c012180:	2980018d 	st.w	$r13,$r12,0
+1c012184:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012188:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01218c:	29800084 	st.w	$r4,$r4,0
+1c012190:	298000a5 	st.w	$r5,$r5,0
+1c012194:	28000190 	ld.b	$r16,$r12,0
+1c012198:	28800085 	ld.w	$r5,$r4,0
+1c01219c:	288000a4 	ld.w	$r4,$r5,0
+1c0121a0:	288000a6 	ld.w	$r6,$r5,0
+1c0121a4:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c0121b0 <inst_error>
+1c0121a8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0121b0 <inst_error>
+1c0121ac:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0121b0 <inst_error>:
+1c0121b0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0121b4:	001569ac 	or	$r12,$r13,$r26
+1c0121b8:	2980030c 	st.w	$r12,$r24,0
+1c0121bc:	4c000020 	jirl	$r0,$r1,0
+
+1c0121c0 <n42_ld_h_test>:
+n42_ld_h_test():
+1c0121c0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0121c4:	00150019 	move	$r25,$r0
+1c0121c8:	14a3084d 	lu12i.w	$r13,333890(0x51842)
+1c0121cc:	029581ad 	addi.w	$r13,$r13,1376(0x560)
+1c0121d0:	14001a6c 	lu12i.w	$r12,211(0xd3)
+1c0121d4:	02af118c 	addi.w	$r12,$r12,-1084(0xbc4)
+1c0121d8:	1400004f 	lu12i.w	$r15,2(0x2)
+1c0121dc:	029581ef 	addi.w	$r15,$r15,1376(0x560)
+1c0121e0:	2989f18d 	st.w	$r13,$r12,636(0x27c)
+1c0121e4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0121e8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0121ec:	2989f084 	st.w	$r4,$r4,636(0x27c)
+1c0121f0:	2989f0a5 	st.w	$r5,$r5,636(0x27c)
+1c0121f4:	2849f190 	ld.h	$r16,$r12,636(0x27c)
+1c0121f8:	2889f085 	ld.w	$r5,$r4,636(0x27c)
+1c0121fc:	2889f0a4 	ld.w	$r4,$r5,636(0x27c)
+1c012200:	2889f0a6 	ld.w	$r6,$r5,636(0x27c)
+1c012204:	5c008df0 	bne	$r15,$r16,140(0x8c) # 1c012290 <inst_error>
+1c012208:	144a2c2d 	lu12i.w	$r13,151905(0x25161)
+1c01220c:	0285b9ad 	addi.w	$r13,$r13,366(0x16e)
+1c012210:	14001a4c 	lu12i.w	$r12,210(0xd2)
+1c012214:	0288818c 	addi.w	$r12,$r12,544(0x220)
+1c012218:	1400002f 	lu12i.w	$r15,1(0x1)
+1c01221c:	0285b9ef 	addi.w	$r15,$r15,366(0x16e)
+1c012220:	29a2418d 	st.w	$r13,$r12,-1904(0x890)
+1c012224:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012228:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01222c:	29a24084 	st.w	$r4,$r4,-1904(0x890)
+1c012230:	29a240a5 	st.w	$r5,$r5,-1904(0x890)
+1c012234:	28624190 	ld.h	$r16,$r12,-1904(0x890)
+1c012238:	28a24085 	ld.w	$r5,$r4,-1904(0x890)
+1c01223c:	28a240a4 	ld.w	$r4,$r5,-1904(0x890)
+1c012240:	28a240a6 	ld.w	$r6,$r5,-1904(0x890)
+1c012244:	5c004df0 	bne	$r15,$r16,76(0x4c) # 1c012290 <inst_error>
+1c012248:	1400000d 	lu12i.w	$r13,0
+1c01224c:	028001ad 	addi.w	$r13,$r13,0
+1c012250:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c012254:	0280018c 	addi.w	$r12,$r12,0
+1c012258:	1400000f 	lu12i.w	$r15,0
+1c01225c:	028001ef 	addi.w	$r15,$r15,0
+1c012260:	2980018d 	st.w	$r13,$r12,0
+1c012264:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012268:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01226c:	29800084 	st.w	$r4,$r4,0
+1c012270:	298000a5 	st.w	$r5,$r5,0
+1c012274:	28400190 	ld.h	$r16,$r12,0
+1c012278:	28800085 	ld.w	$r5,$r4,0
+1c01227c:	288000a4 	ld.w	$r4,$r5,0
+1c012280:	288000a6 	ld.w	$r6,$r5,0
+1c012284:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c012290 <inst_error>
+1c012288:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012290 <inst_error>
+1c01228c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012290 <inst_error>:
+1c012290:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012294:	001569ac 	or	$r12,$r13,$r26
+1c012298:	2980030c 	st.w	$r12,$r24,0
+1c01229c:	4c000020 	jirl	$r0,$r1,0
+
+1c0122a0 <n43_ld_bu_test>:
+n43_ld_bu_test():
+1c0122a0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0122a4:	00150019 	move	$r25,$r0
+1c0122a8:	14f3b7ed 	lu12i.w	$r13,499135(0x79dbf)
+1c0122ac:	0283fdad 	addi.w	$r13,$r13,255(0xff)
+1c0122b0:	14001aac 	lu12i.w	$r12,213(0xd5)
+1c0122b4:	0292618c 	addi.w	$r12,$r12,1176(0x498)
+1c0122b8:	1400000f 	lu12i.w	$r15,0
+1c0122bc:	0283fdef 	addi.w	$r15,$r15,255(0xff)
+1c0122c0:	2990218d 	st.w	$r13,$r12,1032(0x408)
+1c0122c4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0122c8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0122cc:	29902084 	st.w	$r4,$r4,1032(0x408)
+1c0122d0:	299020a5 	st.w	$r5,$r5,1032(0x408)
+1c0122d4:	2a102190 	ld.bu	$r16,$r12,1032(0x408)
+1c0122d8:	28902085 	ld.w	$r5,$r4,1032(0x408)
+1c0122dc:	289020a4 	ld.w	$r4,$r5,1032(0x408)
+1c0122e0:	289020a6 	ld.w	$r6,$r5,1032(0x408)
+1c0122e4:	5c008df0 	bne	$r15,$r16,140(0x8c) # 1c012370 <inst_error>
+1c0122e8:	1536b76d 	lu12i.w	$r13,-412229(0x9b5bb)
+1c0122ec:	02adb1ad 	addi.w	$r13,$r13,-1172(0xb6c)
+1c0122f0:	14001a8c 	lu12i.w	$r12,212(0xd4)
+1c0122f4:	0290c18c 	addi.w	$r12,$r12,1072(0x430)
+1c0122f8:	1400000f 	lu12i.w	$r15,0
+1c0122fc:	02816def 	addi.w	$r15,$r15,91(0x5b)
+1c012300:	2994b18d 	st.w	$r13,$r12,1324(0x52c)
+1c012304:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012308:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01230c:	2994b084 	st.w	$r4,$r4,1324(0x52c)
+1c012310:	2994b0a5 	st.w	$r5,$r5,1324(0x52c)
+1c012314:	2a14b990 	ld.bu	$r16,$r12,1326(0x52e)
+1c012318:	2894b085 	ld.w	$r5,$r4,1324(0x52c)
+1c01231c:	2894b0a4 	ld.w	$r4,$r5,1324(0x52c)
+1c012320:	2894b0a6 	ld.w	$r6,$r5,1324(0x52c)
+1c012324:	5c004df0 	bne	$r15,$r16,76(0x4c) # 1c012370 <inst_error>
+1c012328:	1400000d 	lu12i.w	$r13,0
+1c01232c:	028001ad 	addi.w	$r13,$r13,0
+1c012330:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c012334:	0280018c 	addi.w	$r12,$r12,0
+1c012338:	1400000f 	lu12i.w	$r15,0
+1c01233c:	028001ef 	addi.w	$r15,$r15,0
+1c012340:	2980018d 	st.w	$r13,$r12,0
+1c012344:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012348:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01234c:	29800084 	st.w	$r4,$r4,0
+1c012350:	298000a5 	st.w	$r5,$r5,0
+1c012354:	2a000190 	ld.bu	$r16,$r12,0
+1c012358:	28800085 	ld.w	$r5,$r4,0
+1c01235c:	288000a4 	ld.w	$r4,$r5,0
+1c012360:	288000a6 	ld.w	$r6,$r5,0
+1c012364:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c012370 <inst_error>
+1c012368:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012370 <inst_error>
+1c01236c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012370 <inst_error>:
+1c012370:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012374:	001569ac 	or	$r12,$r13,$r26
+1c012378:	2980030c 	st.w	$r12,$r24,0
+1c01237c:	4c000020 	jirl	$r0,$r1,0
+
+1c012380 <n44_ld_hu_test>:
+n44_ld_hu_test():
+1c012380:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012384:	00150019 	move	$r25,$r0
+1c012388:	158bc20d 	lu12i.w	$r13,-238064(0xc5e10)
+1c01238c:	02b401ad 	addi.w	$r13,$r13,-768(0xd00)
+1c012390:	14001a4c 	lu12i.w	$r12,210(0xd2)
+1c012394:	02b7f18c 	addi.w	$r12,$r12,-516(0xdfc)
+1c012398:	1400018f 	lu12i.w	$r15,12(0xc)
+1c01239c:	029781ef 	addi.w	$r15,$r15,1504(0x5e0)
+1c0123a0:	2995718d 	st.w	$r13,$r12,1372(0x55c)
+1c0123a4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0123a8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0123ac:	29957084 	st.w	$r4,$r4,1372(0x55c)
+1c0123b0:	299570a5 	st.w	$r5,$r5,1372(0x55c)
+1c0123b4:	2a557990 	ld.hu	$r16,$r12,1374(0x55e)
+1c0123b8:	28957085 	ld.w	$r5,$r4,1372(0x55c)
+1c0123bc:	289570a4 	ld.w	$r4,$r5,1372(0x55c)
+1c0123c0:	289570a6 	ld.w	$r6,$r5,1372(0x55c)
+1c0123c4:	5c008df0 	bne	$r15,$r16,140(0x8c) # 1c012450 <inst_error>
+1c0123c8:	144b0e0d 	lu12i.w	$r13,153712(0x25870)
+1c0123cc:	029ec9ad 	addi.w	$r13,$r13,1970(0x7b2)
+1c0123d0:	14001b8c 	lu12i.w	$r12,220(0xdc)
+1c0123d4:	02b6318c 	addi.w	$r12,$r12,-628(0xd8c)
+1c0123d8:	1400000f 	lu12i.w	$r15,0
+1c0123dc:	029ec9ef 	addi.w	$r15,$r15,1970(0x7b2)
+1c0123e0:	29b0d18d 	st.w	$r13,$r12,-972(0xc34)
+1c0123e4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0123e8:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c0123ec:	29b0d084 	st.w	$r4,$r4,-972(0xc34)
+1c0123f0:	29b0d0a5 	st.w	$r5,$r5,-972(0xc34)
+1c0123f4:	2a70d190 	ld.hu	$r16,$r12,-972(0xc34)
+1c0123f8:	28b0d085 	ld.w	$r5,$r4,-972(0xc34)
+1c0123fc:	28b0d0a4 	ld.w	$r4,$r5,-972(0xc34)
+1c012400:	28b0d0a6 	ld.w	$r6,$r5,-972(0xc34)
+1c012404:	5c004df0 	bne	$r15,$r16,76(0x4c) # 1c012450 <inst_error>
+1c012408:	1400000d 	lu12i.w	$r13,0
+1c01240c:	028001ad 	addi.w	$r13,$r13,0
+1c012410:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c012414:	0280018c 	addi.w	$r12,$r12,0
+1c012418:	1400000f 	lu12i.w	$r15,0
+1c01241c:	028001ef 	addi.w	$r15,$r15,0
+1c012420:	2980018d 	st.w	$r13,$r12,0
+1c012424:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012428:	02bfe185 	addi.w	$r5,$r12,-8(0xff8)
+1c01242c:	29800084 	st.w	$r4,$r4,0
+1c012430:	298000a5 	st.w	$r5,$r5,0
+1c012434:	2a400190 	ld.hu	$r16,$r12,0
+1c012438:	28800085 	ld.w	$r5,$r4,0
+1c01243c:	288000a4 	ld.w	$r4,$r5,0
+1c012440:	288000a6 	ld.w	$r6,$r5,0
+1c012444:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c012450 <inst_error>
+1c012448:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012450 <inst_error>
+1c01244c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012450 <inst_error>:
+1c012450:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012454:	001569ac 	or	$r12,$r13,$r26
+1c012458:	2980030c 	st.w	$r12,$r24,0
+1c01245c:	4c000020 	jirl	$r0,$r1,0
+
+1c012460 <n45_st_b_test>:
+n45_st_b_test():
+1c012460:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012464:	00150019 	move	$r25,$r0
+1c012468:	1569e02e 	lu12i.w	$r14,-307455(0xb4f01)
+1c01246c:	02a4c1ce 	addi.w	$r14,$r14,-1744(0x930)
+1c012470:	14f2ab8d 	lu12i.w	$r13,496988(0x7955c)
+1c012474:	029029ad 	addi.w	$r13,$r13,1034(0x40a)
+1c012478:	14001a2c 	lu12i.w	$r12,209(0xd1)
+1c01247c:	029bb18c 	addi.w	$r12,$r12,1772(0x6ec)
+1c012480:	1569e02f 	lu12i.w	$r15,-307455(0xb4f01)
+1c012484:	02a429ef 	addi.w	$r15,$r15,-1782(0x90a)
+1c012488:	2987b18e 	st.w	$r14,$r12,492(0x1ec)
+1c01248c:	2907b18d 	st.b	$r13,$r12,492(0x1ec)
+1c012490:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012494:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c012498:	2987b084 	st.w	$r4,$r4,492(0x1ec)
+1c01249c:	2987b0a5 	st.w	$r5,$r5,492(0x1ec)
+1c0124a0:	2887b190 	ld.w	$r16,$r12,492(0x1ec)
+1c0124a4:	2887b0a4 	ld.w	$r4,$r5,492(0x1ec)
+1c0124a8:	2887b085 	ld.w	$r5,$r4,492(0x1ec)
+1c0124ac:	2887b0a6 	ld.w	$r6,$r5,492(0x1ec)
+1c0124b0:	5c00a5f0 	bne	$r15,$r16,164(0xa4) # 1c012554 <inst_error>
+1c0124b4:	1432866e 	lu12i.w	$r14,103475(0x19433)
+1c0124b8:	028729ce 	addi.w	$r14,$r14,458(0x1ca)
+1c0124bc:	148ecb0d 	lu12i.w	$r13,292440(0x47658)
+1c0124c0:	02b819ad 	addi.w	$r13,$r13,-506(0xe06)
+1c0124c4:	14001aac 	lu12i.w	$r12,213(0xd5)
+1c0124c8:	0281a18c 	addi.w	$r12,$r12,104(0x68)
+1c0124cc:	1432866f 	lu12i.w	$r15,103475(0x19433)
+1c0124d0:	028419ef 	addi.w	$r15,$r15,262(0x106)
+1c0124d4:	29a1a18e 	st.w	$r14,$r12,-1944(0x868)
+1c0124d8:	2921a18d 	st.b	$r13,$r12,-1944(0x868)
+1c0124dc:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0124e0:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c0124e4:	29a1a084 	st.w	$r4,$r4,-1944(0x868)
+1c0124e8:	29a1a0a5 	st.w	$r5,$r5,-1944(0x868)
+1c0124ec:	28a1a190 	ld.w	$r16,$r12,-1944(0x868)
+1c0124f0:	28a1a0a4 	ld.w	$r4,$r5,-1944(0x868)
+1c0124f4:	28a1a085 	ld.w	$r5,$r4,-1944(0x868)
+1c0124f8:	28a1a0a6 	ld.w	$r6,$r5,-1944(0x868)
+1c0124fc:	5c0059f0 	bne	$r15,$r16,88(0x58) # 1c012554 <inst_error>
+1c012500:	1400000e 	lu12i.w	$r14,0
+1c012504:	028001ce 	addi.w	$r14,$r14,0
+1c012508:	1400000d 	lu12i.w	$r13,0
+1c01250c:	028001ad 	addi.w	$r13,$r13,0
+1c012510:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c012514:	0280018c 	addi.w	$r12,$r12,0
+1c012518:	1400000f 	lu12i.w	$r15,0
+1c01251c:	028001ef 	addi.w	$r15,$r15,0
+1c012520:	2980018e 	st.w	$r14,$r12,0
+1c012524:	2900018d 	st.b	$r13,$r12,0
+1c012528:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c01252c:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c012530:	29800084 	st.w	$r4,$r4,0
+1c012534:	298000a5 	st.w	$r5,$r5,0
+1c012538:	28800190 	ld.w	$r16,$r12,0
+1c01253c:	288000a4 	ld.w	$r4,$r5,0
+1c012540:	28800085 	ld.w	$r5,$r4,0
+1c012544:	288000a6 	ld.w	$r6,$r5,0
+1c012548:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c012554 <inst_error>
+1c01254c:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012554 <inst_error>
+1c012550:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012554 <inst_error>:
+1c012554:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012558:	001569ac 	or	$r12,$r13,$r26
+1c01255c:	2980030c 	st.w	$r12,$r24,0
+1c012560:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c012564:	03400000 	andi	$r0,$r0,0x0
+
+1c012568 <n46_st_h_test>:
+n46_st_h_test():
+1c012568:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c01256c:	00150019 	move	$r25,$r0
+1c012570:	15c2bf2e 	lu12i.w	$r14,-125447(0xe15f9)
+1c012574:	02a121ce 	addi.w	$r14,$r14,-1976(0x848)
+1c012578:	141c346d 	lu12i.w	$r13,57763(0xe1a3)
+1c01257c:	029801ad 	addi.w	$r13,$r13,1536(0x600)
+1c012580:	14001aac 	lu12i.w	$r12,213(0xd5)
+1c012584:	028a918c 	addi.w	$r12,$r12,676(0x2a4)
+1c012588:	146c012f 	lu12i.w	$r15,221193(0x36009)
+1c01258c:	02a121ef 	addi.w	$r15,$r15,-1976(0x848)
+1c012590:	29ab718e 	st.w	$r14,$r12,-1316(0xadc)
+1c012594:	296b798d 	st.h	$r13,$r12,-1314(0xade)
+1c012598:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c01259c:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c0125a0:	29ab7084 	st.w	$r4,$r4,-1316(0xadc)
+1c0125a4:	29ab70a5 	st.w	$r5,$r5,-1316(0xadc)
+1c0125a8:	28ab7190 	ld.w	$r16,$r12,-1316(0xadc)
+1c0125ac:	28ab70a4 	ld.w	$r4,$r5,-1316(0xadc)
+1c0125b0:	28ab7085 	ld.w	$r5,$r4,-1316(0xadc)
+1c0125b4:	28ab70a6 	ld.w	$r6,$r5,-1316(0xadc)
+1c0125b8:	5c00a5f0 	bne	$r15,$r16,164(0xa4) # 1c01265c <inst_error>
+1c0125bc:	140820ce 	lu12i.w	$r14,16646(0x4106)
+1c0125c0:	02b3c1ce 	addi.w	$r14,$r14,-784(0xcf0)
+1c0125c4:	156c9aad 	lu12i.w	$r13,-301867(0xb64d5)
+1c0125c8:	028c01ad 	addi.w	$r13,$r13,768(0x300)
+1c0125cc:	14001a8c 	lu12i.w	$r12,212(0xd4)
+1c0125d0:	02bdb18c 	addi.w	$r12,$r12,-148(0xf6c)
+1c0125d4:	14a600cf 	lu12i.w	$r15,339974(0x53006)
+1c0125d8:	02b3c1ef 	addi.w	$r15,$r15,-784(0xcf0)
+1c0125dc:	2995a18e 	st.w	$r14,$r12,1384(0x568)
+1c0125e0:	2955a98d 	st.h	$r13,$r12,1386(0x56a)
+1c0125e4:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c0125e8:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c0125ec:	2995a084 	st.w	$r4,$r4,1384(0x568)
+1c0125f0:	2995a0a5 	st.w	$r5,$r5,1384(0x568)
+1c0125f4:	2895a190 	ld.w	$r16,$r12,1384(0x568)
+1c0125f8:	2895a0a4 	ld.w	$r4,$r5,1384(0x568)
+1c0125fc:	2895a085 	ld.w	$r5,$r4,1384(0x568)
+1c012600:	2895a0a6 	ld.w	$r6,$r5,1384(0x568)
+1c012604:	5c0059f0 	bne	$r15,$r16,88(0x58) # 1c01265c <inst_error>
+1c012608:	1400000e 	lu12i.w	$r14,0
+1c01260c:	028001ce 	addi.w	$r14,$r14,0
+1c012610:	1400000d 	lu12i.w	$r13,0
+1c012614:	028001ad 	addi.w	$r13,$r13,0
+1c012618:	14001a0c 	lu12i.w	$r12,208(0xd0)
+1c01261c:	0280018c 	addi.w	$r12,$r12,0
+1c012620:	1400000f 	lu12i.w	$r15,0
+1c012624:	028001ef 	addi.w	$r15,$r15,0
+1c012628:	2980018e 	st.w	$r14,$r12,0
+1c01262c:	2940018d 	st.h	$r13,$r12,0
+1c012630:	02801184 	addi.w	$r4,$r12,4(0x4)
+1c012634:	02bff185 	addi.w	$r5,$r12,-4(0xffc)
+1c012638:	29800084 	st.w	$r4,$r4,0
+1c01263c:	298000a5 	st.w	$r5,$r5,0
+1c012640:	28800190 	ld.w	$r16,$r12,0
+1c012644:	288000a4 	ld.w	$r4,$r5,0
+1c012648:	28800085 	ld.w	$r5,$r4,0
+1c01264c:	288000a6 	ld.w	$r6,$r5,0
+1c012650:	5c000df0 	bne	$r15,$r16,12(0xc) # 1c01265c <inst_error>
+1c012654:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c01265c <inst_error>
+1c012658:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c01265c <inst_error>:
+1c01265c:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012660:	001569ac 	or	$r12,$r13,$r26
+1c012664:	2980030c 	st.w	$r12,$r24,0
+1c012668:	4c000020 	jirl	$r0,$r1,0
+inst_error():
+1c01266c:	03400000 	andi	$r0,$r0,0x0
+
+1c012670 <n4_sub_w_test>:
+n4_sub_w_test():
+1c012670:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012674:	00150019 	move	$r25,$r0
+1c012678:	15adf80c 	lu12i.w	$r12,-168000(0xd6fc0)
+1c01267c:	0296118c 	addi.w	$r12,$r12,1412(0x584)
+1c012680:	14bf2ecd 	lu12i.w	$r13,391542(0x5f976)
+1c012684:	0296a1ad 	addi.w	$r13,$r13,1448(0x5a8)
+1c012688:	14eec94b 	lu12i.w	$r11,489034(0x7764a)
+1c01268c:	02bf716b 	addi.w	$r11,$r11,-36(0xfdc)
+1c012690:	0011358a 	sub.w	$r10,$r12,$r13
+1c012694:	5c00ad4b 	bne	$r10,$r11,172(0xac) # 1c012740 <inst_error>
+1c012698:	157f392c 	lu12i.w	$r12,-263735(0xbf9c9)
+1c01269c:	0297098c 	addi.w	$r12,$r12,1474(0x5c2)
+1c0126a0:	1466d12d 	lu12i.w	$r13,210569(0x33689)
+1c0126a4:	02a439ad 	addi.w	$r13,$r13,-1778(0x90e)
+1c0126a8:	1518682b 	lu12i.w	$r11,-474303(0x8c341)
+1c0126ac:	02b2d16b 	addi.w	$r11,$r11,-844(0xcb4)
+1c0126b0:	0011358a 	sub.w	$r10,$r12,$r13
+1c0126b4:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c012740 <inst_error>
+1c0126b8:	15b4cf6c 	lu12i.w	$r12,-153989(0xda67b)
+1c0126bc:	02a2218c 	addi.w	$r12,$r12,-1912(0x888)
+1c0126c0:	154e4f8d 	lu12i.w	$r13,-363908(0xa727c)
+1c0126c4:	02a0c1ad 	addi.w	$r13,$r13,-2000(0x830)
+1c0126c8:	14667feb 	lu12i.w	$r11,209919(0x333ff)
+1c0126cc:	0281616b 	addi.w	$r11,$r11,88(0x58)
+1c0126d0:	0011358a 	sub.w	$r10,$r12,$r13
+1c0126d4:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012740 <inst_error>
+1c0126d8:	14470b2c 	lu12i.w	$r12,145497(0x23859)
+1c0126dc:	02a0218c 	addi.w	$r12,$r12,-2040(0x808)
+1c0126e0:	14caf54d 	lu12i.w	$r13,415658(0x657aa)
+1c0126e4:	02a2f1ad 	addi.w	$r13,$r13,-1860(0x8bc)
+1c0126e8:	157c15eb 	lu12i.w	$r11,-270161(0xbe0af)
+1c0126ec:	02bd316b 	addi.w	$r11,$r11,-180(0xf4c)
+1c0126f0:	0011358a 	sub.w	$r10,$r12,$r13
+1c0126f4:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c012740 <inst_error>
+1c0126f8:	140815cc 	lu12i.w	$r12,16558(0x40ae)
+1c0126fc:	0287c18c 	addi.w	$r12,$r12,496(0x1f0)
+1c012700:	149dfe2d 	lu12i.w	$r13,323569(0x4eff1)
+1c012704:	02bfa1ad 	addi.w	$r13,$r13,-24(0xfe8)
+1c012708:	156a17ab 	lu12i.w	$r11,-307011(0xb50bd)
+1c01270c:	0288216b 	addi.w	$r11,$r11,520(0x208)
+1c012710:	0011358a 	sub.w	$r10,$r12,$r13
+1c012714:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c012740 <inst_error>
+1c012718:	1400000c 	lu12i.w	$r12,0
+1c01271c:	0280018c 	addi.w	$r12,$r12,0
+1c012720:	1400000d 	lu12i.w	$r13,0
+1c012724:	028001ad 	addi.w	$r13,$r13,0
+1c012728:	1400000b 	lu12i.w	$r11,0
+1c01272c:	0280016b 	addi.w	$r11,$r11,0
+1c012730:	0011358a 	sub.w	$r10,$r12,$r13
+1c012734:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012740 <inst_error>
+1c012738:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012740 <inst_error>
+1c01273c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012740 <inst_error>:
+1c012740:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012744:	001569ac 	or	$r12,$r13,$r26
+1c012748:	2980030c 	st.w	$r12,$r24,0
+1c01274c:	4c000020 	jirl	$r0,$r1,0
+
+1c012750 <n5_slt_test>:
+n5_slt_test():
+1c012750:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012754:	14000019 	lu12i.w	$r25,0
+1c012758:	14e48a6c 	lu12i.w	$r12,468051(0x72453)
+1c01275c:	0285a98c 	addi.w	$r12,$r12,362(0x16a)
+1c012760:	14f06a0d 	lu12i.w	$r13,492368(0x78350)
+1c012764:	029bc1ad 	addi.w	$r13,$r13,1776(0x6f0)
+1c012768:	1400000b 	lu12i.w	$r11,0
+1c01276c:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c012770:	0012358a 	slt	$r10,$r12,$r13
+1c012774:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c012800 <inst_error>
+1c012778:	15f2744c 	lu12i.w	$r12,-27742(0xf93a2)
+1c01277c:	0281f98c 	addi.w	$r12,$r12,126(0x7e)
+1c012780:	15225dad 	lu12i.w	$r13,-453907(0x912ed)
+1c012784:	028821ad 	addi.w	$r13,$r13,520(0x208)
+1c012788:	1400000b 	lu12i.w	$r11,0
+1c01278c:	0280016b 	addi.w	$r11,$r11,0
+1c012790:	0012358a 	slt	$r10,$r12,$r13
+1c012794:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012800 <inst_error>
+1c012798:	148f2e8c 	lu12i.w	$r12,293236(0x47974)
+1c01279c:	0294598c 	addi.w	$r12,$r12,1302(0x516)
+1c0127a0:	1571faad 	lu12i.w	$r13,-290859(0xb8fd5)
+1c0127a4:	02b471ad 	addi.w	$r13,$r13,-740(0xd1c)
+1c0127a8:	1400000b 	lu12i.w	$r11,0
+1c0127ac:	0280016b 	addi.w	$r11,$r11,0
+1c0127b0:	0012358a 	slt	$r10,$r12,$r13
+1c0127b4:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c012800 <inst_error>
+1c0127b8:	1471260c 	lu12i.w	$r12,231728(0x38930)
+1c0127bc:	02b8818c 	addi.w	$r12,$r12,-480(0xe20)
+1c0127c0:	15807a2d 	lu12i.w	$r13,-261167(0xc03d1)
+1c0127c4:	0297c1ad 	addi.w	$r13,$r13,1520(0x5f0)
+1c0127c8:	1400000b 	lu12i.w	$r11,0
+1c0127cc:	0280016b 	addi.w	$r11,$r11,0
+1c0127d0:	0012358a 	slt	$r10,$r12,$r13
+1c0127d4:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c012800 <inst_error>
+1c0127d8:	1400000c 	lu12i.w	$r12,0
+1c0127dc:	0280018c 	addi.w	$r12,$r12,0
+1c0127e0:	1400000d 	lu12i.w	$r13,0
+1c0127e4:	028001ad 	addi.w	$r13,$r13,0
+1c0127e8:	1400000b 	lu12i.w	$r11,0
+1c0127ec:	0280016b 	addi.w	$r11,$r11,0
+1c0127f0:	0012358a 	slt	$r10,$r12,$r13
+1c0127f4:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012800 <inst_error>
+1c0127f8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012800 <inst_error>
+1c0127fc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012800 <inst_error>:
+1c012800:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012804:	001569ac 	or	$r12,$r13,$r26
+1c012808:	2980030c 	st.w	$r12,$r24,0
+1c01280c:	4c000020 	jirl	$r0,$r1,0
+
+1c012810 <n6_sltu_test>:
+n6_sltu_test():
+1c012810:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012814:	00150019 	move	$r25,$r0
+1c012818:	142b1e6c 	lu12i.w	$r12,88307(0x158f3)
+1c01281c:	02aca58c 	addi.w	$r12,$r12,-1239(0xb29)
+1c012820:	1484382d 	lu12i.w	$r13,270785(0x421c1)
+1c012824:	02a909ad 	addi.w	$r13,$r13,-1470(0xa42)
+1c012828:	1400000b 	lu12i.w	$r11,0
+1c01282c:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c012830:	0012b58a 	sltu	$r10,$r12,$r13
+1c012834:	5c00ad4b 	bne	$r10,$r11,172(0xac) # 1c0128e0 <inst_error>
+1c012838:	14c0688c 	lu12i.w	$r12,394052(0x60344)
+1c01283c:	02afe18c 	addi.w	$r12,$r12,-1032(0xbf8)
+1c012840:	15ba2f6d 	lu12i.w	$r13,-142981(0xdd17b)
+1c012844:	028c29ad 	addi.w	$r13,$r13,778(0x30a)
+1c012848:	1400000b 	lu12i.w	$r11,0
+1c01284c:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c012850:	0012b58a 	sltu	$r10,$r12,$r13
+1c012854:	5c008d4b 	bne	$r10,$r11,140(0x8c) # 1c0128e0 <inst_error>
+1c012858:	145ab86c 	lu12i.w	$r12,185795(0x2d5c3)
+1c01285c:	0286018c 	addi.w	$r12,$r12,384(0x180)
+1c012860:	1429be8d 	lu12i.w	$r13,85492(0x14df4)
+1c012864:	029c61ad 	addi.w	$r13,$r13,1816(0x718)
+1c012868:	1400000b 	lu12i.w	$r11,0
+1c01286c:	0280016b 	addi.w	$r11,$r11,0
+1c012870:	0012b58a 	sltu	$r10,$r12,$r13
+1c012874:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c0128e0 <inst_error>
+1c012878:	14eac20c 	lu12i.w	$r12,480784(0x75610)
+1c01287c:	02ae018c 	addi.w	$r12,$r12,-1152(0xb80)
+1c012880:	1455302d 	lu12i.w	$r13,174465(0x2a981)
+1c012884:	0292e5ad 	addi.w	$r13,$r13,1209(0x4b9)
+1c012888:	1400000b 	lu12i.w	$r11,0
+1c01288c:	0280016b 	addi.w	$r11,$r11,0
+1c012890:	0012b58a 	sltu	$r10,$r12,$r13
+1c012894:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c0128e0 <inst_error>
+1c012898:	1400000c 	lu12i.w	$r12,0
+1c01289c:	0280018c 	addi.w	$r12,$r12,0
+1c0128a0:	1465e4ed 	lu12i.w	$r13,208679(0x32f27)
+1c0128a4:	029e11ad 	addi.w	$r13,$r13,1924(0x784)
+1c0128a8:	1400000b 	lu12i.w	$r11,0
+1c0128ac:	0280056b 	addi.w	$r11,$r11,1(0x1)
+1c0128b0:	0012b58a 	sltu	$r10,$r12,$r13
+1c0128b4:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c0128e0 <inst_error>
+1c0128b8:	1400000c 	lu12i.w	$r12,0
+1c0128bc:	0280018c 	addi.w	$r12,$r12,0
+1c0128c0:	1400000d 	lu12i.w	$r13,0
+1c0128c4:	028001ad 	addi.w	$r13,$r13,0
+1c0128c8:	1400000b 	lu12i.w	$r11,0
+1c0128cc:	0280016b 	addi.w	$r11,$r11,0
+1c0128d0:	0012b58a 	sltu	$r10,$r12,$r13
+1c0128d4:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c0128e0 <inst_error>
+1c0128d8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c0128e0 <inst_error>
+1c0128dc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c0128e0 <inst_error>:
+1c0128e0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c0128e4:	001569ac 	or	$r12,$r13,$r26
+1c0128e8:	2980030c 	st.w	$r12,$r24,0
+1c0128ec:	4c000020 	jirl	$r0,$r1,0
+
+1c0128f0 <n7_and_test>:
+n7_and_test():
+1c0128f0:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c0128f4:	00150019 	move	$r25,$r0
+1c0128f8:	14b92b2c 	lu12i.w	$r12,379225(0x5c959)
+1c0128fc:	0294698c 	addi.w	$r12,$r12,1306(0x51a)
+1c012900:	1594018d 	lu12i.w	$r13,-221172(0xca00c)
+1c012904:	029051ad 	addi.w	$r13,$r13,1044(0x414)
+1c012908:	1490010b 	lu12i.w	$r11,294920(0x48008)
+1c01290c:	0290416b 	addi.w	$r11,$r11,1040(0x410)
+1c012910:	0014b58a 	and	$r10,$r12,$r13
+1c012914:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012980 <inst_error>
+1c012918:	1537518c 	lu12i.w	$r12,-410996(0x9ba8c)
+1c01291c:	02a9c18c 	addi.w	$r12,$r12,-1424(0xa70)
+1c012920:	15d33fad 	lu12i.w	$r13,-91651(0xe99fd)
+1c012924:	02b8e1ad 	addi.w	$r13,$r13,-456(0xe38)
+1c012928:	1513112b 	lu12i.w	$r11,-485239(0x89889)
+1c01292c:	02a8c16b 	addi.w	$r11,$r11,-1488(0xa30)
+1c012930:	0014b58a 	and	$r10,$r12,$r13
+1c012934:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c012980 <inst_error>
+1c012938:	15a6064c 	lu12i.w	$r12,-184270(0xd3032)
+1c01293c:	02a7818c 	addi.w	$r12,$r12,-1568(0x9e0)
+1c012940:	141749ad 	lu12i.w	$r13,47693(0xba4d)
+1c012944:	02bfd9ad 	addi.w	$r13,$r13,-10(0xff6)
+1c012948:	1406002b 	lu12i.w	$r11,12289(0x3001)
+1c01294c:	02a7816b 	addi.w	$r11,$r11,-1568(0x9e0)
+1c012950:	0014b58a 	and	$r10,$r12,$r13
+1c012954:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c012980 <inst_error>
+1c012958:	1400000c 	lu12i.w	$r12,0
+1c01295c:	0280018c 	addi.w	$r12,$r12,0
+1c012960:	1400000d 	lu12i.w	$r13,0
+1c012964:	028001ad 	addi.w	$r13,$r13,0
+1c012968:	1400000b 	lu12i.w	$r11,0
+1c01296c:	0280016b 	addi.w	$r11,$r11,0
+1c012970:	0014b58a 	and	$r10,$r12,$r13
+1c012974:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012980 <inst_error>
+1c012978:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012980 <inst_error>
+1c01297c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012980 <inst_error>:
+1c012980:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012984:	001569ac 	or	$r12,$r13,$r26
+1c012988:	2980030c 	st.w	$r12,$r24,0
+1c01298c:	4c000020 	jirl	$r0,$r1,0
+
+1c012990 <n8_or_test>:
+n8_or_test():
+1c012990:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012994:	00150019 	move	$r25,$r0
+1c012998:	14a1c82c 	lu12i.w	$r12,331329(0x50e41)
+1c01299c:	0292118c 	addi.w	$r12,$r12,1156(0x484)
+1c0129a0:	155a6bed 	lu12i.w	$r13,-339105(0xad35f)
+1c0129a4:	02aa51ad 	addi.w	$r13,$r13,-1388(0xa94)
+1c0129a8:	15fbec0b 	lu12i.w	$r11,-8352(0xfdf60)
+1c0129ac:	02ba516b 	addi.w	$r11,$r11,-364(0xe94)
+1c0129b0:	0015358a 	or	$r10,$r12,$r13
+1c0129b4:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012a20 <inst_error>
+1c0129b8:	15777f6c 	lu12i.w	$r12,-279557(0xbbbfb)
+1c0129bc:	02bf918c 	addi.w	$r12,$r12,-28(0xfe4)
+1c0129c0:	1591d28d 	lu12i.w	$r13,-225644(0xc8e94)
+1c0129c4:	029001ad 	addi.w	$r13,$r13,1024(0x400)
+1c0129c8:	15f7ffeb 	lu12i.w	$r11,-16385(0xfbfff)
+1c0129cc:	02bf916b 	addi.w	$r11,$r11,-28(0xfe4)
+1c0129d0:	0015358a 	or	$r10,$r12,$r13
+1c0129d4:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c012a20 <inst_error>
+1c0129d8:	15e527ec 	lu12i.w	$r12,-54977(0xf293f)
+1c0129dc:	0284d18c 	addi.w	$r12,$r12,308(0x134)
+1c0129e0:	154f990d 	lu12i.w	$r13,-361272(0xa7cc8)
+1c0129e4:	02a629ad 	addi.w	$r13,$r13,-1654(0x98a)
+1c0129e8:	15efc00b 	lu12i.w	$r11,-33280(0xf7e00)
+1c0129ec:	02a6f96b 	addi.w	$r11,$r11,-1602(0x9be)
+1c0129f0:	0015358a 	or	$r10,$r12,$r13
+1c0129f4:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c012a20 <inst_error>
+1c0129f8:	1400000c 	lu12i.w	$r12,0
+1c0129fc:	0280018c 	addi.w	$r12,$r12,0
+1c012a00:	1400000d 	lu12i.w	$r13,0
+1c012a04:	028001ad 	addi.w	$r13,$r13,0
+1c012a08:	1400000b 	lu12i.w	$r11,0
+1c012a0c:	0280016b 	addi.w	$r11,$r11,0
+1c012a10:	0015358a 	or	$r10,$r12,$r13
+1c012a14:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012a20 <inst_error>
+1c012a18:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012a20 <inst_error>
+1c012a1c:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012a20 <inst_error>:
+1c012a20:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012a24:	001569ac 	or	$r12,$r13,$r26
+1c012a28:	2980030c 	st.w	$r12,$r24,0
+1c012a2c:	4c000020 	jirl	$r0,$r1,0
+
+1c012a30 <n9_xor_test>:
+n9_xor_test():
+1c012a30:	028006f7 	addi.w	$r23,$r23,1(0x1)
+1c012a34:	00150019 	move	$r25,$r0
+1c012a38:	142ee7cc 	lu12i.w	$r12,96062(0x1773e)
+1c012a3c:	02be018c 	addi.w	$r12,$r12,-128(0xf80)
+1c012a40:	156b5ead 	lu12i.w	$r13,-304395(0xb5af5)
+1c012a44:	028749ad 	addi.w	$r13,$r13,466(0x1d2)
+1c012a48:	1545b92b 	lu12i.w	$r11,-381495(0xa2dc9)
+1c012a4c:	02b9496b 	addi.w	$r11,$r11,-430(0xe52)
+1c012a50:	0015b58a 	xor	$r10,$r12,$r13
+1c012a54:	5c006d4b 	bne	$r10,$r11,108(0x6c) # 1c012ac0 <inst_error>
+1c012a58:	15cc446c 	lu12i.w	$r12,-105949(0xe6223)
+1c012a5c:	0295418c 	addi.w	$r12,$r12,1360(0x550)
+1c012a60:	1521394d 	lu12i.w	$r13,-456246(0x909ca)
+1c012a64:	02a369ad 	addi.w	$r13,$r13,-1830(0x8da)
+1c012a68:	14ed7d6b 	lu12i.w	$r11,486379(0x76beb)
+1c012a6c:	02b6296b 	addi.w	$r11,$r11,-630(0xd8a)
+1c012a70:	0015b58a 	xor	$r10,$r12,$r13
+1c012a74:	5c004d4b 	bne	$r10,$r11,76(0x4c) # 1c012ac0 <inst_error>
+1c012a78:	15eb914c 	lu12i.w	$r12,-41846(0xf5c8a)
+1c012a7c:	0296618c 	addi.w	$r12,$r12,1432(0x598)
+1c012a80:	144bfa0d 	lu12i.w	$r13,155600(0x25fd0)
+1c012a84:	028901ad 	addi.w	$r13,$r13,576(0x240)
+1c012a88:	15a06b4b 	lu12i.w	$r11,-195750(0xd035a)
+1c012a8c:	029f616b 	addi.w	$r11,$r11,2008(0x7d8)
+1c012a90:	0015b58a 	xor	$r10,$r12,$r13
+1c012a94:	5c002d4b 	bne	$r10,$r11,44(0x2c) # 1c012ac0 <inst_error>
+1c012a98:	1400000c 	lu12i.w	$r12,0
+1c012a9c:	0280018c 	addi.w	$r12,$r12,0
+1c012aa0:	1400000d 	lu12i.w	$r13,0
+1c012aa4:	028001ad 	addi.w	$r13,$r13,0
+1c012aa8:	1400000b 	lu12i.w	$r11,0
+1c012aac:	0280016b 	addi.w	$r11,$r11,0
+1c012ab0:	0015b58a 	xor	$r10,$r12,$r13
+1c012ab4:	5c000d4b 	bne	$r10,$r11,12(0xc) # 1c012ac0 <inst_error>
+1c012ab8:	5c000b20 	bne	$r25,$r0,8(0x8) # 1c012ac0 <inst_error>
+1c012abc:	0280075a 	addi.w	$r26,$r26,1(0x1)
+
+1c012ac0 <inst_error>:
+1c012ac0:	0040e2ed 	slli.w	$r13,$r23,0x18
+1c012ac4:	001569ac 	or	$r12,$r13,$r26
+1c012ac8:	2980030c 	st.w	$r12,$r24,0
+1c012acc:	4c000020 	jirl	$r0,$r1,0
+
+Disassembly of section .eh_frame:
+
+1c012ad0 <.eh_frame>:
+1c012ad0:	00000010 	0x00000010
+1c012ad4:	00000000 	0x00000000
+1c012ad8:	00527a01 	0x00527a01
+1c012adc:	01017c01 	fadd.d	$f1,$f0,$f31
+1c012ae0:	00030d0b 	0x00030d0b
+1c012ae4:	00000010 	0x00000010
+1c012ae8:	00000018 	0x00000018
+1c012aec:	1c010270 	pcaddu12i	$r16,2067(0x813)
+1c012af0:	00000018 	0x00000018
+1c012af4:	00000000 	0x00000000
+1c012af8:	00000010 	0x00000010
+1c012afc:	0000002c 	0x0000002c
+1c012b00:	1c010288 	pcaddu12i	$r8,2068(0x814)
+1c012b04:	00000030 	0x00000030
+1c012b08:	00000000 	0x00000000
+1c012b0c:	00000010 	0x00000010
+1c012b10:	00000040 	0x00000040
+1c012b14:	1c0102b8 	pcaddu12i	$r24,2069(0x815)
+1c012b18:	00000054 	0x00000054
+1c012b1c:	00000000 	0x00000000
+1c012b20:	00000010 	0x00000010
+1c012b24:	00000054 	0x00000054
+1c012b28:	1c010310 	pcaddu12i	$r16,2072(0x818)
+1c012b2c:	00000054 	0x00000054
+1c012b30:	00000000 	0x00000000
+1c012b34:	00000010 	0x00000010
+1c012b38:	00000068 	0x00000068
+1c012b3c:	1c010368 	pcaddu12i	$r8,2075(0x81b)
+1c012b40:	000003c4 	0x000003c4
+1c012b44:	00000000 	0x00000000
+1c012b48:	00000010 	0x00000010
+1c012b4c:	0000007c 	0x0000007c
+1c012b50:	1c010730 	pcaddu12i	$r16,2105(0x839)
+1c012b54:	000000a0 	0x000000a0
+1c012b58:	00000000 	0x00000000
+1c012b5c:	00000010 	0x00000010
+1c012b60:	00000090 	0x00000090
+1c012b64:	1c0107d0 	pcaddu12i	$r16,2110(0x83e)
+1c012b68:	00000080 	0x00000080
+1c012b6c:	00000000 	0x00000000
+1c012b70:	00000010 	0x00000010
+1c012b74:	000000a4 	0x000000a4
+1c012b78:	1c010850 	pcaddu12i	$r16,2114(0x842)
+1c012b7c:	00000080 	0x00000080
+1c012b80:	00000000 	0x00000000
+1c012b84:	00000010 	0x00000010
+1c012b88:	000000b8 	0x000000b8
+1c012b8c:	1c0108d0 	pcaddu12i	$r16,2118(0x846)
+1c012b90:	00000080 	0x00000080
+1c012b94:	00000000 	0x00000000
+1c012b98:	00000010 	0x00000010
+1c012b9c:	000000cc 	0x000000cc
+1c012ba0:	1c010950 	pcaddu12i	$r16,2122(0x84a)
+1c012ba4:	00000120 	0x00000120
+1c012ba8:	00000000 	0x00000000
+1c012bac:	00000010 	0x00000010
+1c012bb0:	000000e0 	0x000000e0
+1c012bb4:	1c010a70 	pcaddu12i	$r16,2131(0x853)
+1c012bb8:	00000120 	0x00000120
+1c012bbc:	00000000 	0x00000000
+1c012bc0:	00000010 	0x00000010
+1c012bc4:	000000f4 	0x000000f4
+1c012bc8:	1c010b90 	pcaddu12i	$r16,2140(0x85c)
+1c012bcc:	0000014c 	0x0000014c
+1c012bd0:	00000000 	0x00000000
+1c012bd4:	00000010 	0x00000010
+1c012bd8:	00000108 	0x00000108
+1c012bdc:	1c010ce0 	pcaddu12i	$r0,2151(0x867)
+1c012be0:	000001b0 	0x000001b0
+1c012be4:	00000000 	0x00000000
+1c012be8:	00000010 	0x00000010
+1c012bec:	0000011c 	0x0000011c
+1c012bf0:	1c010e90 	pcaddu12i	$r16,2164(0x874)
+1c012bf4:	000001e0 	0x000001e0
+1c012bf8:	00000000 	0x00000000
+1c012bfc:	00000010 	0x00000010
+1c012c00:	00000130 	0x00000130
+1c012c04:	1c011070 	pcaddu12i	$r16,2179(0x883)
+1c012c08:	000001c0 	0x000001c0
+1c012c0c:	00000000 	0x00000000
+1c012c10:	00000010 	0x00000010
+1c012c14:	00000144 	0x00000144
+1c012c18:	1c011230 	pcaddu12i	$r16,2193(0x891)
+1c012c1c:	00000078 	0x00000078
+1c012c20:	00000000 	0x00000000
+1c012c24:	00000010 	0x00000010
+1c012c28:	00000158 	0x00000158
+1c012c2c:	1c0112a8 	pcaddu12i	$r8,2197(0x895)
+1c012c30:	00000170 	0x00000170
+1c012c34:	00000000 	0x00000000
+1c012c38:	00000010 	0x00000010
+1c012c3c:	0000016c 	0x0000016c
+1c012c40:	1c011418 	pcaddu12i	$r24,2208(0x8a0)
+1c012c44:	000000b0 	0x000000b0
+1c012c48:	00000000 	0x00000000
+1c012c4c:	00000010 	0x00000010
+1c012c50:	00000180 	0x00000180
+1c012c54:	1c0114c8 	pcaddu12i	$r8,2214(0x8a6)
+1c012c58:	00000068 	0x00000068
+1c012c5c:	00000000 	0x00000000
+1c012c60:	00000010 	0x00000010
+1c012c64:	00000194 	0x00000194
+1c012c68:	1c011530 	pcaddu12i	$r16,2217(0x8a9)
+1c012c6c:	00000068 	0x00000068
+1c012c70:	00000000 	0x00000000
+1c012c74:	00000010 	0x00000010
+1c012c78:	000001a8 	0x000001a8
+1c012c7c:	1c011598 	pcaddu12i	$r24,2220(0x8ac)
+1c012c80:	00000080 	0x00000080
+1c012c84:	00000000 	0x00000000
+1c012c88:	00000010 	0x00000010
+1c012c8c:	000001bc 	0x000001bc
+1c012c90:	1c011618 	pcaddu12i	$r24,2224(0x8b0)
+1c012c94:	00000080 	0x00000080
+1c012c98:	00000000 	0x00000000
+1c012c9c:	00000010 	0x00000010
+1c012ca0:	000001d0 	0x000001d0
+1c012ca4:	1c011698 	pcaddu12i	$r24,2228(0x8b4)
+1c012ca8:	00000080 	0x00000080
+1c012cac:	00000000 	0x00000000
+1c012cb0:	00000010 	0x00000010
+1c012cb4:	000001e4 	0x000001e4
+1c012cb8:	1c011718 	pcaddu12i	$r24,2232(0x8b8)
+1c012cbc:	00000080 	0x00000080
+1c012cc0:	00000000 	0x00000000
+1c012cc4:	00000010 	0x00000010
+1c012cc8:	000001f8 	0x000001f8
+1c012ccc:	1c011798 	pcaddu12i	$r24,2236(0x8bc)
+1c012cd0:	000000a0 	0x000000a0
+1c012cd4:	00000000 	0x00000000
+1c012cd8:	00000010 	0x00000010
+1c012cdc:	0000020c 	0x0000020c
+1c012ce0:	1c011838 	pcaddu12i	$r24,2241(0x8c1)
+1c012ce4:	000000a0 	0x000000a0
+1c012ce8:	00000000 	0x00000000
+1c012cec:	00000010 	0x00000010
+1c012cf0:	00000220 	0x00000220
+1c012cf4:	1c0118d8 	pcaddu12i	$r24,2246(0x8c6)
+1c012cf8:	000000e0 	0x000000e0
+1c012cfc:	00000000 	0x00000000
+1c012d00:	00000010 	0x00000010
+1c012d04:	00000234 	0x00000234
+1c012d08:	1c0119b8 	pcaddu12i	$r24,2253(0x8cd)
+1c012d0c:	00000074 	0x00000074
+1c012d10:	00000000 	0x00000000
+1c012d14:	00000010 	0x00000010
+1c012d18:	00000248 	0x00000248
+1c012d1c:	1c011a30 	pcaddu12i	$r16,2257(0x8d1)
+1c012d20:	00000058 	0x00000058
+1c012d24:	00000000 	0x00000000
+1c012d28:	00000010 	0x00000010
+1c012d2c:	0000025c 	0x0000025c
+1c012d30:	1c011a88 	pcaddu12i	$r8,2260(0x8d4)
+1c012d34:	00000094 	0x00000094
+1c012d38:	00000000 	0x00000000
+1c012d3c:	00000010 	0x00000010
+1c012d40:	00000270 	0x00000270
+1c012d44:	1c011b20 	pcaddu12i	$r0,2265(0x8d9)
+1c012d48:	00000074 	0x00000074
+1c012d4c:	00000000 	0x00000000
+1c012d50:	00000010 	0x00000010
+1c012d54:	00000284 	0x00000284
+1c012d58:	1c011b98 	pcaddu12i	$r24,2268(0x8dc)
+1c012d5c:	00000074 	0x00000074
+1c012d60:	00000000 	0x00000000
+1c012d64:	00000010 	0x00000010
+1c012d68:	00000298 	0x00000298
+1c012d6c:	1c011c10 	pcaddu12i	$r16,2272(0x8e0)
+1c012d70:	00000078 	0x00000078
+1c012d74:	00000000 	0x00000000
+1c012d78:	00000010 	0x00000010
+1c012d7c:	000002ac 	0x000002ac
+1c012d80:	1c011c88 	pcaddu12i	$r8,2276(0x8e4)
+1c012d84:	00000078 	0x00000078
+1c012d88:	00000000 	0x00000000
+1c012d8c:	00000010 	0x00000010
+1c012d90:	000002c0 	0x000002c0
+1c012d94:	1c011d00 	pcaddu12i	$r0,2280(0x8e8)
+1c012d98:	000000c0 	0x000000c0
+1c012d9c:	00000000 	0x00000000
+1c012da0:	00000010 	0x00000010
+1c012da4:	000002d4 	0x000002d4
+1c012da8:	1c011dc0 	pcaddu12i	$r0,2286(0x8ee)
+1c012dac:	000000c0 	0x000000c0
+1c012db0:	00000000 	0x00000000
+1c012db4:	00000010 	0x00000010
+1c012db8:	000002e8 	0x000002e8
+1c012dbc:	1c011e80 	pcaddu12i	$r0,2292(0x8f4)
+1c012dc0:	000000c0 	0x000000c0
+1c012dc4:	00000000 	0x00000000
+1c012dc8:	00000010 	0x00000010
+1c012dcc:	000002fc 	0x000002fc
+1c012dd0:	1c011f40 	pcaddu12i	$r0,2298(0x8fa)
+1c012dd4:	000000e0 	0x000000e0
+1c012dd8:	00000000 	0x00000000
+1c012ddc:	00000010 	0x00000010
+1c012de0:	00000310 	0x00000310
+1c012de4:	1c012020 	pcaddu12i	$r0,2305(0x901)
+1c012de8:	000000c0 	0x000000c0
+1c012dec:	00000000 	0x00000000
+1c012df0:	00000010 	0x00000010
+1c012df4:	00000324 	0x00000324
+1c012df8:	1c0120e0 	pcaddu12i	$r0,2311(0x907)
+1c012dfc:	000000e0 	0x000000e0
+1c012e00:	00000000 	0x00000000
+1c012e04:	00000010 	0x00000010
+1c012e08:	00000338 	0x00000338
+1c012e0c:	1c0121c0 	pcaddu12i	$r0,2318(0x90e)
+1c012e10:	000000e0 	0x000000e0
+1c012e14:	00000000 	0x00000000
+1c012e18:	00000010 	0x00000010
+1c012e1c:	0000034c 	0x0000034c
+1c012e20:	1c0122a0 	pcaddu12i	$r0,2325(0x915)
+1c012e24:	000000e0 	0x000000e0
+1c012e28:	00000000 	0x00000000
+1c012e2c:	00000010 	0x00000010
+1c012e30:	00000360 	0x00000360
+1c012e34:	1c012380 	pcaddu12i	$r0,2332(0x91c)
+1c012e38:	000000e0 	0x000000e0
+1c012e3c:	00000000 	0x00000000
+1c012e40:	00000010 	0x00000010
+1c012e44:	00000374 	0x00000374
+1c012e48:	1c012460 	pcaddu12i	$r0,2339(0x923)
+1c012e4c:	00000104 	0x00000104
+1c012e50:	00000000 	0x00000000
+1c012e54:	00000010 	0x00000010
+1c012e58:	00000388 	0x00000388
+1c012e5c:	1c012568 	pcaddu12i	$r8,2347(0x92b)
+1c012e60:	00000104 	0x00000104
+1c012e64:	00000000 	0x00000000
+1c012e68:	00000010 	0x00000010
+1c012e6c:	0000039c 	0x0000039c
+1c012e70:	1c012670 	pcaddu12i	$r16,2355(0x933)
+1c012e74:	000000e0 	0x000000e0
+1c012e78:	00000000 	0x00000000
+1c012e7c:	00000010 	0x00000010
+1c012e80:	000003b0 	0x000003b0
+1c012e84:	1c012750 	pcaddu12i	$r16,2362(0x93a)
+1c012e88:	000000c0 	0x000000c0
+1c012e8c:	00000000 	0x00000000
+1c012e90:	00000010 	0x00000010
+1c012e94:	000003c4 	0x000003c4
+1c012e98:	1c012810 	pcaddu12i	$r16,2368(0x940)
+1c012e9c:	000000e0 	0x000000e0
+1c012ea0:	00000000 	0x00000000
+1c012ea4:	00000010 	0x00000010
+1c012ea8:	000003d8 	0x000003d8
+1c012eac:	1c0128f0 	pcaddu12i	$r16,2375(0x947)
+1c012eb0:	000000a0 	0x000000a0
+1c012eb4:	00000000 	0x00000000
+1c012eb8:	00000010 	0x00000010
+1c012ebc:	000003ec 	0x000003ec
+1c012ec0:	1c012990 	pcaddu12i	$r16,2380(0x94c)
+1c012ec4:	000000a0 	0x000000a0
+1c012ec8:	00000000 	0x00000000
+1c012ecc:	00000010 	0x00000010
+1c012ed0:	00000400 	0x00000400
+1c012ed4:	1c012a30 	pcaddu12i	$r16,2385(0x951)
+1c012ed8:	000000a0 	0x000000a0
+1c012edc:	00000000 	0x00000000
+>>>>>>> main
