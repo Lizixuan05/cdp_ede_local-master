@@ -1,0 +1,116 @@
+module EXE_state (
+    input  wire        clk,
+    input  wire        reset,
+
+    //ID_EXE interface
+    /*state control*/
+    output wire        EXE_allowin,
+    input  wire        ID_EXE_valid,
+    /*buffer*/
+    input  wire [31:0] ID_pc,
+    input  wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
+    input  wire [ 5:0] ID_rf,
+    input  wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
+    input  wire [ 7:0] ID_inst,
+
+    //EXE_MEM interface
+    /*state control*/
+    input  wire        MEM_allowin,
+    output wire        EXE_MEM_valid,
+    /*buffer*/
+    output reg  [31:0] EXE_pc,//reg类型为级间缓存
+    output wire [38:0] EXE_rf,//{res_from_mem[38],rf_we[37],rf_waddr[36:32],alu_result[31:0]}
+    output wire [ 6:0]  EXE_load,//{EXE_alu_result[6:5],inst_ld_hu[4],inst_ld_bu[3],inst_ld_h[2],inst_ld_b[1],inst_ld_w[0]}
+
+    // data sram interface
+    output wire        data_sram_en,
+    output wire [ 3:0] data_sram_we,
+    output wire [31:0] data_sram_addr,
+    output wire [31:0] data_sram_wdata
+
+);
+    wire EXE_ready_go;
+    reg  EXE_valid;
+    reg [18:0] EXE_alu_op;
+    reg [31:0] EXE_alu_src1;
+    reg [31:0] EXE_alu_src2;
+    reg exe_mem_we;
+    reg exe_res_from_mem;
+    reg [31:0] exe_rkd_value;
+    wire [31:0] EXE_alu_result;
+    reg exe_rf_we;
+    reg [4:0] exe_rf_waddr;
+    wire alu_complete;
+    //inst
+    reg inst_ld_w;
+    reg inst_ld_b;
+    reg inst_ld_h;
+    reg inst_ld_bu;
+    reg inst_ld_hu;
+    reg inst_st_w;
+    reg inst_st_b;
+    reg inst_st_h;
+    wire [31:0] st_data;
+    wire [3:0] st_data_byte_en;
+
+    /*---------------ID_EXE buffer--------------------*/
+    always @(posedge clk) begin
+        if (ID_EXE_valid & EXE_allowin) begin
+            EXE_pc <= ID_pc;
+            {EXE_alu_op,EXE_alu_src2,EXE_alu_src1} <= ID_alu;
+            {exe_mem_we,exe_res_from_mem,exe_rkd_value} <= ID_mem;
+            {exe_rf_we,exe_rf_waddr} <= ID_rf;
+            {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w} <= ID_inst;
+        end
+    end
+
+    /*-----------------state control------------------*/
+    assign EXE_ready_go = alu_complete;
+    assign EXE_allowin = ~EXE_valid | EXE_ready_go & MEM_allowin;
+    assign EXE_MEM_valid = EXE_valid & EXE_ready_go;
+    always @(posedge clk) begin
+        if (reset) begin
+            EXE_valid <= 1'b0;
+        end
+        else if (EXE_allowin) begin
+            EXE_valid <= ID_EXE_valid ;
+        end
+    end
+
+    /*--------------------alu control-----------------*/
+
+    alu u_alu(
+    .clk        (clk           ),
+    .rst        (reset         ),
+    .alu_op     (EXE_alu_op    ),
+    .alu_src1   (EXE_alu_src1  ),
+    .alu_src2   (EXE_alu_src2  ),
+    .alu_result (EXE_alu_result),
+    .es_valid(EXE_valid),
+    .es_ready_go(EXE_ready_go),
+    .ms_allowin(MEM_allowin),
+    .alu_complete(alu_complete)
+    );
+
+    /*-------------------EXE_MEM buffer---------------*/
+
+    assign EXE_rf = {exe_res_from_mem&EXE_valid,exe_rf_we&EXE_valid,exe_rf_waddr,EXE_alu_result};
+    assign EXE_load = {EXE_alu_result[1:0],inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
+
+    /*------------------byte enable control---------------------*/
+    assign st_data = inst_st_b ? {4{exe_rkd_value[7:0]}}:
+                     inst_st_h ? {2{exe_rkd_value[15:0]}}:
+                                    exe_rkd_value;
+    assign st_data_byte_en = inst_st_w ? 4'b1111:
+                             inst_st_b ? 4'b0001<<EXE_alu_result[1:0]:
+                             inst_st_h ? 4'b0011<<EXE_alu_result[1:0]:
+                             4'b0000;
+    
+
+    /*---------------data sram control---------------------*/
+    assign data_sram_en = (exe_mem_we | exe_res_from_mem) & EXE_valid;
+    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid}};
+    assign data_sram_addr = EXE_alu_result;
+    assign data_sram_wdata = st_data;
+
+endmodule
