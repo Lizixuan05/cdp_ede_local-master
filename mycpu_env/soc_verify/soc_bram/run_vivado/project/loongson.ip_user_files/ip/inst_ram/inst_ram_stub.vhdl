@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Wed Apr 16 12:46:46 2025
+-- Date        : Wed Apr 16 14:44:27 2025
 -- Host        : LAPTOP-EH5L1GAH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/inst_ram_stub.vhdl
@@ -18,7 +18,7 @@ entity inst_ram is
     clka : in STD_LOGIC;
     ena : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    addra : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    addra : in STD_LOGIC_VECTOR ( 14 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
@@ -29,7 +29,7 @@ architecture stub of inst_ram is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[3:0],addra[17:0],dina[31:0],douta[31:0]";
+attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[3:0],addra[14:0],dina[31:0],douta[31:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "blk_mem_gen_v8_4_6,Vivado 2023.1";
 begin

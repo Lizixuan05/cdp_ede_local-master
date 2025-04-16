@@ -311,7 +311,6 @@ LEAF(n2_add_w_test)
     // TEST_ADD_W(0x00000000, 0x00000000, 0x00000000)
 //   #endif
     TEST_ADD_W(0x00000000, 0x00000000, 0x00000000)
-  #endif
 ###detect exception
     bne s2, zero, inst_error
     NOP4

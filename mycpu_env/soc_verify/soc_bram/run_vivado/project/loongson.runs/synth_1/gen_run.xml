@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1744778571" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/soc_lite_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1744786072">
   <File Type="PA-TCL" Name="soc_lite_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="soc_lite_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="soc_lite_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="soc_lite_top.vds"/>
   <File Type="RDS-UTIL" Name="soc_lite_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="soc_lite_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="soc_lite_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="soc_lite_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="soc_lite_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../rtl/xilinx_ip/clk_pll/clk_pll.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/xilinx_ip/data_ram/data_ram.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../../../myCPU/EXE_state.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -121,15 +132,6 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/soc_lite_top.dcp">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedInSteps" Val="synth_1"/>
-        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
-        <Attr Name="AutoDcp" Val="1"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
@@ -139,8 +141,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="inst_ram"/>
-  <BlockFileSet Type="BlockSrcs" Name="data_ram"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_pll"/>
   <BlockFileSet Type="BlockSrcs" Name="my_div_s"/>
   <BlockFileSet Type="BlockSrcs" Name="my_div_u"/>
 </GenRun>

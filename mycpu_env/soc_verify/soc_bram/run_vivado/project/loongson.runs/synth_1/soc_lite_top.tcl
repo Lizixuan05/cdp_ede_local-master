@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 5
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100ticsg324-1L
 
@@ -103,16 +102,16 @@ read_verilog -library xil_defaultlib {
   d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v
   d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/soc_lite_top.v
 }
-read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/inst_ram.xci
-set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/inst_ram_ooc.xdc]
-
-read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/data_ram/data_ram.xci
-set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/data_ram/data_ram_ooc.xdc]
-
 read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll.xci
 set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_board.xdc]
 set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll.xdc]
 set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_ooc.xdc]
+
+read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/data_ram/data_ram.xci
+set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/data_ram/data_ram_ooc.xdc]
+
+read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/inst_ram.xci
+set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/inst_ram_ooc.xdc]
 
 read_ip -quiet d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.srcs/sources_1/ip/my_div_s/my_div_s.xci
 set_property used_in_implementation false [get_files -all d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.gen/sources_1/ip/my_div_s/my_div_s_ooc.xdc]
@@ -132,9 +131,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/constraints/soc_lite_top.xdc
 set_property used_in_implementation false [get_files d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/constraints/soc_lite_top.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
-
-read_checkpoint -auto_incremental -incremental d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.srcs/utils_1/imports/synth_1/soc_lite_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

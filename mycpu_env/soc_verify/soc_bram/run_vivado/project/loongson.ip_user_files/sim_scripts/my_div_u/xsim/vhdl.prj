@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../loongson.gen/sources_1/ip/my_div_u/sim/my_div_u.vhd" \
+
+# Do not sort compile order
+nosort
