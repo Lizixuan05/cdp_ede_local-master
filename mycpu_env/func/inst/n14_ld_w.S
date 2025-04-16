@@ -72,7 +72,7 @@ LEAF(n14_ld_w_test)
     // TEST_LD_W(0x9393289c, 0xd0000,  0x000,  0x000, 0x9393289c)
     // TEST_LD_W(0x29b2c02d, 0xd0000,  0x000,  0x000, 0x29b2c02d)
     TEST_LD_W(0x00000000, 0xd0000,  0x000,  0x000, 0x00000000)
-  #endif
+  //#endif
 ###detect exception
     bne s2, zero, inst_error
     NOP4

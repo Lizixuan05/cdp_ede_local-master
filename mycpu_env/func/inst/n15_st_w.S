@@ -77,7 +77,7 @@ LEAF(n15_st_w_test)
     // TEST_ST_W(0x36964fd0, 0xd0000,  0x000,  0x000, 0x36964fd0)
     // TEST_ST_W(0xe67b1aa6, 0xd0000,  0x000,  0x000, 0xe67b1aa6)
     TEST_ST_W(0x00000000, 0xd0000,  0x000,  0x000, 0x00000000)
-  #endif
+  //#endif
 ###detect exception
     bne s2, zero, inst_error
     NOP4

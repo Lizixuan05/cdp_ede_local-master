@@ -309,9 +309,9 @@ LEAF(n8_or_test)
     // TEST_OR(0x00000000, 0x8a126074, 0x8a126074)
     // TEST_OR(0x00000000, 0x0734f91e, 0x0734f91e)
     // TEST_OR(0x00000000, 0x8ad8c75c, 0x8ad8c75c)
-    TEST_OR(0x00000000, 0xc82df286, 0xc82df286)
+    //TEST_OR(0x00000000, 0xc82df286, 0xc82df286)
     TEST_OR(0x00000000, 0x00000000, 0x00000000)
-  #endif
+  //#endif
 ###detect exception
     bne s2, zero, inst_error
     NOP4

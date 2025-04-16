@@ -310,8 +310,9 @@ LEAF(n10_nor_test)
     // TEST_NOR(0x00000000, 0x09800273, 0xf67ffd8c)
     // TEST_NOR(0x00000000, 0xe07cdec0, 0x1f83213f)
     // TEST_NOR(0x00000000, 0xc5b31dc7, 0x3a4ce238)
-    TEST_NOR(0x00000000, 0x00000000, 0xffffffff)
-  #endif
+    //TEST_NOR(0x00000000, 0x00000000, 0xffffffff)
+  //#endif
+  TEST_NOR(0x00000000, 0x00000000, 0xffffffff)
 ###detect exception
     bne s2, zero, inst_error
     NOP4
