@@ -1,3 +1,4 @@
+`include "macro.v"
 module mycpu_top(
     input  wire        clk,
     input  wire        resetn,
