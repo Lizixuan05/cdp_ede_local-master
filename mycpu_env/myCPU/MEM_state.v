@@ -96,4 +96,8 @@ module MEM_state (
     assign mem_rf_wdata = mem_res_from_mem?mem_result:mem_alu_result;
     assign MEM_rf = {mem_csr_re,mem_rf_we&MEM_valid,mem_rf_waddr,mem_rf_wdata};
     assign MEM_except = mem_except;
+
+    /*------------exception control ----------------------*/
+    assign mem_ex = mem_except[2];
+
 endmodule

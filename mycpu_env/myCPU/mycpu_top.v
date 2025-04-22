@@ -32,7 +32,7 @@ wire        EXE_allowin;
 wire        ID_EXE_valid;
 wire [31:0] ID_pc;
 wire [33:0] ID_mem;
-wire [ 5:0] ID_rf;
+wire [ 6:0] ID_rf;
 wire [82:0] ID_alu;
 wire [37:0] WB_rf;
 wire [ 7:0] ID_inst;

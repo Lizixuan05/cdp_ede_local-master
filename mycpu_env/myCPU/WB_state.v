@@ -46,6 +46,7 @@ module WB_state (
         if (MEM_WB_valid & WB_allowin) begin
             WB_pc <= MEM_pc;
             {csr_re,wb_rf_buffer} <= MEM_rf;
+            wb_except <= MEM_except;
         end
     end
 

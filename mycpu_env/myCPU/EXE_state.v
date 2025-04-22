@@ -49,6 +49,7 @@ module EXE_state (
     wire alu_complete;
     reg [80:0] exe_except;
     reg exe_csr_re;
+    wire exe_ex;
     //inst
     reg inst_ld_w;
     reg inst_ld_b;
@@ -121,8 +122,11 @@ module EXE_state (
 
     /*---------------data sram control---------------------*/
     assign data_sram_en = (exe_mem_we | exe_res_from_mem) & EXE_valid;
-    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid & ~wb_ex & mem_ex}};
+    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid & ~wb_ex & ~mem_ex & ~exe_ex}};
     assign data_sram_addr = EXE_alu_result;
     assign data_sram_wdata = st_data;
+
+    /*-------------------exception control ------------------*/
+    assign exe_ex = exe_except[2];
 
 endmodule

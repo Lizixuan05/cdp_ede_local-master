@@ -437,7 +437,7 @@ module ID_state (
                                                        /*inst_jirl*/ (rj_value + jirl_offs);
 
     /*--------------------ID_EXE buffer-----------------*/
-    assign ID_rf = {rf_we,rf_waddr};
+    assign ID_rf = {id_csr_re,rf_we,rf_waddr};
     assign ID_mem = {mem_we,res_from_mem,rkd_value};
     assign ID_alu = {alu_op,alu_src2,alu_src1};
     assign ID_inst = {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
