@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.gen/sources_1/ip/my_div_s/sim/my_div_s.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'my_div_s'
+INFO: [VRFC 10-163] Analyzing VHDL file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.gen/sources_1/ip/my_div_u/sim/my_div_u.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'my_div_u'

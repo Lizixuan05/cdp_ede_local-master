@@ -1,3 +1,4 @@
+`include "macro.vh"
 module IF_state(
     input  wire        clk,
     input  wire        reset,
@@ -19,7 +20,13 @@ module IF_state(
 
     //ID_IF interface
     input  wire        br_taken,
-    input  wire [31:0] br_target
+    input  wire [31:0] br_target,
+
+    //Exception interface
+    input  wire        wb_ex,
+    input  wire        ertn_flush,
+    input  wire [31:0] ex_entry,
+    input  wire [31:0] ertn_entry
     );
 
     wire        IF_ready_go;
@@ -31,7 +38,7 @@ module IF_state(
     /*---------------state control-----------------*/
 
     assign IF_ready_go = 1'b1;
-    assign IF_allowin = ~IF_valid | IF_ready_go & ID_allowin;
+    assign IF_allowin = ~IF_valid | IF_ready_go & ID_allowin | wb_ex | ertn_flush;
     assign IF_ID_valid = IF_valid & IF_ready_go;
     always @(posedge clk) begin
         if (reset) begin
@@ -54,7 +61,9 @@ module IF_state(
 
     /*---------------pc control-----------------*/
     assign seq_pc       = IF_pc + 3'h4;
-    assign nextpc       = br_taken ? br_target : seq_pc;
+    assign nextpc       = wb_ex ? ex_entry :
+                          ertn_flush ? ertn_entry :
+                          br_taken ? br_target : seq_pc;
 
     /*---------------IF_ID buffer-----------------*/
 

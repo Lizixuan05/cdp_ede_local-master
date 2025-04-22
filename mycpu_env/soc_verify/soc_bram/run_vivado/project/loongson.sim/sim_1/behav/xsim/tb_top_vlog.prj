@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../loongson.ip_user_files/ipstatic" --include "../../../../../../../../myCPU" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" \
+"../../../../../../rtl/xilinx_ip/clk_pll/clk_pll.v" \
+"../../../../../../rtl/xilinx_ip/data_ram/sim/data_ram.v" \
+"../../../../../../rtl/xilinx_ip/inst_ram/sim/inst_ram.v" \
+"../../../../../../../../myCPU/EXE_state.v" \
+"../../../../../../../../myCPU/ID_state.v" \
+"../../../../../../../../myCPU/IF_state.v" \
+"../../../../../../../../myCPU/MEM_state.v" \
+"../../../../../../../../myCPU/WB_state.v" \
+"../../../../../../../../myCPU/alu.v" \
+"../../../../../../rtl/BRIDGE/bridge_1x2.v" \
+"../../../../../../rtl/CONFREG/confreg.v" \
+"../../../../../../../../myCPU/csr.v" \
+"../../../../../../../../myCPU/mycpu_top.v" \
+"../../../../../../../../myCPU/regfile.v" \
+"../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../../../myCPU/tools.v" \
+"../../../../../../testbench/mycpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

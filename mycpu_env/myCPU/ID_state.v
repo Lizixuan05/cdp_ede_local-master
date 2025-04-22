@@ -1,3 +1,4 @@
+`include "macro.vh"
 module ID_state (
     input  wire        clk,
     input  wire        reset,
@@ -21,14 +22,18 @@ module ID_state (
     /*buffer*/
     output reg  [31:0] ID_pc,//reg类型
     output wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
-    output wire [ 5:0] ID_rf,//{rf_we[5],rf_waddr[4:0]}
+    output wire [ 6:0] ID_rf,//{csr_re[6],rf_we[5],rf_waddr[4:0]}
     output wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
     output wire [ 7:0] ID_inst,//{inst_st_h[7],inst_st_b[6],inst_st_w[5],inst_ld_hu[4],inst_ld_bu[3],inst_ld_h[2],inst_ld_b[1],inst_ld_w[0]}
+    output wire [80:0] ID_except,//{id_csr_num[80:67], id_csr_wmask[66:35], id_csr_wvalue[34:3], inst_syscall[2], inst_ertn[1], id_csr_we[0]}
 
     //confict detection interface
     input  wire [37:0] WB_rf, //{wb_rf_we[37], wb_rf_waddr[36:32], wb_rf_wdata[31:0]}
-    input  wire [37:0] MEM_rf,//{mem_rf_we[37], mem_rf_waddr[36:32], mem_rf_wdata[31:0]}
-    input  wire [38:0] EXE_rf //{exe_res_from_mem[38], exe_rf_we[37], exe_rf_waddr[36:32], exe_rf_wdata[31:0]}
+    input  wire [38:0] MEM_rf,//{mem_csr_re[38],mem_rf_we[37],mem_rf_waddr[36:32], mem_rf_wdata[31:0]}
+    input  wire [39:0] EXE_rf, //{exe_csr_re[39],exe_res_from_mem[38],exe_rf_we[37], exe_rf_waddr[36:32], exe_rf_wdata[31:0]}
+
+    //exception interface
+    input  wire        wb_ex
     );
     wire        ID_stall;
     reg  [31:0] inst;
@@ -69,6 +74,7 @@ module ID_state (
     wire [ 3:0] op_21_20_d;
     wire [31:0] op_19_15_d;
 
+    //用户态指令
     wire        inst_add_w;
     wire        inst_sub_w;
     wire        inst_slt;
@@ -115,6 +121,12 @@ module ID_state (
     wire        inst_mod_w;
     wire        inst_div_wu;
     wire        inst_mod_wu;
+    //特权态指令
+    wire        inst_csrrd;
+    wire        inst_csrwr;
+    wire        inst_csrxchg;
+    wire        inst_ertn;
+    wire        inst_syscall;
 
     wire        need_ui12;
     wire        need_ui5;
@@ -143,17 +155,24 @@ module ID_state (
     wire        need_r1;
     wire        need_r2;
 
-    wire        wb_rf_we   ;
-    wire [ 4:0] wb_rf_waddr;
-    wire [31:0] wb_rf_wdata;
+    wire        wb_rf_we    ;
+    wire [ 4:0] wb_rf_waddr ;
+    wire [31:0] wb_rf_wdata ;
+    wire        mem_csr_re  ;
     wire        mem_rf_we   ;
     wire [ 4:0] mem_rf_waddr;
     wire [31:0] mem_rf_wdata;
+    wire        exe_csr_re  ;  
     wire        exe_rf_we   ;
     wire [ 4:0] exe_rf_waddr;
     wire [31:0] exe_rf_wdata;
     wire        exe_res_from_mem;
 
+    wire        id_csr_re;
+    wire [13:0] id_csr_num;
+    wire        id_csr_we;
+    wire [31:0] id_csr_wvalue;
+    wire [31:0] id_csr_wmask;
 
     /*---------------IF_ID buffer-----------------*/
     always @(posedge clk) begin
@@ -165,12 +184,17 @@ module ID_state (
     /*---------------state control-----------------*/
 
     assign ID_ready_go = ~ID_stall;
-    assign ID_stall = exe_res_from_mem & (conflict_r1_exe & need_r1|conflict_r2_exe & need_r2);
+    assign ID_stall = (exe_res_from_mem|exe_csr_re) & (conflict_r1_exe & need_r1|conflict_r2_exe & need_r2)
+                      | mem_csr_re &  (conflict_r1_mem & need_r1|conflict_r2_mem & need_r2) ;
+
     assign ID_allowin = ~ID_valid | ID_ready_go & EXE_allowin;
     assign ID_EXE_valid = ID_valid & ID_ready_go;
 
     always @(posedge clk) begin
         if (reset) begin
+            ID_valid <= 1'b0;
+        end
+        else if (wb_ex)begin
             ID_valid <= 1'b0;
         end
         else if (br_taken) begin
@@ -247,6 +271,11 @@ module ID_state (
     assign inst_mod_w  = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h01];
     assign inst_div_wu = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h02];
     assign inst_mod_wu = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h03];
+    assign inst_csrrd   = op_31_26_d[6'h01] & (op_25_22[3:2] == 2'b0) & (rj == 5'h00);
+    assign inst_csrwr   = op_31_26_d[6'h01] & (op_25_22[3:2] == 2'b0) & (rj == 5'h01);
+    assign inst_csrxchg = op_31_26_d[6'h01] & (op_25_22[3:2] == 2'b0) & ~inst_csrrd & ~inst_csrwr;
+    assign inst_syscall = op_31_26_d[6'h00] & op_25_22_d[4'h0] & op_21_20_d[2'h2] & op_19_15_d[5'h16];
+    assign inst_ertn    = op_31_26_d[6'h01] & op_25_22_d[4'h9] & op_21_20_d[2'h0] & op_19_15_d[5'h10] & (rk == 5'h0e) & (~|rj) & (~|rd);
 
     /*--------------signal from inst--------------*/
 
@@ -294,7 +323,8 @@ module ID_state (
     assign jirl_offs = {{14{i16[15]}}, i16[15:0], 2'b0};
 
     assign src_reg_is_rd = inst_beq | inst_bne | inst_st_w | inst_blt | inst_bge 
-                           | inst_bltu | inst_bgeu | inst_st_b | inst_st_h ;
+                           | inst_bltu | inst_bgeu | inst_st_b | inst_st_h 
+                           | inst_csrwr | inst_csrxchg;
     assign src1_is_pc    = inst_jirl | inst_bl |inst_pcaddu12i;
     assign src2_is_imm   = inst_slli_w |
                            inst_srli_w |
@@ -323,7 +353,7 @@ module ID_state (
     assign dst_is_r1     = inst_bl;
     assign gr_we         = ~inst_st_w & ~inst_beq & ~inst_bne & ~inst_b 
                            & ~inst_blt & ~inst_bge & ~inst_bltu & ~inst_bgeu 
-                           & ~inst_st_b & ~inst_st_h;
+                           & ~inst_st_b & ~inst_st_h & ~inst_syscall & ~inst_ertn;
     assign mem_we        = inst_st_w | inst_st_b | inst_st_h;
     assign dest          = dst_is_r1 ? 5'd1 : rd;
 
@@ -332,7 +362,7 @@ module ID_state (
     assign alu_src2 = src2_is_imm ? imm : rkd_value;
     //alu_op
 
-    assign rf_we    = gr_we;
+    assign rf_we    = gr_we & ID_valid;
     assign rf_waddr = dest;
 
     //mem_we
@@ -359,8 +389,8 @@ module ID_state (
     /*-------------------conflict detection-----------------*/
 
     assign {wb_rf_we,wb_rf_waddr,wb_rf_wdata} = WB_rf;
-    assign {mem_rf_we, mem_rf_waddr, mem_rf_wdata} = MEM_rf;
-    assign {exe_res_from_mem, exe_rf_we, exe_rf_waddr, exe_rf_wdata} = EXE_rf;
+    assign {mem_csr_re,mem_rf_we, mem_rf_waddr, mem_rf_wdata} = MEM_rf;
+    assign {exe_csr_re,exe_res_from_mem, exe_rf_we, exe_rf_waddr, exe_rf_wdata} = EXE_rf;
 
     assign conflict_r1_wb = (|rf_raddr1) & (rf_raddr1 == wb_rf_waddr) & wb_rf_we;
     assign conflict_r2_wb = (|rf_raddr2) & (rf_raddr2 == wb_rf_waddr) & wb_rf_we;
@@ -376,7 +406,16 @@ module ID_state (
                         conflict_r1_wb  ? wb_rf_wdata : rf_rdata1; 
     assign rkd_value =  conflict_r2_exe ? exe_rf_wdata:
                         conflict_r2_mem ? mem_rf_wdata:
-                        conflict_r2_wb  ? wb_rf_wdata : rf_rdata2; 
+                        conflict_r2_wb  ? wb_rf_wdata : rf_rdata2;
+                        
+    /*----------------------csr control------------------*/
+
+    assign id_csr_re = inst_csrrd | inst_csrwr | inst_csrxchg;
+    assign id_csr_we = inst_csrwr | inst_csrxchg;
+    assign id_csr_num = inst[23:10];
+    assign id_csr_wvalue = rkd_value;
+    assign id_csr_wmask = {32{inst_csrxchg}} & rj_value | {32{inst_csrwr}};
+
 
     /*--------------------brunch control-----------------*/
     assign rj_eq_rd = (rj_value == rkd_value);
@@ -402,5 +441,6 @@ module ID_state (
     assign ID_mem = {mem_we,res_from_mem,rkd_value};
     assign ID_alu = {alu_op,alu_src2,alu_src1};
     assign ID_inst = {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
+    assign ID_except = {id_csr_num, id_csr_wmask, id_csr_wvalue, inst_syscall, inst_ertn, id_csr_we};
 
 endmodule

@@ -1,3 +1,4 @@
+`include "macro.vh"
 module EXE_state (
     input  wire        clk,
     input  wire        reset,
@@ -9,9 +10,10 @@ module EXE_state (
     /*buffer*/
     input  wire [31:0] ID_pc,
     input  wire [33:0] ID_mem,//{mem_we[33],res_from_mem[32],rkd_value[31:0]}
-    input  wire [ 5:0] ID_rf,
+    input  wire [ 6:0] ID_rf, //{csr_re[6],rf_we[5],rf_waddr[4:0]}
     input  wire [82:0] ID_alu,//{alu_op[82:64],alu_src2[63:32],alu_src1[31:0]}
     input  wire [ 7:0] ID_inst,
+    input  wire [80:0] ID_except,//{id_csr_num[80:67], id_csr_wmask[66:35], id_csr_wvalue[34:3], inst_syscall[2], inst_ertn[1], id_csr_we[0]}
 
     //EXE_MEM interface
     /*state control*/
@@ -19,15 +21,19 @@ module EXE_state (
     output wire        EXE_MEM_valid,
     /*buffer*/
     output reg  [31:0] EXE_pc,//reg类型为级间缓存
-    output wire [38:0] EXE_rf,//{res_from_mem[38],rf_we[37],rf_waddr[36:32],alu_result[31:0]}
+    output wire [39:0] EXE_rf,//{csr_re,res_from_mem[38],rf_we[37],rf_waddr[36:32],alu_result[31:0]}
     output wire [ 6:0]  EXE_load,//{EXE_alu_result[6:5],inst_ld_hu[4],inst_ld_bu[3],inst_ld_h[2],inst_ld_b[1],inst_ld_w[0]}
+    output wire [80:0] EXE_except,//{id_csr_num[80:67], id_csr_wmask[66:35], id_csr_wvalue[34:3], inst_syscall[2], inst_ertn[1], id_csr_we[0]}
 
     // data sram interface
     output wire        data_sram_en,
     output wire [ 3:0] data_sram_we,
     output wire [31:0] data_sram_addr,
-    output wire [31:0] data_sram_wdata
+    output wire [31:0] data_sram_wdata,
 
+    //exception interface
+    input  wire        wb_ex,
+    input  wire        mem_ex
 );
     wire EXE_ready_go;
     reg  EXE_valid;
@@ -41,6 +47,8 @@ module EXE_state (
     reg exe_rf_we;
     reg [4:0] exe_rf_waddr;
     wire alu_complete;
+    reg [80:0] exe_except;
+    reg exe_csr_re;
     //inst
     reg inst_ld_w;
     reg inst_ld_b;
@@ -59,8 +67,9 @@ module EXE_state (
             EXE_pc <= ID_pc;
             {EXE_alu_op,EXE_alu_src2,EXE_alu_src1} <= ID_alu;
             {exe_mem_we,exe_res_from_mem,exe_rkd_value} <= ID_mem;
-            {exe_rf_we,exe_rf_waddr} <= ID_rf;
+            {exe_csr_re,exe_rf_we,exe_rf_waddr} <= ID_rf;
             {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w} <= ID_inst;
+            exe_except <= ID_except;
         end
     end
 
@@ -71,6 +80,9 @@ module EXE_state (
     always @(posedge clk) begin
         if (reset) begin
             EXE_valid <= 1'b0;
+        end
+        else if (wb_ex) begin
+            EXE_valid <= ID_EXE_valid;
         end
         else if (EXE_allowin) begin
             EXE_valid <= ID_EXE_valid ;
@@ -94,9 +106,9 @@ module EXE_state (
 
     /*-------------------EXE_MEM buffer---------------*/
 
-    assign EXE_rf = {exe_res_from_mem&EXE_valid,exe_rf_we&EXE_valid,exe_rf_waddr,EXE_alu_result};
+    assign EXE_rf = {exe_csr_re&EXE_valid,exe_res_from_mem&EXE_valid,exe_rf_we&EXE_valid,exe_rf_waddr,EXE_alu_result};
     assign EXE_load = {EXE_alu_result[1:0],inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
-
+    assign EXE_except = exe_except;
     /*------------------byte enable control---------------------*/
     assign st_data = inst_st_b ? {4{exe_rkd_value[7:0]}}:
                      inst_st_h ? {2{exe_rkd_value[15:0]}}:
@@ -109,7 +121,7 @@ module EXE_state (
 
     /*---------------data sram control---------------------*/
     assign data_sram_en = (exe_mem_we | exe_res_from_mem) & EXE_valid;
-    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid}};
+    assign data_sram_we = {st_data_byte_en} & {4{EXE_valid & ~wb_ex & mem_ex}};
     assign data_sram_addr = EXE_alu_result;
     assign data_sram_wdata = st_data;
 

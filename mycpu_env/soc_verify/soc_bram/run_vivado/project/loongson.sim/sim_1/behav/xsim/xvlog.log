@@ -1,0 +1,50 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/EXE_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/ID_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/IF_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/MEM_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/WB_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/csr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module csr
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+WARNING: [VRFC 10-3248] data object 'ex_entry' is already declared [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:69]
+WARNING: [VRFC 10-9364] second declaration of 'ex_entry' is ignored [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:69]
+WARNING: [VRFC 10-3248] data object 'ertn_entry' is already declared [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:70]
+WARNING: [VRFC 10-9364] second declaration of 'ertn_entry' is ignored [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:70]
+WARNING: [VRFC 10-3248] data object 'ertn_flush' is already declared [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:72]
+WARNING: [VRFC 10-9364] second declaration of 'ertn_flush' is ignored [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:72]
+WARNING: [VRFC 10-3248] data object 'wb_ex' is already declared [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:74]
+WARNING: [VRFC 10-9364] second declaration of 'wb_ex' is ignored [d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/mycpu_top.v:74]
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/myCPU/tools.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_2_4
+INFO: [VRFC 10-311] analyzing module decoder_4_16
+INFO: [VRFC 10-311] analyzing module decoder_5_32
+INFO: [VRFC 10-311] analyzing module decoder_6_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+WARNING: [VRFC 10-2096] empty statement in sequential block [d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/testbench/mycpu_tb.v:237]
+INFO: [VRFC 10-2263] Analyzing Verilog file "d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
