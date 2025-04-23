@@ -168,3 +168,19 @@ Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:2
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1479.336 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 330 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.gen/sources_1/ip/my_div_s/my_div_s_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.gen/sources_1/ip/my_div_s/my_div_s_ooc.xdc] for cell 'U0'
+Parsing XDC File [d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.runs/my_div_s_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.runs/my_div_s_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1513.855 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 1513.918 ; gain = 0.062
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
