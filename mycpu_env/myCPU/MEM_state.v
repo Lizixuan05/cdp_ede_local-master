@@ -94,7 +94,7 @@ module MEM_state (
 
     /*--------------MEM_WB buffer--------------------------*/
     assign mem_rf_wdata = mem_res_from_mem?mem_result:mem_alu_result;
-    assign MEM_rf = {mem_csr_re,mem_rf_we&MEM_valid,mem_rf_waddr,mem_rf_wdata};
+    assign MEM_rf = {mem_csr_re&MEM_valid,mem_rf_we&MEM_valid,mem_rf_waddr,mem_rf_wdata};
     assign MEM_except = mem_except;
 
     /*------------exception control ----------------------*/

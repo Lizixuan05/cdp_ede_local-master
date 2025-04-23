@@ -185,7 +185,7 @@ module ID_state (
 
     assign ID_ready_go = ~ID_stall;
     assign ID_stall = (exe_res_from_mem|exe_csr_re) & (conflict_r1_exe & need_r1|conflict_r2_exe & need_r2)
-                      | mem_csr_re &  (conflict_r1_mem & need_r1|conflict_r2_mem & need_r2) ;
+                      | mem_csr_re &  (conflict_r1_mem |conflict_r2_mem ) ;
 
     assign ID_allowin = ~ID_valid | ID_ready_go & EXE_allowin;
     assign ID_EXE_valid = ID_valid & ID_ready_go;
@@ -353,7 +353,7 @@ module ID_state (
     assign dst_is_r1     = inst_bl;
     assign gr_we         = ~inst_st_w & ~inst_beq & ~inst_bne & ~inst_b 
                            & ~inst_blt & ~inst_bge & ~inst_bltu & ~inst_bgeu 
-                           & ~inst_st_b & ~inst_st_h & ~inst_syscall & ~inst_ertn;
+                           & ~inst_st_b & ~inst_st_h & ~inst_syscall ;
     assign mem_we        = inst_st_w | inst_st_b | inst_st_h;
     assign dest          = dst_is_r1 ? 5'd1 : rd;
 
@@ -441,6 +441,6 @@ module ID_state (
     assign ID_mem = {mem_we,res_from_mem,rkd_value};
     assign ID_alu = {alu_op,alu_src2,alu_src1};
     assign ID_inst = {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
-    assign ID_except = {id_csr_num, id_csr_wmask, id_csr_wvalue, inst_syscall, inst_ertn, id_csr_we};
+    assign ID_except = {id_csr_num, id_csr_wmask, id_csr_wvalue, inst_syscall&ID_valid, inst_ertn&ID_valid, id_csr_we};
 
 endmodule

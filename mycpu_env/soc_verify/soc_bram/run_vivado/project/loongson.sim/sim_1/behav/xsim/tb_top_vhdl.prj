@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../loongson.gen/sources_1/ip/my_div_s/sim/my_div_s.vhd" \
-"../../../../loongson.gen/sources_1/ip/my_div_u/sim/my_div_u.vhd" \
-
-# Do not sort compile order
-nosort

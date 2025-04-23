@@ -119,7 +119,7 @@ IF_state  IF_state_inst (
     .WB_rf(WB_rf),
     .MEM_rf(MEM_rf),
     .EXE_rf(EXE_rf),
-    .wb_ex(wb_ex)
+    .wb_ex(wb_ex | ertn_flush)
   );
   EXE_state  EXE_state_inst (
     .clk(clk),
@@ -142,7 +142,7 @@ IF_state  IF_state_inst (
     .data_sram_we(data_sram_we),
     .data_sram_addr(data_sram_addr),
     .data_sram_wdata(data_sram_wdata),
-    .wb_ex(wb_ex),
+    .wb_ex(wb_ex | ertn_flush),
     .mem_ex(mem_ex)
   );
   MEM_state  MEM_state_inst (
@@ -161,7 +161,7 @@ IF_state  IF_state_inst (
     .MEM_except(MEM_except),
     .data_sram_rdata(data_sram_rdata),
     .mem_ex(mem_ex),
-    .wb_ex(wb_ex)
+    .wb_ex(wb_ex | ertn_flush)
   );
 
   WB_state  WB_state_inst (

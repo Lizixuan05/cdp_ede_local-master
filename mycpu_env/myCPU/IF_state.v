@@ -47,9 +47,6 @@ module IF_state(
         else if (IF_allowin) begin
             IF_valid <= ~reset;
         end
-        else if (br_taken) begin
-            IF_valid <= 1'b0;
-        end
     end
 
     /*---------------inst sram -----------------*/
