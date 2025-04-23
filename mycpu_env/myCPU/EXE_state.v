@@ -33,7 +33,8 @@ module EXE_state (
 
     //exception interface
     input  wire        wb_ex,
-    input  wire        mem_ex
+    input  wire        mem_ex,
+    output wire        exe_ex
 );
     wire EXE_ready_go;
     reg  EXE_valid;
@@ -49,7 +50,6 @@ module EXE_state (
     wire alu_complete;
     reg [80:0] exe_except;
     reg exe_csr_re;
-    wire exe_ex;
     //inst
     reg inst_ld_w;
     reg inst_ld_b;
@@ -82,8 +82,8 @@ module EXE_state (
         if (reset) begin
             EXE_valid <= 1'b0;
         end
-        else if (wb_ex) begin
-            EXE_valid <= ID_EXE_valid;
+        else if (wb_ex|mem_ex) begin
+            EXE_valid <= 1'b0;
         end
         else if (EXE_allowin) begin
             EXE_valid <= ID_EXE_valid ;

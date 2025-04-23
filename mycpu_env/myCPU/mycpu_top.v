@@ -54,11 +54,9 @@ wire [80:0] EXE_except;
 wire [80:0] MEM_except;
 
 
-wire wb_ex;
-wire ertn_flush;
-wire mem_ex;
-wire [31:0] ex_entry;
-wire [31:0] ertn_entry;
+wire id_ex;
+wire exe_ex;
+
 
 wire        csr_re;
 wire [13:0] csr_num;
@@ -74,6 +72,7 @@ wire        ms_ex;
 wire        wb_ex;
 wire [ 5:0] wb_ecode;
 wire [ 8:0] wb_esubcode;
+wire [31:0] wb_pc;
 
 
 reg         reset;
@@ -94,6 +93,7 @@ IF_state  IF_state_inst (
     .br_taken(br_taken),
     .br_target(br_target),
     .wb_ex(wb_ex),
+    .id_ex(id_ex|exe_ex|mem_ex),
     .ertn_flush(ertn_flush),
     .ex_entry(ex_entry),
     .ertn_entry(ertn_entry)
@@ -119,7 +119,8 @@ IF_state  IF_state_inst (
     .WB_rf(WB_rf),
     .MEM_rf(MEM_rf),
     .EXE_rf(EXE_rf),
-    .wb_ex(wb_ex | ertn_flush)
+    .wb_ex(wb_ex | ertn_flush |exe_ex |mem_ex),
+    .id_ex(id_ex)
   );
   EXE_state  EXE_state_inst (
     .clk(clk),
@@ -143,7 +144,8 @@ IF_state  IF_state_inst (
     .data_sram_addr(data_sram_addr),
     .data_sram_wdata(data_sram_wdata),
     .wb_ex(wb_ex | ertn_flush),
-    .mem_ex(mem_ex)
+    .mem_ex(mem_ex),
+    .exe_ex(exe_ex)
   );
   MEM_state  MEM_state_inst (
     .clk(clk),

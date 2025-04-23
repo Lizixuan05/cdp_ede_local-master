@@ -24,9 +24,11 @@ module IF_state(
 
     //Exception interface
     input  wire        wb_ex,
+    input  wire        id_ex,
     input  wire        ertn_flush,
     input  wire [31:0] ex_entry,
     input  wire [31:0] ertn_entry
+
     );
 
     wire        IF_ready_go;

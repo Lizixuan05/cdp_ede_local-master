@@ -33,7 +33,8 @@ module ID_state (
     input  wire [39:0] EXE_rf, //{exe_csr_re[39],exe_res_from_mem[38],exe_rf_we[37], exe_rf_waddr[36:32], exe_rf_wdata[31:0]}
 
     //exception interface
-    input  wire        wb_ex
+    input  wire        wb_ex,
+    output wire        id_ex
     );
     wire        ID_stall;
     reg  [31:0] inst;
@@ -145,6 +146,8 @@ module ID_state (
 
     wire [31:0] alu_src1   ;
     wire [31:0] alu_src2   ;
+
+    wire        brunch;
     
     wire        conflict_r1_wb;
     wire        conflict_r2_wb;
@@ -398,8 +401,8 @@ module ID_state (
     assign conflict_r2_mem = (|rf_raddr2) & (rf_raddr2 == mem_rf_waddr) & mem_rf_we;
     assign conflict_r1_exe = (|rf_raddr1) & (rf_raddr1 == exe_rf_waddr) & exe_rf_we;
     assign conflict_r2_exe = (|rf_raddr2) & (rf_raddr2 == exe_rf_waddr) & exe_rf_we;
-    assign need_r1         = ~src1_is_pc & (|alu_op);
-    assign need_r2         = ~src2_is_imm & (|alu_op);
+    assign need_r1         = ~src1_is_pc & (|alu_op || brunch);
+    assign need_r2         = ~src2_is_imm & (|alu_op || brunch);
     // 数据冲突时处理有优先级
     assign rj_value  =  conflict_r1_exe ? exe_rf_wdata:
                         conflict_r1_mem ? mem_rf_wdata:
@@ -421,6 +424,8 @@ module ID_state (
     assign rj_eq_rd = (rj_value == rkd_value);
     assign rj_ls_rd = ($signed(rj_value) < $signed(rkd_value));
     assign rj_lu_rd = (rj_value <  rkd_value);
+    assign brunch = inst_beq || inst_bne || inst_blt || inst_bge || inst_bltu || inst_bgeu
+                        || inst_jirl || inst_bl || inst_b;
     assign br_taken = (   inst_beq  &&  rj_eq_rd
                        || inst_bne  && !rj_eq_rd
                        || inst_blt  &&  rj_ls_rd
@@ -435,12 +440,12 @@ module ID_state (
     assign br_target = (inst_beq || inst_bne || inst_bl || inst_b || inst_blt || 
                         inst_bge || inst_bltu || inst_bgeu) ? (ID_pc + br_offs) :
                                                        /*inst_jirl*/ (rj_value + jirl_offs);
-
     /*--------------------ID_EXE buffer-----------------*/
     assign ID_rf = {id_csr_re,rf_we,rf_waddr};
     assign ID_mem = {mem_we,res_from_mem,rkd_value};
     assign ID_alu = {alu_op,alu_src2,alu_src1};
     assign ID_inst = {inst_st_h,inst_st_b,inst_st_w,inst_ld_hu,inst_ld_bu,inst_ld_h,inst_ld_b,inst_ld_w};
     assign ID_except = {id_csr_num, id_csr_wmask, id_csr_wvalue, inst_syscall&ID_valid, inst_ertn&ID_valid, id_csr_we};
+    assign id_ex = inst_syscall&ID_valid;
 
 endmodule

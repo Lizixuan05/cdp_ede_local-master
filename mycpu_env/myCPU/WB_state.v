@@ -36,7 +36,6 @@ module WB_state (
 );
     wire WB_ready_go;
     reg  WB_valid;
-    reg [31:0] WB_pc;
     reg [37:0] wb_rf_buffer;
     wire [31:0] wb_rf_wdata;
     reg [80:0] wb_except;
@@ -44,7 +43,7 @@ module WB_state (
     /*-----------------------MEM_WB buffer--------------*/
     always @(posedge clk) begin
         if (MEM_WB_valid & WB_allowin) begin
-            WB_pc <= MEM_pc;
+            wb_pc <= MEM_pc;
             {csr_re,wb_rf_buffer} <= MEM_rf;
             wb_except <= MEM_except;
         end
@@ -74,7 +73,7 @@ module WB_state (
     assign WB_rf = {wb_rf_buffer[37] & WB_valid, wb_rf_buffer[36:32], wb_rf_wdata};
 
     /*-------------------debug info generate--------------------*/
-    assign debug_wb_pc       = WB_pc;
+    assign debug_wb_pc       = wb_pc;
     assign debug_wb_rf_we   = {4{wb_rf_buffer[37] & WB_valid}};
     assign debug_wb_rf_wnum  = wb_rf_buffer[36:32];
     assign debug_wb_rf_wdata = wb_rf_wdata; 
