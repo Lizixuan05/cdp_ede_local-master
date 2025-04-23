@@ -11,3 +11,4 @@
 # Journal file: d:/nscscc/cdp_ede_local-master/mycpu_env/soc_verify/soc_bram/run_vivado/project/loongson.runs/my_div_s_synth_1\vivado.jou
 # Running On: LAPTOP-EH5L1GAH, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 16890 MB
 #-----------------------------------------------------------
+source my_div_s.tcl -notrace
