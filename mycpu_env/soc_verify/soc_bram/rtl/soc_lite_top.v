@@ -181,62 +181,185 @@ inst_ram inst_ram
     .douta (cpu_inst_rdata     )    //31:0
 );
 
-bridge_1x2 bridge_1x2(
-    .clk             ( cpu_clk         ), // i, 1                 
-    .resetn          ( cpu_resetn      ), // i, 1                 
-
-    .cpu_data_en     ( cpu_data_en     ), // i, 4                 
-    .cpu_data_we     ( cpu_data_we     ), // i, 4                 
-    .cpu_data_addr   ( cpu_data_addr   ), // i, 32                
-    .cpu_data_wdata  ( cpu_data_wdata  ), // i, 32                
-    .cpu_data_rdata  ( cpu_data_rdata  ), // o, 32                
-
-    .data_sram_en    ( data_sram_en    ), // o, 4                 
-    .data_sram_we    ( data_sram_we    ), // o, 4                 
-    .data_sram_addr  ( data_sram_addr  ), // o, `DATA_RAM_ADDR_LEN
-    .data_sram_wdata ( data_sram_wdata ), // o, 32                
-    .data_sram_rdata ( data_sram_rdata ), // i, 32                
-
-    .conf_en         ( conf_en         ), // o, 1                 
-    .conf_we         ( conf_we         ), // o, 4                 
-    .conf_addr       ( conf_addr       ), // o, 32                
-    .conf_wdata      ( conf_wdata      ), // o, 32                
-    .conf_rdata      ( conf_rdata      )  // i, 32                
- );
 
 //data ram
-data_ram data_ram
-(
-    .clka  (cpu_clk             ),   
-    .ena   (data_sram_en        ),
-    .wea   (data_sram_we        ),   //3:0
-    .addra (data_sram_addr[17:2]),   //15:0
-    .dina  (data_sram_wdata     ),   //31:0
-    .douta (data_sram_rdata     )    //31:0
-);
+ data_ram data_ram (
+    .rsta_busy(rsta_busy),          // output wire rsta_busy
+    .rstb_busy(rstb_busy),          // output wire rstb_busy
+    .s_aclk(s_aclk),                // input wire s_aclk
+    .s_aresetn(s_aresetn),          // input wire s_aresetn
+    .s_axi_awid(s_axi_awid),        // input wire [3 : 0] s_axi_awid
+    .s_axi_awaddr(s_axi_awaddr),    // input wire [31 : 0] s_axi_awaddr
+    .s_axi_awlen(s_axi_awlen),      // input wire [7 : 0] s_axi_awlen
+    .s_axi_awsize(s_axi_awsize),    // input wire [2 : 0] s_axi_awsize
+    .s_axi_awburst(s_axi_awburst),  // input wire [1 : 0] s_axi_awburst
+    .s_axi_awvalid(s_axi_awvalid),  // input wire s_axi_awvalid
+    .s_axi_awready(s_axi_awready),  // output wire s_axi_awready
+    .s_axi_wdata(s_axi_wdata),      // input wire [31 : 0] s_axi_wdata
+    .s_axi_wstrb(s_axi_wstrb),      // input wire [3 : 0] s_axi_wstrb
+    .s_axi_wlast(s_axi_wlast),      // input wire s_axi_wlast
+    .s_axi_wvalid(s_axi_wvalid),    // input wire s_axi_wvalid
+    .s_axi_wready(s_axi_wready),    // output wire s_axi_wready
+    .s_axi_bid(s_axi_bid),          // output wire [3 : 0] s_axi_bid
+    .s_axi_bresp(s_axi_bresp),      // output wire [1 : 0] s_axi_bresp
+    .s_axi_bvalid(s_axi_bvalid),    // output wire s_axi_bvalid
+    .s_axi_bready(s_axi_bready),    // input wire s_axi_bready
+    .s_axi_arid(s_axi_arid),        // input wire [3 : 0] s_axi_arid
+    .s_axi_araddr(s_axi_araddr),    // input wire [31 : 0] s_axi_araddr
+    .s_axi_arlen(s_axi_arlen),      // input wire [7 : 0] s_axi_arlen
+    .s_axi_arsize(s_axi_arsize),    // input wire [2 : 0] s_axi_arsize
+    .s_axi_arburst(s_axi_arburst),  // input wire [1 : 0] s_axi_arburst
+    .s_axi_arvalid(s_axi_arvalid),  // input wire s_axi_arvalid
+    .s_axi_arready(s_axi_arready),  // output wire s_axi_arready
+    .s_axi_rid(s_axi_rid),          // output wire [3 : 0] s_axi_rid
+    .s_axi_rdata(s_axi_rdata),      // output wire [31 : 0] s_axi_rdata
+    .s_axi_rresp(s_axi_rresp),      // output wire [1 : 0] s_axi_rresp
+    .s_axi_rlast(s_axi_rlast),      // output wire s_axi_rlast
+    .s_axi_rvalid(s_axi_rvalid),    // output wire s_axi_rvalid
+    .s_axi_rready(s_axi_rready)    // input wire s_axi_rready
+  );
 
-//confreg
-confreg #(.SIMULATION(SIMULATION)) u_confreg
-(
-    .clk         ( cpu_clk    ),  // i, 1   
-    .timer_clk   ( timer_clk  ),  // i, 1   
-    .resetn      ( cpu_resetn ),  // i, 1    
-    .conf_en     ( conf_en    ),  // i, 1      
-    .conf_we     ( conf_we    ),  // i, 4      
-    .conf_addr   ( conf_addr  ),  // i, 32        
-    .conf_wdata  ( conf_wdata ),  // i, 32         
-    .conf_rdata  ( conf_rdata ),  // o, 32         
-    .led         ( led        ),  // o, 16   
-    .led_rg0     ( led_rg0    ),  // o, 2      
-    .led_rg1     ( led_rg1    ),  // o, 2      
-    .num_csn     ( num_csn    ),  // o, 8      
-    .num_a_g     ( num_a_g    ),  // o, 7      
-    .num_data    ( num_data   ),  // o, 32
-    .switch      ( switch     ),  // i, 8     
-    .btn_key_col ( btn_key_col),  // o, 4          
-    .btn_key_row ( btn_key_row),  // i, 4           
-    .btn_step    ( btn_step   )   // i, 2   
-);
+cache  cache_inst (
+    .clk(clk),
+    .resetn(resetn),
+    .valid(valid),
+    .op(op),
+    .index(index),
+    .tag(tag),
+    .offset(offset),
+    .wstrb(wstrb),
+    .wdata(wdata),
+    .addr_ok(addr_ok),
+    .data_ok(data_ok),
+    .rdata(rdata),
+    .rd_req(rd_req),
+    .rd_type(rd_type),
+    .rd_addr(rd_addr),
+    .rd_rdy(rd_rdy),
+    .ret_valid(ret_valid),
+    .ret_last(ret_last),
+    .ret_data(ret_data),
+    .wr_req(wr_req),
+    .wr_type(wr_type),
+    .wr_addr(wr_addr),
+    .wr_wstrb(wr_wstrb),
+    .wr_data(wr_data),
+    .wr_rdy(wr_rdy)
+  );
 
+  bridge_sram_axi my_bridge_sram_axi(
+    .aclk               (aclk               ),
+    .aresetn            (aresetn            ),
+
+    .arid               (arid               ),
+    .araddr             (araddr             ),
+    .arlen              (arlen              ),
+    .arsize             (arsize             ),
+    .arburst            (arburst            ),
+    .arlock             (arlock             ),
+    .arcache            (arcache            ),
+    .arprot             (arprot             ),
+    .arvalid            (arvalid            ),
+    .arready            (arready            ),
+
+    .rid                (rid                ),
+    .rdata              (rdata              ),
+    .rvalid             (rvalid             ),
+    .rlast              (rlast              ),
+    .rready             (rready             ),
+
+    .awid               (awid               ),
+    .awaddr             (awaddr             ),
+    .awlen              (awlen              ),
+    .awsize             (awsize             ),
+    .awburst            (awburst            ),
+    .awlock             (awlock             ),
+    .awcache            (awcache            ),
+    .awprot             (awprot             ),
+    .awvalid            (awvalid            ),
+    .awready            (awready            ),
+
+    .wid                (wid                ),
+    .wdata              (wdata              ),
+    .wstrb              (wstrb              ),
+    .wlast              (wlast              ),
+    .wvalid             (wvalid             ),
+    .wready             (wready             ),
+
+    .bid                (bid                ),
+    .bvalid             (bvalid             ),
+    .bready             (bready             ),
+
+    .icache_rd_req      (icache_rd_req      ),
+    .icache_rd_type     (icache_rd_type     ),
+    .icache_rd_addr     (icache_rd_addr     ),
+    .icache_rd_rdy      (icache_rd_rdy      ),
+    .icache_ret_valid   (icache_ret_valid   ),
+    .icache_ret_last    (icache_ret_last    ),
+    .icache_ret_data    (icache_ret_data    ),
+
+    .dcache_rd_req      (dcache_rd_req      ),
+    .dcache_rd_type     (dcache_rd_type     ),
+    .dcache_rd_addr     (dcache_rd_addr     ),
+    .dcache_rd_rdy      (dcache_rd_rdy      ),
+    .dcache_ret_valid   (dcache_ret_valid   ),
+    .dcache_ret_last    (dcache_ret_last    ),
+    .dcache_ret_data    (dcache_ret_data    ),
+
+    .dcache_wr_req      (dcache_wr_req      ),
+    .dcache_wr_type     (dcache_wr_type     ),
+    .dcache_wr_addr     (dcache_wr_addr     ),
+    .dcache_wr_wstrb    (dcache_wr_wstrb    ),
+    .dcache_wr_data     (dcache_wr_data     ),
+    .dcache_wr_rdy      (dcache_wr_rdy      )
+    );
+
+
+    /*排序上板无需外设*/
+// //confreg
+// confreg #(.SIMULATION(SIMULATION)) u_confreg
+// (
+//     .clk         ( cpu_clk    ),  // i, 1   
+//     .timer_clk   ( timer_clk  ),  // i, 1   
+//     .resetn      ( cpu_resetn ),  // i, 1    
+//     .conf_en     ( conf_en    ),  // i, 1      
+//     .conf_we     ( conf_we    ),  // i, 4      
+//     .conf_addr   ( conf_addr  ),  // i, 32        
+//     .conf_wdata  ( conf_wdata ),  // i, 32         
+//     .conf_rdata  ( conf_rdata ),  // o, 32         
+//     .led         ( led        ),  // o, 16   
+//     .led_rg0     ( led_rg0    ),  // o, 2      
+//     .led_rg1     ( led_rg1    ),  // o, 2      
+//     .num_csn     ( num_csn    ),  // o, 8      
+//     .num_a_g     ( num_a_g    ),  // o, 7      
+//     .num_data    ( num_data   ),  // o, 32
+//     .switch      ( switch     ),  // i, 8     
+//     .btn_key_col ( btn_key_col),  // o, 4          
+//     .btn_key_row ( btn_key_row),  // i, 4           
+//     .btn_step    ( btn_step   )   // i, 2   
+// );
+
+    // bridge_1x2 bridge_1x2(
+    //     .clk             ( cpu_clk         ), // i, 1                 
+    //     .resetn          ( cpu_resetn      ), // i, 1                 
+    
+    //     .cpu_data_en     ( cpu_data_en     ), // i, 4                 
+    //     .cpu_data_we     ( cpu_data_we     ), // i, 4                 
+    //     .cpu_data_addr   ( cpu_data_addr   ), // i, 32                
+    //     .cpu_data_wdata  ( cpu_data_wdata  ), // i, 32                
+    //     .cpu_data_rdata  ( cpu_data_rdata  ), // o, 32                
+    
+    //     .data_sram_en    ( data_sram_en    ), // o, 4                 
+    //     .data_sram_we    ( data_sram_we    ), // o, 4                 
+    //     .data_sram_addr  ( data_sram_addr  ), // o, `DATA_RAM_ADDR_LEN
+    //     .data_sram_wdata ( data_sram_wdata ), // o, 32                
+    //     .data_sram_rdata ( data_sram_rdata ), // i, 32                
+    
+    //     .conf_en         ( conf_en         ), // o, 1                 
+    //     .conf_we         ( conf_we         ), // o, 4                 
+    //     .conf_addr       ( conf_addr       ), // o, 32                
+    //     .conf_wdata      ( conf_wdata      ), // o, 32                
+    //     .conf_rdata      ( conf_rdata      )  // i, 32                
+    //  );
 endmodule
 
